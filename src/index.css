@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: #1A5C1A;
+    --color-primary-mid: #2E7D1F;
+    --color-primary-light: #4CAF28;
+    --color-accent: #F5A000;
+    --color-accent-hot: #FF7A00;
+    --color-bg: #F5F7F2;
+    --color-dark: #0D2E0D;
+    --color-text: #1A1A1A;
+    --color-mono: #F5A000;
+  }
+
+  body {
+    @apply bg-bg text-text font-body antialiased;
+    margin: 0;
+    padding: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Structural SVG noise overlay */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100dvh;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    mix-blend-mode: overlay;
+  }
+}
+
+@layer components {
+  /* Boutons magnétiques */
+  .btn-magnetic {
+    @apply relative overflow-hidden inline-flex items-center justify-center rounded-full font-heading font-bold text-white transition-all duration-300 bg-accent hover:bg-accent-hot cursor-pointer;
+    transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .btn-magnetic:hover {
+    transform: scale(1.03);
+  }
+  
+  .btn-magnetic span {
+    @apply relative z-10 flex items-center gap-2;
+  }
+
+  /* Lien header/footer */
+  .hover-link {
+    @apply transition-transform duration-300 hover:-translate-y-[1px] inline-block;
+  }
+}

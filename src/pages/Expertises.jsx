@@ -1,0 +1,323 @@
+import React, { useEffect, useState, useRef } from 'react';
+import { ArrowRight, MousePointer2 } from 'lucide-react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
+// Custom Interactive Component 1: Diagnostic Shuffler
+const DiagnosticShuffler = () => {
+    const cards = ['Audit énergétique', 'Étude de faisabilité', 'Optimisation ENR'];
+    const [activeIndex, setActiveIndex] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setActiveIndex((prev) => (prev + 1) % cards.length);
+        }, 3000);
+        return () => clearInterval(interval);
+    }, [cards.length]);
+
+    return (
+        <div className="relative h-48 w-full max-w-sm mx-auto mt-8 flex items-center justify-center perspective-1000">
+            {cards.map((card, index) => {
+                // Calculate relative position (-1, 0, 1) considering active index
+                let diff = index - activeIndex;
+                // Adjust for wrapping
+                if (diff < -1) diff += cards.length;
+                if (diff > 1) diff -= cards.length;
+
+                let zIndex = 10 - Math.abs(diff);
+                let scale = diff === 0 ? 1 : diff === 1 ? 0.9 : 0.8;
+                let translateY = diff === 0 ? 0 : diff === 1 ? 20 : 40;
+                let opacity = diff === 0 ? 1 : diff === 1 ? 0.7 : 0.4;
+
+                return (
+                    <div
+                        key={index}
+                        className="absolute top-0 w-full bg-white text-dark p-6 rounded-2xl shadow-xl border border-primary/10 transition-all duration-700 font-heading font-bold text-center flex items-center justify-center h-24"
+                        style={{
+                            transform: `translateY(${translateY}px) scale(${scale})`,
+                            zIndex,
+                            opacity,
+                            transitionTimingFunction: 'cubic-bezier(0.34, 1.56, 0.64, 1)'
+                        }}
+                    >
+                        {card}
+                    </div>
+                );
+            })}
+        </div>
+    );
+};
+
+// Custom Interactive Component 2: Telemetry Typewriter
+const TelemetryTypewriter = () => {
+    const lines = [
+        "> Analyse réglementaire en cours...",
+        "> Structuration projet PV : OK ✓",
+        "> Recommandation transmise au MOA...",
+        "> Veille normative : mise à jour"
+    ];
+
+    const [displayedText, setDisplayedText] = useState("");
+    const [currentLineIndex, setCurrentLineIndex] = useState(0);
+    const [currentCharIndex, setCurrentCharIndex] = useState(0);
+    const [cursorVisible, setCursorVisible] = useState(true);
+
+    // Blinking cursor
+    useEffect(() => {
+        const blink = setInterval(() => setCursorVisible(v => !v), 500);
+        return () => clearInterval(blink);
+    }, []);
+
+    // Typewriter effect
+    useEffect(() => {
+        if (currentLineIndex >= lines.length) {
+            setTimeout(() => {
+                setDisplayedText("");
+                setCurrentLineIndex(0);
+                setCurrentCharIndex(0);
+            }, 5000);
+            return;
+        }
+
+        const currentLine = lines[currentLineIndex];
+
+        if (currentCharIndex < currentLine.length) {
+            const timeout = setTimeout(() => {
+                setDisplayedText(prev => prev + currentLine[currentCharIndex]);
+                setCurrentCharIndex(c => c + 1);
+            }, Math.random() * 50 + 30);
+            return () => clearTimeout(timeout);
+        } else {
+            const timeout = setTimeout(() => {
+                setDisplayedText(prev => prev + '\n');
+                setCurrentLineIndex(l => l + 1);
+                setCurrentCharIndex(0);
+            }, 800);
+            return () => clearTimeout(timeout);
+        }
+    }, [currentLineIndex, currentCharIndex, lines]);
+
+    return (
+        <div className="bg-dark text-white p-6 rounded-2xl shadow-2xl relative overflow-hidden h-64 flex flex-col mt-8">
+            <div className="absolute inset-0 opacity-10 bg-[linear-gradient(transparent_50%,rgba(0,0,0,0.5)_50%)] bg-[length:100%_4px] pointer-events-none"></div>
+
+            <div className="flex items-center gap-3 mb-6 border-b border-white/10 pb-4">
+                <span className="relative flex h-3 w-3">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-3 w-3 bg-accent"></span>
+                </span>
+                <span className="font-mono text-xs tracking-wider text-bg/80">FLUX CONSEIL — EN DIRECT</span>
+            </div>
+
+            <div className="font-mono text-sm leading-relaxed whitespace-pre-wrap flex-grow text-accent-hot">
+                {displayedText}
+                <span className={`inline-block w-2.5 h-4 bg-accent align-middle ml-1 ${cursorVisible ? 'opacity-100' : 'opacity-0'}`}></span>
+            </div>
+        </div>
+    );
+};
+
+// Custom Interactive Component 3: Scheduler
+const Scheduler = () => {
+    const days = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
+    const [activeDay, setActiveDay] = useState(null);
+    const cursorRef = useRef(null);
+
+    useEffect(() => {
+        // Sequence animation
+        let ctx = gsap.context(() => {
+            const tl = gsap.timeline({ repeat: -1, repeatDelay: 2 });
+
+            // Move to 'J' (index 3)
+            tl.to(cursorRef.current, {
+                x: (3 * 40), // approx width of day box
+                y: 0,
+                duration: 2,
+                ease: "power2.inOut",
+                delay: 1
+            });
+
+            // Click animation
+            tl.to(cursorRef.current, { scale: 0.8, duration: 0.1 });
+            tl.call(() => setActiveDay(3));
+            tl.to(cursorRef.current, { scale: 1, duration: 0.1 });
+
+            // Reset
+            tl.to({}, { duration: 3 }); // wait 3 seconds
+            tl.call(() => setActiveDay(null));
+            tl.to(cursorRef.current, { x: -40, y: 0, duration: 1, ease: "power2.inOut" });
+
+        });
+
+        return () => ctx.revert();
+    }, []);
+
+    return (
+        <div className="bg-white p-8 rounded-3xl shadow-lg border border-primary/5 mt-8 max-w-sm mx-auto">
+            <h4 className="font-heading font-bold text-dark mb-6 text-center">Planifier un Audit</h4>
+
+            <div className="relative">
+                <div className="flex justify-between items-center mb-8 relative">
+                    {days.map((day, i) => (
+                        <div
+                            key={i}
+                            className={`w-10 h-10 rounded-xl flex items-center justify-center font-mono font-bold transition-colors duration-300 relative z-10 ${activeDay === i ? 'bg-accent text-white shadow-lg' : 'bg-bg text-dark'}`}
+                        >
+                            {day}
+                        </div>
+                    ))}
+
+                    {/* Animated Cursor */}
+                    <div ref={cursorRef} className="absolute -left-10 top-2 z-20 pointer-events-none">
+                        <MousePointer2 className="w-6 h-6 text-primary drop-shadow-md" fill="white" />
+                    </div>
+                </div>
+            </div>
+
+            <button className={`w-full py-3 rounded-xl font-heading font-bold transition-all duration-300 ${activeDay !== null ? 'bg-primary text-white scale-[1.02] shadow-xl' : 'bg-bg text-text/50 pointer-events-none'}`}>
+                Lancer l'audit <ArrowRight className="inline w-4 h-4 ml-2" />
+            </button>
+        </div>
+    );
+};
+
+export default function Expertises() {
+    const heroRef = useRef(null);
+    const sectionRefs = useRef([]);
+
+    useEffect(() => {
+        let ctx = gsap.context(() => {
+            // Hero reveal
+            gsap.fromTo('.hero-text',
+                { y: 30, opacity: 0 },
+                { y: 0, opacity: 1, duration: 1, stagger: 0.2, ease: "power3.out" }
+            );
+
+            // Fade up sections
+            sectionRefs.current.forEach((el) => {
+                if (el) {
+                    gsap.fromTo(el,
+                        { y: 60, opacity: 0 },
+                        {
+                            y: 0, opacity: 1, duration: 1, ease: "power2.out",
+                            scrollTrigger: {
+                                trigger: el,
+                                start: "top 75%"
+                            }
+                        }
+                    );
+                }
+            });
+        });
+
+        return () => ctx.revert();
+    }, []);
+
+    return (
+        <div className="bg-bg">
+            {/* Hero Interne */}
+            <section ref={heroRef} className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden bg-dark">
+                <div className="absolute inset-0 opacity-30">
+                    <img
+                        src="/images/projet_solaire.png"
+                        alt="Panneaux solaires"
+                        className="w-full h-full object-cover object-center"
+                    />
+                    <div className="absolute inset-0 bg-dark/70"></div>
+                </div>
+                <div className="relative z-10 text-center px-6 mt-16">
+                    <h1 className="hero-text font-serif italic text-5xl md:text-7xl text-white mb-6">Nos Domaines d'Expertise</h1>
+                    <div className="hero-text font-mono text-xs text-white/50 tracking-wide uppercase">
+                        Accueil <span className="mx-2 text-accent">/</span> Expertises
+                    </div>
+                </div>
+            </section>
+
+            {/* Expertise 1 */}
+            <section ref={el => sectionRefs.current[0] = el} className="py-32 px-6 overflow-hidden">
+                <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 lg:gap-24">
+                    <div className="w-full md:w-1/2 order-2 md:order-1">
+                        <span className="font-mono text-accent text-sm font-bold tracking-widest block mb-4">PÔLE 01</span>
+                        <h2 className="font-heading font-black text-4xl lg:text-5xl text-dark mb-6 leading-tight">Ingénierie & Études Techniques</h2>
+                        <ul className="space-y-4 font-body text-lg text-text/80 mb-8 border-l-2 border-primary/20 pl-6">
+                            <li>Études techniques approfondies</li>
+                            <li>Ingénierie de projets ENR</li>
+                            <li>Analyse, audit et optimisation systèmes</li>
+                            <li>Conception de solutions innovantes</li>
+                        </ul>
+                        <a href="/contact" className="font-heading font-bold text-primary hover:text-accent transition-colors flex items-center gap-2">
+                            Demander notre brochure <ArrowRight className="w-4 h-4" />
+                        </a>
+                    </div>
+                    <div className="w-full md:w-1/2 order-1 md:order-2">
+                        <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl bg-white p-8 border border-primary/5">
+                            <DiagnosticShuffler />
+                        </div>
+                        <div className="mt-8 rounded-[2.5rem] overflow-hidden shadow-2xl h-80">
+                            <img src="/images/projet_audit.png" alt="Laboratoire ENR" className="w-full h-full object-cover" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Expertise 2 */}
+            <section ref={el => sectionRefs.current[1] = el} className="py-32 px-6 bg-primary/5 border-y border-primary/10 overflow-hidden">
+                <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 lg:gap-24">
+                    <div className="w-full md:w-1/2">
+                        <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl h-80 mb-8">
+                            <img src="/images/bureau.png" alt="Réunion stratégique" className="w-full h-full object-cover" />
+                        </div>
+                        <TelemetryTypewriter />
+                    </div>
+                    <div className="w-full md:w-1/2">
+                        <span className="font-mono text-accent text-sm font-bold tracking-widest block mb-4">PÔLE 02</span>
+                        <h2 className="font-heading font-black text-4xl lg:text-5xl text-dark mb-6 leading-tight">Conseil & Assistance Stratégique</h2>
+                        <ul className="space-y-4 font-body text-lg text-text/80 mb-8 border-l-2 border-primary/20 pl-6">
+                            <li>Accompagnement maîtres d'ouvrage</li>
+                            <li>Études de faisabilité technico-économique</li>
+                            <li>Structuration de projets énergétiques</li>
+                            <li>Conseil réglementaire et veille normative</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            {/* Expertise 3 */}
+            <section ref={el => sectionRefs.current[2] = el} className="py-32 px-6 overflow-hidden">
+                <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 lg:gap-24">
+                    <div className="w-full md:w-1/2 order-2 md:order-1">
+                        <span className="font-mono text-accent text-sm font-bold tracking-widest block mb-4">PÔLE 03</span>
+                        <h2 className="font-heading font-black text-4xl lg:text-5xl text-dark mb-6 leading-tight">Audit, Formation & Communication</h2>
+                        <ul className="space-y-4 font-body text-lg text-text/80 mb-8 border-l-2 border-primary/20 pl-6">
+                            <li>Audits énergétiques réglementaires</li>
+                            <li>Programmes de formation sur-mesure</li>
+                            <li>Transfert de compétences pour les exploitants</li>
+                            <li>Plans de communication autour des projets ENR</li>
+                        </ul>
+                        <Scheduler />
+                    </div>
+                    <div className="w-full md:w-1/2 order-1 md:order-2">
+                        <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl h-[40rem]">
+                            <img src="/images/formation.png" alt="Formation professionnelle" className="w-full h-full object-cover" />
+                            <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-dark to-transparent opacity-80"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Secteurs d'Intervention */}
+            <section ref={el => sectionRefs.current[3] = el} className="py-24 px-6 max-w-5xl mx-auto text-center">
+                <h2 className="font-serif italic text-4xl text-dark mb-12">Nos Secteurs d'Intervention</h2>
+                <div className="flex flex-wrap items-center justify-center gap-4">
+                    {['Collectivités', 'Entreprises privées', 'Structures publiques', 'Promoteurs', 'Industrie', 'Aménagement territorial'].map((sector, i) => (
+                        <div key={i} className="px-6 py-3 rounded-full border border-primary/20 bg-white font-mono text-sm font-bold text-dark shadow-sm hover:border-accent hover:shadow-md transition-all cursor-default">
+                            {sector}
+                        </div>
+                    ))}
+                </div>
+            </section>
+        </div>
+    );
+}
