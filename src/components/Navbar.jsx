@@ -17,15 +17,15 @@ export default function Navbar() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const navClass = `fixed top-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 rounded-full px-5 py-3 xl:pl-6 xl:pr-3 flex items-center justify-between gap-4 xl:gap-8 min-w-[300px] w-max max-w-[96vw] ${scrolled || !isHome
+    const navClass = `fixed top-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 rounded-full px-5 py-3 xl:py-1.5 xl:pl-6 xl:pr-3 flex items-center justify-between gap-4 xl:gap-8 min-w-[300px] w-max max-w-[96vw] ${scrolled || !isHome
         ? 'bg-bg/80 backdrop-blur-xl border border-primary/10 shadow-lg text-primary'
         : 'bg-transparent text-white'
         }`;
 
     return (
         <nav className={navClass}>
-            <Link to="/" className="flex items-center gap-2 hover-link group shrink-0 h-8 w-36 xl:w-56 overflow-hidden relative justify-start">
-                <img src="/logo.png" alt="BATI ENERGY" className={`absolute w-full h-full object-contain scale-[2] xl:scale-[3] origin-left object-left ${!scrolled && isHome ? 'brightness-0 invert' : ''}`} />
+            <Link to="/" className="flex items-center gap-2 hover-link group shrink-0 h-8 w-36 xl:h-11 xl:w-48 overflow-hidden relative justify-start">
+                <img src="/logo.png" alt="BATI ENERGY" className={`absolute w-full h-full object-contain scale-[2] xl:scale-[2.2] origin-left object-left ${!scrolled && isHome ? 'brightness-0 invert' : ''}`} />
             </Link>
 
             <ul className="hidden xl:flex items-center gap-5 font-body text-[14px] font-semibold whitespace-nowrap">
