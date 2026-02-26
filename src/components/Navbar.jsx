@@ -24,8 +24,8 @@ export default function Navbar() {
 
     return (
         <nav className={navClass}>
-            <Link to="/" className="flex items-center gap-2 hover-link group shrink-0 h-8 w-36 xl:h-11 xl:w-48 overflow-hidden relative justify-start">
-                <img src="/logo.png" alt="BATI ENERGY" className={`absolute w-full h-full object-contain scale-[1.5] xl:scale-[1.8] origin-left object-left ${!scrolled && isHome ? 'brightness-0 invert' : ''}`} />
+            <Link to="/" className="flex items-center gap-2 hover-link group shrink-0">
+                <img src="/logo.png" alt="BATI ENERGY" className={`h-10 xl:h-12 w-auto object-contain ${!scrolled && isHome ? 'brightness-0 invert' : ''}`} />
             </Link>
 
             <ul className="hidden xl:flex items-center gap-5 font-body text-[14px] font-semibold whitespace-nowrap">
