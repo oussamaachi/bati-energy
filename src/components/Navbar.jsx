@@ -24,8 +24,8 @@ export default function Navbar() {
 
     return (
         <nav className={navClass}>
-            <Link to="/" className="flex items-center gap-2 hover-link group shrink-0">
-                <img src="/logo.png" alt="BATI ENERGY" className={`h-14 xl:h-[4.5rem] w-auto object-contain transition-all duration-300 ${!scrolled && isHome ? 'drop-shadow-md' : ''}`} />
+            <Link to="/" className="flex items-center gap-2 hover-link group shrink-0 pr-20 xl:pr-32">
+                <img src="/logo.png" alt="BATI ENERGY" className="h-10 xl:h-12 w-auto object-contain scale-[2] origin-left" />
             </Link>
 
             <ul className="hidden xl:flex items-center gap-5 font-body text-[14px] font-semibold whitespace-nowrap">
