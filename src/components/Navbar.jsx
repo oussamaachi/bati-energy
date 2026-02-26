@@ -17,15 +17,15 @@ export default function Navbar() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const navClass = `fixed top-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 rounded-full px-5 py-3 xl:py-1.5 xl:pl-6 xl:pr-3 flex items-center justify-between gap-4 xl:gap-8 min-w-[300px] w-max max-w-[96vw] ${scrolled || !isHome
+    const navClass = `fixed top-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 rounded-full px-5 py-3 xl:py-1.5 xl:px-5 flex items-center justify-between gap-4 xl:gap-6 min-w-[300px] w-max max-w-[96vw] ${scrolled || !isHome
         ? 'bg-bg/80 backdrop-blur-xl border border-primary/10 shadow-lg text-primary'
         : 'bg-transparent text-white'
         }`;
 
     return (
         <nav className={navClass}>
-            <Link to="/" className="flex items-center gap-2 hover-link group shrink-0 pr-20 xl:pr-32">
-                <img src="/logo.png" alt="BATI ENERGY" className="h-10 xl:h-12 w-auto object-contain scale-[2] origin-left" />
+            <Link to="/" className="flex items-center gap-2 hover-link group shrink-0 xl:min-w-[200px]">
+                <img src="/logo.png" alt="BATI ENERGY" className="h-10 xl:h-12 w-auto object-contain" />
             </Link>
 
             <ul className="hidden xl:flex items-center gap-5 font-body text-[14px] font-semibold whitespace-nowrap">
