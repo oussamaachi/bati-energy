@@ -25,7 +25,7 @@ const useCountUp = (end, duration = 1.5, start = 0, isDecimal = false) => {
 };
 
 const EnrCalculator = () => {
-    const [projectType, setProjectType] = useState('Solaire PV'); // Solaire PV, Éolien, Mixte ENR, Audit seul
+    const [projectType, setProjectType] = useState('Géothermie'); // Géothermie, Éolien, Mixte ENR, Audit seul
     const [power, setPower] = useState(100); // 10 kWc to 500 kWc
     const [structureType, setStructureType] = useState('Entreprise'); // Entreprise, Collectivité, Industriel
 
@@ -47,7 +47,7 @@ const EnrCalculator = () => {
         let baseSavings = baseProd * tariff;
 
         let baseCo2 = baseProd * 0.05; // tonnes CO2 / MWh (very rough grid average offset here)
-        if (projectType === 'Solaire PV') baseCo2 *= 1.2;
+        if (projectType === 'Géothermie') baseCo2 *= 1.2;
 
         let roiBase = structureType === 'Collectivité' ? 8 : (structureType === 'Industriel' ? 6 : 7);
         if (projectType === 'Mixte ENR') roiBase += 2;
@@ -86,7 +86,7 @@ const EnrCalculator = () => {
                         <div>
                             <div className="font-mono text-primary text-sm font-bold tracking-widest mb-3">ÉTAPE 1 — TYPE DE PROJET</div>
                             <div className="flex flex-wrap gap-3">
-                                {['Solaire PV', 'Éolien', 'Mixte ENR', 'Audit seul'].map(type => (
+                                {['Géothermie', 'Éolien', 'Mixte ENR', 'Audit seul'].map(type => (
                                     <button
                                         key={type}
                                         onClick={() => setProjectType(type)}
@@ -241,8 +241,8 @@ export default function Contact() {
                     {/* Colonne Gauche - Formulaire */}
                     <div className="w-full lg:w-3/5">
                         <div className="mb-10">
-                            <h2 className="font-heading font-black text-3xl md:text-4xl text-dark mb-4">Lancez la dynamique</h2>
-                            <p className="font-body text-text/70 text-lg">Nos ingénieurs vous recontactent sous 48h ouvrées avec une première analyse de faisabilité.</p>
+                            <h2 className="font-heading font-black text-3xl md:text-4xl text-dark mb-4">Consultez notre Bureau d'Études</h2>
+                            <p className="font-body text-text/70 text-lg">Nos ingénieurs vous recontactent sous 48h ouvrées avec une première analyse de faisabilité énergétique et d'éligibilité CEE.</p>
                         </div>
 
                         <form onSubmit={handleSubmit} className="space-y-6">
@@ -273,9 +273,9 @@ export default function Contact() {
                                 <div className="relative">
                                     <select id="besoin" className="w-full bg-white border border-primary/20 rounded-xl px-5 py-4 appearance-none focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all font-body text-dark cursor-pointer">
                                         <option value="">Sélectionnez un domaine d'intervention</option>
-                                        <option value="etudes">Étude technique (Faisabilité, PV, Éolien...)</option>
+                                        <option value="etudes">Étude technique (Faisabilité, Géothermie, Éolien...)</option>
                                         <option value="conseil">Conseil stratégique & AMO</option>
-                                        <option value="audit">Audit énergétique réglementaire</option>
+                                        <option value="audit">Audit énergétique & Valorisation CEE</option>
                                         <option value="formation">Formation professionnelle</option>
                                         <option value="autre">Autre demande</option>
                                     </select>

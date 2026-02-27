@@ -7,7 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 // Custom Interactive Component 1: Diagnostic Shuffler
 const DiagnosticShuffler = () => {
-    const cards = ['Audit énergétique', 'Étude de faisabilité', 'Optimisation ENR'];
+    const cards = ['Audit énergétique', 'Bureau d\'études', 'Valorisation CEE', 'Optimisation ENR'];
     const [activeIndex, setActiveIndex] = useState(0);
 
     useEffect(() => {
@@ -54,9 +54,9 @@ const DiagnosticShuffler = () => {
 const TelemetryTypewriter = () => {
     const lines = [
         "> Analyse réglementaire en cours...",
-        "> Structuration projet PV : OK ✓",
+        "> Structuration projet éolien : OK ✓",
         "> Recommandation transmise au MOA...",
-        "> Veille normative : mise à jour"
+        "> Veille 2026 : CEE 6ème période intégrée"
     ];
 
     const [displayedText, setDisplayedText] = useState("");
@@ -221,8 +221,8 @@ export default function Expertises() {
             <section ref={heroRef} className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden bg-dark">
                 <div className="absolute inset-0 opacity-30">
                     <img
-                        src="/images/projet_solaire.png"
-                        alt="Panneaux solaires"
+                        src="/images/projet_eolien.png"
+                        alt="Infrastructures ENR"
                         className="w-full h-full object-cover object-center"
                     />
                     <div className="absolute inset-0 bg-dark/70"></div>
@@ -289,9 +289,10 @@ export default function Expertises() {
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 lg:gap-24">
                     <div className="w-full md:w-1/2 order-2 md:order-1">
                         <span className="font-mono text-accent text-sm font-bold tracking-widest block mb-4">PÔLE 03</span>
-                        <h2 className="font-heading font-black text-4xl lg:text-5xl text-dark mb-6 leading-tight">Audit, Formation & Communication</h2>
+                        <h2 className="font-heading font-black text-4xl lg:text-5xl text-dark mb-6 leading-tight">Bureau d'Études, Audit & Formation</h2>
                         <ul className="space-y-4 font-body text-lg text-text/80 mb-8 border-l-2 border-primary/20 pl-6">
                             <li>Audits énergétiques réglementaires</li>
+                            <li>Ingénierie financière et valorisation CEE (6ème période)</li>
                             <li>Programmes de formation sur-mesure</li>
                             <li>Transfert de compétences pour les exploitants</li>
                             <li>Plans de communication autour des projets ENR</li>

@@ -125,7 +125,7 @@ export default function Accueil() {
                 <div className="absolute inset-0 z-0">
                     <img
                         src="/images/hero_texture.png"
-                        alt="Parc photovoltaïque"
+                        alt="Infrastructures ENR"
                         className="w-full h-full object-cover object-center transform scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-dark via-primary/50 to-transparent"></div>
@@ -143,7 +143,7 @@ export default function Accueil() {
                             </span>
                         </h1>
                         <p className="hero-anim text-bg/90 font-body text-lg md:text-xl max-w-2xl mt-6 border-l-2 border-accent pl-4">
-                            Bureau d'ingénierie spécialisé en ENR, environnement et territoire — Montrouge, depuis 2023.
+                            Bureau d'études et d'ingénierie spécialisé en ENR, Audit Énergétique et environnement — Montrouge, depuis 2023.
                         </p>
                         <div className="hero-anim pt-8 flex flex-wrap items-center gap-6">
                             <Link to="/contact" className="btn-magnetic px-8 py-4 text-base shadow-[0_0_30px_rgba(245,160,0,0.3)]">
@@ -206,8 +206,8 @@ export default function Accueil() {
                             <div className="w-16 h-16 rounded-2xl bg-bg flexItems-center justify-center mb-8 flex text-primary group-hover:bg-accent group-hover:text-white transition-colors duration-300">
                                 <GraduationCap className="w-8 h-8 m-auto" />
                             </div>
-                            <h3 className="font-heading font-bold text-2xl text-dark mb-4">Formation & Audit</h3>
-                            <p className="font-body text-text/70 mb-8 leading-relaxed">Diagnostics thermiques certifiés et transfert de compétences pour les acteurs publics et privés.</p>
+                            <h3 className="font-heading font-bold text-2xl text-dark mb-4">Bureau d'études & Audit</h3>
+                            <p className="font-body text-text/70 mb-8 leading-relaxed">Audits énergétiques, valorisation de vos aides (CEE, subventions) et transfert de compétences.</p>
                             <Link to="/formation-audit" className="font-heading font-bold text-sm text-primary group-hover:text-accent transition-colors flex items-center gap-2">
                                 En savoir plus <ArrowRight className="w-4 h-4" />
                             </Link>
@@ -263,13 +263,13 @@ export default function Accueil() {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {/* Project 1 */}
                         <div className="project-card group relative h-96 rounded-3xl overflow-hidden cursor-pointer">
-                            <img src="/images/projet_solaire.png" alt="Projet Solaire" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                            <img src="/images/formation.png" alt="Formation ENR" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                             <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
 
                             <div className="absolute inset-0 p-8 flex flex-col justify-end">
-                                <span className="font-mono text-accent text-sm mb-3 font-semibold tracking-wider">SOLAIRE PV</span>
-                                <h3 className="font-heading font-bold text-2xl text-white mb-1">Centrale Solaire</h3>
-                                <p className="font-body text-bg/70 text-sm">Île-de-France — 2024</p>
+                                <span className="font-mono text-accent text-sm mb-3 font-semibold tracking-wider">FORMATION</span>
+                                <h3 className="font-heading font-bold text-2xl text-white mb-1">Programme Formation ENR</h3>
+                                <p className="font-body text-bg/70 text-sm">Hauts-de-Seine — 2025</p>
                             </div>
                         </div>
 

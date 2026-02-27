@@ -150,7 +150,7 @@ export default function APropos() {
                     <div>
                         <span className="font-mono text-accent text-sm font-bold tracking-widest block mb-4">NOTRE MISSION</span>
                         <p className="font-body text-lg text-text/80 leading-relaxed">
-                            Nous sommes nés d'une conviction simple : la transition énergétique nécessite une approche globale qui dépasse le simple cadre technique. Notre mission est de fournir des solutions techniques fiables, de promouvoir activement les énergies renouvelables et de contribuer concrètement à la gestion durable de nos territoires.
+                            En tant que bureau d'études spécialisé, nous sommes nés d'une conviction simple : la transition énergétique nécessite une approche globale qui dépasse le simple cadre technique. Notre mission est de fournir des audits énergétiques précis, de valoriser vos projets via les CEE et les subventions, et de contribuer concrètement à la gestion durable de nos territoires.
                         </p>
                     </div>
                     <div>
@@ -171,7 +171,7 @@ export default function APropos() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {[
                         { name: "Directrice Générale", role: "Fondatrice — Ingénieure ENR", img: "/images/camille.png" },
-                        { name: "Directeur Technique", role: "Expert Solaire PV & Éolien", img: "/images/thomas.png" },
+                        { name: "Directeur Technique", role: "Expert Géothermie & Éolien", img: "/images/thomas.png" },
                         { name: "Responsable Conseil", role: "Stratégie & Assistance MOA", img: "/images/sarah.png" }
                     ].map((member, i) => (
                         <div key={i} className="team-card group relative overflow-hidden rounded-3xl bg-white shadow-lg">

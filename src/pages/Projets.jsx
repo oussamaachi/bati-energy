@@ -7,33 +7,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 const projectsData = [
     {
-        id: 1,
-        title: "Centrale Solaire",
-        category: "Solaire",
-        location: "Île-de-France",
-        year: "2024",
-        image: "/images/projet_solaire.png",
-        gallery: [
-            "/images/projet_solaire.png",
-            "https://images.unsplash.com/photo-1509391366360-1e9e30a5ca6f?q=80&w=2000&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1588612158671-0ae10717208d?q=80&w=2000&auto=format&fit=crop"
-        ],
-        shortDesc: "Étude et dimensionnement d'une ferme solaire de 5MWc sur friche industrielle.",
-        fullDesc: "Sur ce projet ambitieux de revalorisation d'une ancienne friche industrielle, nous avons mené l'ensemble des études techniques : gisement solaire, ingénierie électrique, et intégration paysagère. Le défi principal consistait à optimiser la disposition des trackers solaires tout en respectant les contraintes strictes du PLU local.",
-        tags: ["Faisabilité", "PV Tracker", "Autoconsommation", "Réseau MT"],
-        results: [
-            { label: "Puissance", value: "5 MWc", icon: Zap },
-            { label: "Production", value: "6.2 GWh/an", icon: Leaf },
-            { label: "Évitement CO2", value: "~350 t/an", icon: Leaf },
-            { label: "Économies annuelles", value: "850 K€", icon: Euro }
-        ],
-        testimonial: {
-            quote: "L'expertise de Bati Energy nous a permis de maximiser le potentiel de cette friche tout en sécurisant un ROI sur moins de 6 ans.",
-            author: "Direction Énergie",
-            role: "Établissement Public — Région Île-de-France"
-        }
-    },
-    {
         id: 2,
         title: "Plan Territorial ENR",
         category: "Conseil territorial",
@@ -46,7 +19,7 @@ const projectsData = [
             "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000&auto=format&fit=crop"
         ],
         shortDesc: "Schéma directeur des énergies renouvelables à l'échelle métropolitaine.",
-        fullDesc: "Accompagnement de la collectivité dans la définition de sa stratégie de transition énergétique. Cartographie des gisements (solaire, géothermie, réseaux de chaleur), modélisation des scénarios technico-économiques et rédaction du masterplan.",
+        fullDesc: "Accompagnement de la collectivité dans la définition de sa stratégie de transition énergétique. Cartographie des gisements (géothermie, réseaux de chaleur, éolien), modélisation des scénarios technico-économiques et rédaction du masterplan.",
         tags: ["Stratégie", "SIG", "Concertation", "Plan Climat"],
         results: [
             { label: "Couverture ENR", value: "32% visés", icon: Leaf },
@@ -119,7 +92,7 @@ const projectsData = [
             "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2000&auto=format&fit=crop"
         ],
         shortDesc: "Montée en compétences des équipes techniques de l'EPCI.",
-        fullDesc: "Déploiement d'un parcours de formation sur mesure d'une semaine pour 25 techniciens et ingénieurs de la métropole, axé sur la maintenance photovoltaïque et le suivi d'exploitation des réseaux de chaleur urbains.",
+        fullDesc: "Déploiement d'un parcours de formation sur mesure d'une semaine pour 25 techniciens et ingénieurs de la métropole, axé sur le suivi d'exploitation des réseaux de chaleur urbains et l'éolien.",
         tags: ["Présentiel", "Ingénierie Pédagogique", "Exploitation"],
         results: [
             { label: "Session", value: "5 jours", icon: Clock },
@@ -140,13 +113,12 @@ const projectsData = [
             "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000&auto=format&fit=crop"
         ],
         shortDesc: "Modélisation dynamique globale d'un grand ensemble tertiaire.",
-        fullDesc: "Diagnostic complet de la performance thermique d'un campus de bureaux de 40 000 m². Simulation Thermique Dynamique (STD) pour orienter la rénovation de la GTB et l'intégration d'ombrières photovoltaïques en parking.",
+        fullDesc: "Diagnostic complet de la performance thermique d'un campus de bureaux de 40 000 m². Simulation Thermique Dynamique (STD) pour orienter la rénovation de la GTB et l'optimisation énergétique globale.",
         tags: ["STD", "GTB", "Tertiaire", "Décret Bap"],
         results: [
             { label: "Surface", value: "40 k m²", icon: Zap },
             { label: "Gain estimé", value: "-25% énergie", icon: Leaf },
-            { label: "Évitement CO2", value: "110 t/an", icon: Leaf },
-            { label: "Autoconsommation", value: "14%", icon: Zap }
+            { label: "Évitement CO2", value: "110 t/an", icon: Leaf }
         ],
         testimonial: {
             quote: "Leur modélisation détaillée nous a permis d'optimiser notre investissement tout en répondant aux exigences du décret tertiaire.",
@@ -156,7 +128,7 @@ const projectsData = [
     }
 ];
 
-const categories = ["Tous", "Solaire", "Éolien", "Conseil territorial", "Formation", "Audit"];
+const categories = ["Tous", "Éolien", "Conseil territorial", "Formation", "Audit"];
 
 const ImageSlider = ({ images }) => {
     const [currentIndex, setCurrentIndex] = useState(0);

@@ -131,7 +131,7 @@ export default function FormationAudit() {
                         COMPÉTENCES & PERFORMANCES
                         <span className="w-12 h-px bg-accent"></span>
                     </div>
-                    <h1 className="hero-text font-serif italic text-5xl md:text-7xl text-white mb-6">Formation & Audit</h1>
+                    <h1 className="hero-text font-serif italic text-5xl md:text-7xl text-white mb-6">Bureau d'Études & Audit</h1>
                     <div className="hero-text font-mono text-xs text-white/50 tracking-wide uppercase">
                         Accueil <span className="mx-2 text-accent">/</span> Formation & Audit
                     </div>
@@ -143,18 +143,18 @@ export default function FormationAudit() {
                 <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
                     <div className="w-full lg:w-[55%]">
                         <span className="font-mono text-accent text-sm font-bold tracking-widest block mb-4 uppercase">Pôle Évaluation</span>
-                        <h2 className="font-heading font-black text-4xl lg:text-5xl text-dark mb-6 leading-tight">Audits Énergétiques</h2>
+                        <h2 className="font-heading font-black text-4xl lg:text-5xl text-dark mb-6 leading-tight">Bureau d'Études & Audits Énergétiques</h2>
                         <p className="font-body text-text/80 text-lg mb-8 leading-relaxed">
-                            Base incontournable de toute démarche d'amélioration, nos audits dressent un portrait factuel et chiffré de votre patrimoine foncier ou industriel. Nous traduisons la donnée brute en plan d'investissement stratégique.
+                            Base incontournable de toute démarche d'amélioration, nos audits dressent un portrait factuel et chiffré de votre patrimoine foncier ou industriel. Depuis la loi DDADUE (2025), toute entreprise consommant plus de 2,75 GWh/an doit réaliser un audit avant le 11 octobre 2026. Nous traduisons la donnée brute en plan d'investissement stratégique.
                         </p>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
                             <div className="bg-white p-6 rounded-2xl border border-primary/10 hover:border-accent transition-colors">
-                                <h4 className="font-heading font-bold text-dark mb-2">Audit Réglementaire</h4>
-                                <p className="font-body text-sm text-text/70 line-clamp-3">Mise en conformité avec les décrets tertiaires (BACS, etc.) et réalisation des rapports obligatoires.</p>
+                                <h4 className="font-heading font-bold text-dark mb-2">Audit Réglementaire 2026</h4>
+                                <p className="font-body text-sm text-text/70 line-clamp-3">Mise en conformité avec le Décret BACS (échéances 2025/2030) et préparation de la Déclaration OPERAT (septembre 2026).</p>
                             </div>
                             <div className="bg-white p-6 rounded-2xl border border-primary/10 hover:border-accent transition-colors">
                                 <h4 className="font-heading font-bold text-dark mb-2">Audit Technique ENR</h4>
-                                <p className="font-body text-sm text-text/70 line-clamp-3">Évaluation experte des performances d'unités de production existantes (PV, géothermie, réseaux de chaleur).</p>
+                                <p className="font-body text-sm text-text/70 line-clamp-3">Évaluation experte des performances d'unités de production existantes (géothermie, réseaux de chaleur, éolien).</p>
                             </div>
                             <div className="bg-white p-6 rounded-2xl border border-primary/10 hover:border-accent transition-colors">
                                 <h4 className="font-heading font-bold text-dark mb-2">Diagnostic Environnemental</h4>
@@ -163,6 +163,10 @@ export default function FormationAudit() {
                             <div className="bg-white p-6 rounded-2xl border border-primary/10 hover:border-accent transition-colors">
                                 <h4 className="font-heading font-bold text-dark mb-2">Audit Territorial</h4>
                                 <p className="font-body text-sm text-text/70 line-clamp-3">Approche multi-sites à l'échelle d'une commune ou d'une agglomération.</p>
+                            </div>
+                            <div className="bg-white p-6 rounded-2xl border border-primary/10 hover:border-accent transition-colors sm:col-span-2 md:col-span-1">
+                                <h4 className="font-heading font-bold text-dark mb-2">Valorisation CEE & Subventions</h4>
+                                <p className="font-body text-sm text-text/70 line-clamp-3">Montage technico-administratif stratégique pour la 6ème période des CEE (2026-2030) et l'accès au Fonds Chaleur.</p>
                             </div>
                         </div>
                         <button className="btn-magnetic px-6 py-3">
@@ -193,8 +197,8 @@ export default function FormationAudit() {
                             {[
                                 { icon: ClipboardCheck, title: "1. Cadrage", desc: "Définition des périmètres de mesure et mobilisation des données." },
                                 { icon: Search, title: "2. Diagnostic", desc: "Campagnes de mesures in-situ, relevés thermographiques et modélisations." },
-                                { icon: FileText, title: "3. Rapport", desc: "Analyse critique, STD et synthèse des potentiels." },
-                                { icon: Lightbulb, title: "4. Recommandations", desc: "Scénarios d'actions, ingénierie financière et planning." }
+                                { icon: FileText, title: "3. Rapport BE", desc: "Analyse critique, STD et synthèse des potentiels par notre bureau d'études." },
+                                { icon: Lightbulb, title: "4. Recommandations", desc: "Scénarios d'actions, valorisation CEE et planning de travaux." }
                             ].map((step, i) => (
                                 <div key={i} className="process-step text-center group">
                                     <div className="w-24 h-24 mx-auto bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-primary/10 flex items-center justify-center mb-6 group-hover:-translate-y-2 group-hover:border-accent group-hover:shadow-[0_8px_30px_rgba(245,160,0,0.15)] transition-all duration-300">
@@ -229,7 +233,7 @@ export default function FormationAudit() {
                             </div>
 
                             <h3 className="font-heading font-bold text-2xl text-dark mb-4">Fondamentaux ENR</h3>
-                            <p className="font-body text-text/70 mb-8 h-24">Maîtriser les ordres de grandeur énergétiques, les filières (PV, Bois, Géothermie, Éolien) et les clés de la transition territoire.</p>
+                            <p className="font-body text-text/70 mb-8 h-24">Maîtriser les ordres de grandeur énergétiques, les filières (Bois, Géothermie, Éolien) et les clés de la transition territoire.</p>
 
                             <div className="space-y-3 font-mono text-sm text-dark mb-8">
                                 <div className="flex justify-between border-b border-primary/10 pb-2">
@@ -255,8 +259,8 @@ export default function FormationAudit() {
                                 <span className="bg-primary/10 text-primary px-3 py-1 rounded-md text-xs">3 JOURS</span>
                             </div>
 
-                            <h3 className="font-heading font-bold text-2xl text-dark mb-4">Ingénierie Solaire PV</h3>
-                            <p className="font-body text-text/70 mb-8 h-24">Module technique avancé : dimensionnement de calepinage, onduleurs, courbes de charge, PVSyst et cadre consuel.</p>
+                            <h3 className="font-heading font-bold text-2xl text-dark mb-4">Ingénierie Réseaux de Chaleur</h3>
+                            <p className="font-body text-text/70 mb-8 h-24">Module technique avancé : dimensionnement, thermodynamique, courbes de charge, et cadre réglementaire.</p>
 
                             <div className="space-y-3 font-mono text-sm text-dark mb-8">
                                 <div className="flex justify-between border-b border-primary/10 pb-2">
