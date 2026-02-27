@@ -134,16 +134,24 @@ export default function Accueil() {
                 {/* Hero Content */}
                 <div className="relative z-10 max-w-7xl mx-auto w-full">
                     <div className="max-w-4xl space-y-4">
+                        <div className="hero-anim flex items-center gap-3 mb-6">
+                            <span className="bg-white/10 border border-white/20 text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full backdrop-blur-sm">
+                                🏠 Particuliers
+                            </span>
+                            <span className="bg-accent/20 border border-accent/40 text-accent text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full backdrop-blur-sm">
+                                🏢 Tertiaire
+                            </span>
+                        </div>
                         <h1 className="flex flex-col">
                             <span className="hero-anim text-white font-heading font-black text-4xl md:text-6xl lg:text-[4rem] leading-tight tracking-tight">
-                                L'énergie de demain,
+                                Produisez votre propre
                             </span>
                             <span className="hero-anim text-accent font-serif italic text-6xl md:text-8xl lg:text-[7rem] leading-none mt-2">
-                                s'ingénie aujourd'hui.
+                                énergie solaire.
                             </span>
                         </h1>
                         <p className="hero-anim text-bg/90 font-body text-lg md:text-xl max-w-2xl mt-6 border-l-2 border-accent pl-4">
-                            Conseil, ingénierie et déploiement de solutions d'efficacité énergétique — Montrouge, depuis 2023.
+                            Simulez vos économies d'énergie grâce au photovoltaïque et aux pompes à chaleur. Des solutions clés en main, de l'étude à l'installation.
                         </p>
                         <div className="hero-anim pt-8 flex flex-wrap items-center gap-6">
                             <Link to="/contact" className="btn-magnetic px-8 py-4 text-base shadow-[0_0_30px_rgba(245,160,0,0.3)]">

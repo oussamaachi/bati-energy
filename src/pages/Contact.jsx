@@ -25,9 +25,9 @@ const useCountUp = (end, duration = 1.5, start = 0, isDecimal = false) => {
 };
 
 const EfficiencyCalculator = () => {
-    const [projectType, setProjectType] = useState('Relamping LED'); // Relamping LED, Isolation, CVC / GTB, Audit global
-    const [surface, setSurface] = useState(1000); // 500 to 10000 m2
-    const [structureType, setStructureType] = useState('Tertiaire'); // Tertiaire, Industriel, Collectivité
+    const [projectType, setProjectType] = useState('Photovoltaïque'); // Photovoltaïque, PAC, Isolation, Audit
+    const [surface, setSurface] = useState(100); // 50 to 10000 m2
+    const [structureType, setStructureType] = useState('Particulier'); // Particulier, Tertiaire, Industriel
 
     // Derived values for animation
     const [results, setResults] = useState({ savingsAmount: 0, ceeEstimate: 0, co2: 0, roiMin: 0, roiMax: 0 });
@@ -43,21 +43,21 @@ const EfficiencyCalculator = () => {
         let baseCo2PerM2 = 0;
         let roiBase = 0;
 
-        if (projectType === 'Relamping LED') {
-            baseSavingsPerM2 = 12;
-            baseCeePerM2 = 4;
-            baseCo2PerM2 = 0.015;
-            roiBase = 2;
+        if (projectType === 'Photovoltaïque') {
+            baseSavingsPerM2 = 20; // Example values for simulation
+            baseCeePerM2 = 0;      // Often different mechanisms for PV
+            baseCo2PerM2 = 0.03;
+            roiBase = 7;
         } else if (projectType === 'Isolation') {
             baseSavingsPerM2 = 25;
             baseCeePerM2 = 15;
             baseCo2PerM2 = 0.04;
             roiBase = 6;
-        } else if (projectType === 'CVC / GTB') {
+        } else if (projectType === 'Pompes à Chaleur') {
             baseSavingsPerM2 = 30;
-            baseCeePerM2 = 20;
+            baseCeePerM2 = 25; // High CEE for PAC replacements
             baseCo2PerM2 = 0.05;
-            roiBase = 4;
+            roiBase = 5;
         }
 
         let structureMultiplier = structureType === 'Industriel' ? 1.3 : (structureType === 'Collectivité' ? 0.9 : 1.0);
@@ -96,7 +96,7 @@ const EfficiencyCalculator = () => {
                         <div>
                             <div className="font-mono text-primary text-sm font-bold tracking-widest mb-3">ÉTAPE 1 — LOT TECHNIQUE</div>
                             <div className="flex flex-wrap gap-3">
-                                {['Relamping LED', 'Isolation', 'CVC / GTB', 'Audit global'].map(type => (
+                                {['Photovoltaïque', 'Pompes à Chaleur', 'Isolation', 'Audit global'].map(type => (
                                     <button
                                         key={type}
                                         onClick={() => setProjectType(type)}
@@ -119,15 +119,15 @@ const EfficiencyCalculator = () => {
                             </div>
                             <input
                                 type="range"
-                                min="500"
+                                min="50"
                                 max="10000"
-                                step="100"
+                                step="50"
                                 value={surface}
                                 onChange={(e) => setSurface(parseInt(e.target.value))}
                                 className="w-full h-2 bg-primary/20 rounded-lg appearance-none cursor-pointer accent-accent"
                             />
                             <div className="flex justify-between text-xs text-text/50 font-mono mt-2">
-                                <span>500 m²</span>
+                                <span>50 m²</span>
                                 <span>10 000 m² +</span>
                             </div>
                         </div>
@@ -137,9 +137,9 @@ const EfficiencyCalculator = () => {
                             <div className="font-mono text-primary text-sm font-bold tracking-widest mb-3">ÉTAPE 3 — SECTEUR D'ACTIVITÉ</div>
                             <div className="flex flex-wrap gap-3">
                                 {[
-                                    { id: 'Tertiaire', icon: Building2 },
-                                    { id: 'Industriel', icon: Zap },
-                                    { id: 'Collectivité', icon: Trees }
+                                    { id: 'Particulier', icon: Building2 }, // Reusing Building2 temporarily or adjusting icon
+                                    { id: 'Tertiaire', icon: Zap },
+                                    { id: 'Industriel', icon: Trees },
                                 ].map(type => (
                                     <button
                                         key={type.id}
@@ -279,9 +279,11 @@ export default function Contact() {
                                 <div className="relative">
                                     <select id="besoin" className="w-full bg-white border border-primary/20 rounded-xl px-5 py-4 appearance-none focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all font-body text-dark cursor-pointer">
                                         <option value="">Sélectionnez un domaine d'intervention</option>
+                                        <option value="solaire">Installation Photovoltaïque</option>
+                                        <option value="pac">Pompes à Chaleur (Air-Air, Air-Eau)</option>
                                         <option value="audit">Bureau d'études & Audit énergétique</option>
-                                        <option value="cee">Montage & Valorisation dossier CEE</option>
-                                        <option value="travaux">Réalisation Travaux (Isolation, CVC, LED)</option>
+                                        <option value="cee">Montage & Valorisation dossier C2E</option>
+                                        <option value="travaux">Isolation & Efficacité globale</option>
                                         <option value="autre">Autre demande</option>
                                     </select>
                                     <div className="absolute inset-y-0 right-5 flex items-center pointer-events-none">

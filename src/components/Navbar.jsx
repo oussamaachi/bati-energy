@@ -30,9 +30,32 @@ export default function Navbar() {
 
             <ul className="hidden xl:flex items-center gap-5 font-body text-[14px] font-semibold whitespace-nowrap">
                 <li><NavLink to="/" className={({ isActive }) => `hover:text-accent transition-colors ${isActive ? 'text-accent' : ''}`}>Accueil</NavLink></li>
-                <li><NavLink to="/expertises" className={({ isActive }) => `hover:text-accent transition-colors ${isActive ? 'text-accent' : ''}`}>Expertises</NavLink></li>
+
+                <li className="relative group cursor-pointer py-2">
+                    <div className="flex items-center gap-1 hover:text-accent transition-colors">
+                        Nos Solutions
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </div>
+                    {/* Submenu Dropdown */}
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-72 bg-bg/95 backdrop-blur-xl border border-primary/10 rounded-2xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col p-2 pointer-events-none group-hover:pointer-events-auto">
+                        <div className="px-4 py-2 text-xs text-text/50 font-mono uppercase tracking-wider mb-1 flex items-center gap-2">
+                            <span className="w-2 h-2 rounded-full bg-accent"></span> Particuliers & Tertiaire
+                        </div>
+                        <NavLink to="/expertises#photovoltaique" className="px-4 py-2.5 hover:bg-dark/5 rounded-xl transition-colors text-dark hover:text-accent flex flex-col">
+                            <span className="font-semibold text-sm">Photovoltaïque</span>
+                            <span className="text-xs text-dark/60 font-normal mt-0.5">Autoconsommation & Revente</span>
+                        </NavLink>
+                        <NavLink to="/expertises#pompes-a-chaleur" className="px-4 py-2.5 hover:bg-dark/5 rounded-xl transition-colors text-dark hover:text-accent flex flex-col">
+                            <span className="font-semibold text-sm">Pompes à Chaleur (PAC)</span>
+                            <span className="text-xs text-dark/60 font-normal mt-0.5">Air-Air & Air-Eau (Hydraulique)</span>
+                        </NavLink>
+                        <div className="h-px bg-dark/10 my-1 mx-2"></div>
+                        <NavLink to="/bureau-etudes" className="px-4 py-2.5 hover:bg-dark/5 rounded-xl transition-colors text-dark hover:text-accent text-sm">Bureau d'Études & Audit</NavLink>
+                        <NavLink to="/expertises#cee" className="px-4 py-2.5 hover:bg-dark/5 rounded-xl transition-colors text-dark hover:text-accent text-sm">Primes C2E / Montage dossiers</NavLink>
+                    </div>
+                </li>
+
                 <li><NavLink to="/projets" className={({ isActive }) => `hover:text-accent transition-colors ${isActive ? 'text-accent' : ''}`}>Projets</NavLink></li>
-                <li><NavLink to="/bureau-etudes" className={({ isActive }) => `hover:text-accent transition-colors ${isActive ? 'text-accent' : ''}`}>Bureau d'Études</NavLink></li>
                 <li><NavLink to="/blog" className={({ isActive }) => `hover:text-accent transition-colors ${isActive ? 'text-accent' : ''}`}>Blog</NavLink></li>
                 <li><NavLink to="/a-propos" className={({ isActive }) => `hover:text-accent transition-colors ${isActive ? 'text-accent' : ''}`}>À propos</NavLink></li>
                 <li><NavLink to="/contact" className={({ isActive }) => `hover:text-accent transition-colors ${isActive ? 'text-accent' : ''}`}>Contact</NavLink></li>
@@ -56,6 +79,7 @@ function MobileMenu({ scrolled, isHome }) {
     }, [location.pathname]);
 
     const linkClass = "block font-body font-semibold text-lg text-dark hover:text-accent transition-colors py-2 border-b border-primary/10 last:border-none";
+    const subLinkClass = "block font-body font-medium text-base text-dark/80 hover:text-accent transition-colors py-2 pl-4 border-b border-primary/5 last:border-none";
 
     return (
         <div className="xl:hidden relative">
@@ -70,12 +94,24 @@ function MobileMenu({ scrolled, isHome }) {
             </button>
 
             {open && (
-                <div className="absolute top-14 right-0 w-72 bg-bg rounded-3xl shadow-2xl border border-primary/10 p-6 z-[999]">
+                <div className="absolute top-14 right-0 w-80 max-w-[90vw] bg-bg rounded-3xl shadow-2xl border border-primary/10 p-6 z-[999] max-h-[80vh] overflow-y-auto">
                     <nav className="flex flex-col gap-1">
                         <NavLink to="/" className={linkClass}>Accueil</NavLink>
-                        <NavLink to="/expertises" className={linkClass}>Expertises</NavLink>
+
+                        <div className="py-2 border-b border-primary/10">
+                            <div className="font-body font-semibold text-lg text-primary mb-2">Nos Solutions</div>
+                            <div className="px-2 py-1 mb-2 bg-dark/5 rounded-lg text-xs font-mono font-bold text-dark/70 uppercase tracking-wider inline-flex items-center gap-2">
+                                <span className="w-1.5 h-1.5 rounded-full bg-accent"></span> Particuliers & Tertiaire
+                            </div>
+                            <div className="flex flex-col border-l-2 border-primary/20 ml-2">
+                                <NavLink to="/expertises#photovoltaique" className={subLinkClass}>☀️ Photovoltaïque</NavLink>
+                                <NavLink to="/expertises#pompes-a-chaleur" className={subLinkClass}>❄️ Pompes à Chaleur (PAC)</NavLink>
+                                <NavLink to="/bureau-etudes" className={subLinkClass}>📋 Bureau d'Études</NavLink>
+                                <NavLink to="/expertises#cee" className={subLinkClass}>💶 Primes C2E / Dossiers</NavLink>
+                            </div>
+                        </div>
+
                         <NavLink to="/projets" className={linkClass}>Projets</NavLink>
-                        <NavLink to="/bureau-etudes" className={linkClass}>Bureau d'Études</NavLink>
                         <NavLink to="/blog" className={linkClass}>Blog</NavLink>
                         <NavLink to="/a-propos" className={linkClass}>À propos</NavLink>
                         <NavLink to="/contact" className={linkClass}>Contact</NavLink>

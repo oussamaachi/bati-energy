@@ -235,19 +235,18 @@ export default function Expertises() {
                 </div>
             </section>
 
-            {/* Expertise 1 */}
+            {/* Expertise 1 : Bureau d'études */}
             <section ref={el => sectionRefs.current[0] = el} className="py-32 px-6 overflow-hidden">
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 lg:gap-24">
                     <div className="w-full md:w-1/2 order-2 md:order-1">
-                        <span className="font-mono text-accent text-sm font-bold tracking-widest block mb-4">PÔLE 01</span>
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-accent/20 text-accent text-sm font-bold tracking-wider mb-4">PÔLE 01</span>
                         <h2 className="font-heading font-black text-4xl lg:text-5xl text-dark mb-6 leading-tight">Bureau d'études & Audit</h2>
                         <ul className="space-y-4 font-body text-lg text-text/80 mb-8 border-l-2 border-primary/20 pl-6">
                             <li>Audits énergétiques réglementaires et volontaires</li>
                             <li>Diagnostics de performance des bâtiments (enveloppe, équipements, usages)</li>
-                            <li>Études de faisabilité et plans d'actions priorisés</li>
-                            <li>Optimisation des contrats et des abonnements énergie</li>
-                            <li>Suivi et pilotage des consommations</li>
-                            <li>Accompagnement à la mise en conformité avec le Décret Tertiaire</li>
+                            <li>Études de faisabilité et dimensionnement des installations</li>
+                            <li>Optimisation des puissances de souscription</li>
+                            <li>Accompagnement Tertiaire et Industriels</li>
                         </ul>
                         <a href="/bureau-etudes" className="font-heading font-bold text-primary hover:text-accent transition-colors flex items-center gap-2">
                             Découvrir notre démarche d'audit <ArrowRight className="w-4 h-4" />
@@ -264,59 +263,70 @@ export default function Expertises() {
                 </div>
             </section>
 
-            {/* Expertise 2 */}
+            {/* Expertise 2 : Photovoltaïque & PAC */}
             <section ref={el => sectionRefs.current[1] = el} className="py-32 px-6 bg-primary/5 border-y border-primary/10 overflow-hidden">
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 lg:gap-24">
                     <div className="w-full md:w-1/2">
                         <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl h-80 mb-8">
-                            <img src="/images/formation.png" alt="Réunion stratégique" className="w-full h-full object-cover" />
+                            <img src="/images/bureau.png" alt="Installation Pompes à chaleur et Solaire" className="w-full h-full object-cover" />
                         </div>
                         <TelemetryTypewriter />
                     </div>
                     <div className="w-full md:w-1/2">
-                        <span className="font-mono text-accent text-sm font-bold tracking-widest block mb-4">PÔLE 02</span>
-                        <h2 className="font-heading font-black text-4xl lg:text-5xl text-dark mb-6 leading-tight">Valorisation des CEE</h2>
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-accent/20 text-accent text-sm font-bold tracking-wider mb-4">PÔLE 02</span>
+                        <h2 className="font-heading font-black text-4xl lg:text-5xl text-dark mb-6 leading-tight">Photovoltaïque & Pompes à Chaleur</h2>
                         <p className="font-body text-lg text-text/80 mb-6">
-                            Les CEE constituent un levier financier puissant pour réduire significativement le coût de vos investissements.
+                            Produisez votre propre énergie et optimisez votre confort thermique avec des solutions durables et rentables, adaptées aux particuliers et aux professionnels.
                         </p>
-                        <ul className="space-y-4 font-body text-lg text-text/80 mb-8 border-l-2 border-primary/20 pl-6">
-                            <li>Identification des opérations éligibles</li>
-                            <li>Montage et gestion complète des dossiers CEE</li>
-                            <li>Maximisation des primes sur l'ensemble des postes</li>
-                            <li>Articulation avec d'autres dispositifs (ADEME, etc.)</li>
-                        </ul>
+
+                        <div className="mb-6 bg-white p-6 rounded-2xl shadow-sm border border-primary/10">
+                            <h3 className="font-heading font-bold text-xl text-primary mb-3 flex items-center gap-2">☀️ Photovoltaïque</h3>
+                            <ul className="space-y-2 font-body text-text/70 pl-6 list-disc marker:text-accent">
+                                <li>Autoconsommation avec ou sans revente de surplus</li>
+                                <li>Centrales solaires pour toitures tertiaires et industrielles</li>
+                                <li>Ombrières de parking photovoltaïques</li>
+                            </ul>
+                        </div>
+
+                        <div className="bg-white p-6 rounded-2xl shadow-sm border border-primary/10">
+                            <h3 className="font-heading font-bold text-xl text-primary mb-3 flex items-center gap-2">❄️ Pompes à Chaleur (PAC)</h3>
+                            <ul className="space-y-2 font-body text-text/70 pl-6 list-disc marker:text-accent">
+                                <li><strong>PAC Air-Air</strong> : Systèmes de climatisation réversible haut rendement</li>
+                                <li><strong>PAC Air-Eau</strong> : Systèmes hydrauliques de chauffage et production d'ECS</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            {/* Expertise 3 */}
+            {/* Expertise 3 : CEE & Isolation */}
             <section ref={el => sectionRefs.current[2] = el} className="py-32 px-6 overflow-hidden">
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 lg:gap-24">
                     <div className="w-full md:w-1/2 order-2 md:order-1">
-                        <span className="font-mono text-accent text-sm font-bold tracking-widest block mb-4">PÔLE 03</span>
-                        <h2 className="font-heading font-black text-4xl lg:text-5xl text-dark mb-6 leading-tight">Solutions d'efficacité énergétique</h2>
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-accent/20 text-accent text-sm font-bold tracking-wider mb-4">PÔLE 03</span>
+                        <h2 className="font-heading font-black text-4xl lg:text-5xl text-dark mb-6 leading-tight">Efficacité Globale & Primes C2E</h2>
                         <ul className="space-y-4 font-body text-lg text-text/80 mb-8 border-l-2 border-primary/20 pl-6">
                             <li><strong>Isolation Thermique :</strong> Combles, murs (ITI/ITE), toitures terrasses, planchers bas et calorifugeage.</li>
-                            <li><strong>Éclairage & équipements :</strong> Relamping LED professionnel et gestion intelligente.</li>
-                            <li><strong>Optimisation CVC :</strong> Chauffage, ventilation, climatisation.</li>
+                            <li><strong>Éclairage :</strong> Relamping LED professionnel et gestion de présence.</li>
+                            <li><strong>Aides & Financement :</strong> Montage intégral de vos dossiers de Primes C2E pour minimiser le reste à charge.</li>
                         </ul>
                         <Scheduler />
                     </div>
                     <div className="w-full md:w-1/2 order-1 md:order-2">
                         <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl h-[40rem]">
-                            <img src="/images/projet_territoire.png" alt="Solutions Efficacité Energétique" className="w-full h-full object-cover" />
+                            <img src="/images/projet_territoire.png" alt="Solutions d'isolation et relamping" className="w-full h-full object-cover" />
                             <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-dark to-transparent opacity-80"></div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Secteurs d'Intervention */}
+            {/* Secteurs d'Intervention - Typography fix */}
             <section ref={el => sectionRefs.current[3] = el} className="py-24 px-6 max-w-5xl mx-auto text-center">
-                <h2 className="font-serif italic text-4xl text-dark mb-12">Nos Secteurs d'Intervention</h2>
+                <h2 className="font-serif italic text-4xl text-dark mb-12">Nos cibles d'intervention</h2>
                 <div className="flex flex-wrap items-center justify-center gap-4">
-                    {['Bâtiments Tertiaires', 'Bâtiments Industriels', 'Collectivités', 'Structures Publiques', 'Copropriétés'].map((sector, i) => (
-                        <div key={i} className="px-6 py-3 rounded-full border border-primary/20 bg-white font-mono text-sm font-bold text-dark shadow-sm hover:border-accent hover:shadow-md transition-all cursor-default">
+                    {['Particuliers', 'Bâtiments Tertiaires', 'Infrastructures Industrielles', 'Collectivités'].map((sector, i) => (
+                        <div key={i} className="px-8 py-4 rounded-full border-2 border-primary/20 bg-white font-heading text-lg font-bold text-primary shadow-sm hover:border-accent hover:shadow-lg transition-all cursor-default transform hover:-translate-y-1">
                             {sector}
                         </div>
                     ))}

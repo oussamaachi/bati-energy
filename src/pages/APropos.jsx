@@ -125,8 +125,8 @@ export default function APropos() {
                         {[
                             { date: "Jan 2023", title: "Création de BATI ENERGY à Montrouge", side: "left" },
                             { date: "2024", title: "Développement du pôle Audit & Ingénierie", side: "right" },
-                            { date: "2025", title: "Expertise en Valorisation des CEE", side: "left" },
-                            { date: "2026", title: "Déploiement de solutions globales d'efficacité", side: "right" }
+                            { date: "2025", title: "Expertise en Pompes à Chaleur (PAC)", side: "left" },
+                            { date: "2026", title: "Déploiement de solutions Photovoltaïques", side: "right" }
                         ].map((item, index) => (
                             <div key={index} className={`timeline-item relative flex flex-col md:flex-row items-start md:items-center ${item.side === 'right' ? 'md:flex-row-reverse' : ''}`}>
                                 <div className="absolute left-[20px] md:left-1/2 w-3 h-3 bg-accent rounded-full border-4 border-bg md:-translate-x-1.5 mt-1.5 md:mt-0 z-10"></div>
@@ -150,7 +150,7 @@ export default function APropos() {
                     <div>
                         <span className="font-mono text-accent text-sm font-bold tracking-widest block mb-4">NOTRE MISSION</span>
                         <p className="font-body text-lg text-text/80 leading-relaxed">
-                            En tant que bureau d'études technique et financier, nous sommes nés d'une conviction simple : la rénovation énergétique performante nécessite une approche intégrée. Notre mission est d'accompagner les acteurs tertiaires et industriels de A à Z. De l'audit réglementaire à la conception des solutions (CVC, Isolation), jusqu'à la maximisation des subventions CEE pour garantir la rentabilité de chaque projet.
+                            Nous sommes nés d'une conviction simple : la transition énergétique nécessite une approche intégrée et concrète. Dès le départ, notre mission a été d'accompagner aussi bien les particuliers que les acteurs tertiaires vers l'indépendance énergétique. De l'audit initial à la conception de solutions photovoltaïques et de pompes à chaleur, jusqu'au soutien financier via les C2E, nous garantissons des projets performants et pérennes.
                         </p>
                     </div>
                     <div>
