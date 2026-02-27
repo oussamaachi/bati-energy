@@ -120,7 +120,7 @@ export default function FormationAudit() {
                 <div className="absolute inset-0 opacity-40">
                     <img
                         src="/images/formation.png"
-                        alt="Formation professionnelle ENR"
+                        alt="Bureau d'études efficacité énergétique"
                         className="w-full h-full object-cover object-center"
                     />
                     <div className="absolute inset-0 bg-dark/70"></div>
@@ -128,12 +128,12 @@ export default function FormationAudit() {
                 <div className="relative z-10 text-center px-6 mt-16">
                     <div className="hero-text inline-flex items-center gap-2 text-accent font-mono text-sm tracking-widest mb-6">
                         <span className="w-12 h-px bg-accent"></span>
-                        COMPÉTENCES & PERFORMANCES
+                        OPÉRATION & PERFORMANCES
                         <span className="w-12 h-px bg-accent"></span>
                     </div>
-                    <h1 className="hero-text font-serif italic text-5xl md:text-7xl text-white mb-6">Bureau d'Études & Audit</h1>
+                    <h1 className="hero-text font-serif italic text-5xl md:text-7xl text-white mb-6">Bureau d'Études</h1>
                     <div className="hero-text font-mono text-xs text-white/50 tracking-wide uppercase">
-                        Accueil <span className="mx-2 text-accent">/</span> Formation & Audit
+                        Accueil <span className="mx-2 text-accent">/</span> Bureau d'Études
                     </div>
                 </div>
             </section>
@@ -149,24 +149,24 @@ export default function FormationAudit() {
                         </p>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
                             <div className="bg-white p-6 rounded-2xl border border-primary/10 hover:border-accent transition-colors">
-                                <h4 className="font-heading font-bold text-dark mb-2">Audit Réglementaire 2026</h4>
-                                <p className="font-body text-sm text-text/70 line-clamp-3">Mise en conformité avec le Décret BACS (échéances 2025/2030) et préparation de la Déclaration OPERAT (septembre 2026).</p>
+                                <h4 className="font-heading font-bold text-dark mb-2">Audit Énergétique Réglementaire</h4>
+                                <p className="font-body text-sm text-text/70 line-clamp-3">Mise en conformité avec le Décret Tertiaire et BACS (échéances 2026-2030).</p>
                             </div>
                             <div className="bg-white p-6 rounded-2xl border border-primary/10 hover:border-accent transition-colors">
-                                <h4 className="font-heading font-bold text-dark mb-2">Audit Technique ENR</h4>
-                                <p className="font-body text-sm text-text/70 line-clamp-3">Évaluation experte des performances d'unités de production existantes (géothermie, réseaux de chaleur, éolien).</p>
+                                <h4 className="font-heading font-bold text-dark mb-2">Audit Énergétique Volontaire</h4>
+                                <p className="font-body text-sm text-text/70 line-clamp-3">Identification des gisements d'économies d'énergie et optimisation de l'exploitation.</p>
                             </div>
                             <div className="bg-white p-6 rounded-2xl border border-primary/10 hover:border-accent transition-colors">
-                                <h4 className="font-heading font-bold text-dark mb-2">Diagnostic Environnemental</h4>
-                                <p className="font-body text-sm text-text/70 line-clamp-3">Analyse d'impact, émissions GES et approche cycle de vie des bâtiments.</p>
+                                <h4 className="font-heading font-bold text-dark mb-2">Études CVC & Éclairage</h4>
+                                <p className="font-body text-sm text-text/70 line-clamp-3">Dimensionnement et optimisation des installations de chauffage, climatisation et relamping.</p>
                             </div>
                             <div className="bg-white p-6 rounded-2xl border border-primary/10 hover:border-accent transition-colors">
-                                <h4 className="font-heading font-bold text-dark mb-2">Audit Territorial</h4>
-                                <p className="font-body text-sm text-text/70 line-clamp-3">Approche multi-sites à l'échelle d'une commune ou d'une agglomération.</p>
+                                <h4 className="font-heading font-bold text-dark mb-2">Études Enveloppe (Isolation)</h4>
+                                <p className="font-body text-sm text-text/70 line-clamp-3">Analyses thermiques pour l'isolation des toitures, murs, combles et calorifugeage.</p>
                             </div>
                             <div className="bg-white p-6 rounded-2xl border border-primary/10 hover:border-accent transition-colors sm:col-span-2 md:col-span-1">
                                 <h4 className="font-heading font-bold text-dark mb-2">Valorisation CEE & Subventions</h4>
-                                <p className="font-body text-sm text-text/70 line-clamp-3">Montage technico-administratif stratégique pour la 6ème période des CEE (2026-2030) et l'accès au Fonds Chaleur.</p>
+                                <p className="font-body text-sm text-text/70 line-clamp-3">Montage stratégique pour maximiser l'aide financière (CEE 6ème période) et réduire le reste à charge.</p>
                             </div>
                         </div>
                         <button className="btn-magnetic px-6 py-3">
@@ -213,13 +213,13 @@ export default function FormationAudit() {
                 </div>
             </section>
 
-            {/* Section Formation */}
+            {/* Solutions Section */}
             <section className="py-32 px-6 fade-up">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16">
-                        <span className="font-mono text-accent text-sm font-bold tracking-widest block mb-4 uppercase">Pôle Transfert de Compétences</span>
-                        <h2 className="font-heading font-black text-4xl lg:text-5xl text-dark mb-6">Programmes de Formation</h2>
-                        <p className="font-body text-text/70 text-lg max-w-3xl mx-auto">Préparer vos équipes d'exploitation, de conception ou de gestion aux défis de demain grâce à nos formateurs-ingénieurs spécialisés.</p>
+                        <span className="font-mono text-accent text-sm font-bold tracking-widest block mb-4 uppercase">Domaine Tertiaire</span>
+                        <h2 className="font-heading font-black text-4xl lg:text-5xl text-dark mb-6">Solutions d'Efficacité Énergétique</h2>
+                        <p className="font-body text-text/70 text-lg max-w-3xl mx-auto">De l'audit à l'exécution de vos travaux subventionnés, une offre clé en main.</p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -228,25 +228,25 @@ export default function FormationAudit() {
                             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-accent"></div>
 
                             <div className="font-mono text-accent text-sm font-bold tracking-widest mb-4 flex items-center justify-between">
-                                MODULE 1
-                                <span className="bg-primary/10 text-primary px-3 py-1 rounded-md text-xs">2 JOURS</span>
+                                LEVIER 1
+                                <span className="bg-primary/10 text-primary px-3 py-1 rounded-md text-xs">ISOLATION</span>
                             </div>
 
-                            <h3 className="font-heading font-bold text-2xl text-dark mb-4">Fondamentaux ENR</h3>
-                            <p className="font-body text-text/70 mb-8 h-24">Maîtriser les ordres de grandeur énergétiques, les filières (Bois, Géothermie, Éolien) et les clés de la transition territoire.</p>
+                            <h3 className="font-heading font-bold text-2xl text-dark mb-4">Isolation Thermique Bâtiment</h3>
+                            <p className="font-body text-text/70 mb-8 h-24">Le premier pas vers les économies d'énergie : combles, murs (ITI/ITE), toitures terrasses, planchers bas et isolation thermique globale.</p>
 
                             <div className="space-y-3 font-mono text-sm text-dark mb-8">
                                 <div className="flex justify-between border-b border-primary/10 pb-2">
-                                    <span className="text-text/50 uppercase">Public</span>
-                                    <span className="font-bold flex-1 text-right">Élus, décideurs</span>
+                                    <span className="text-text/50 uppercase">Potentiel Gain</span>
+                                    <span className="font-bold flex-1 text-right">~30-40% d'énergie</span>
                                 </div>
                                 <div className="flex justify-between border-b border-primary/10 pb-2">
-                                    <span className="text-text/50 uppercase">Format</span>
-                                    <span className="font-bold flex-1 text-right">Présentiel / Visio</span>
+                                    <span className="text-text/50 uppercase">CEE applicable</span>
+                                    <span className="font-bold flex-1 text-right">OUI</span>
                                 </div>
                             </div>
                             <a href="/contact" className="font-heading font-bold text-primary flex items-center gap-2 group-hover:text-accent transition-colors">
-                                Programme détaillé <ArrowRight className="w-4 h-4" />
+                                Demander un devis <ArrowRight className="w-4 h-4" />
                             </a>
                         </div>
 
@@ -255,25 +255,25 @@ export default function FormationAudit() {
                             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-accent"></div>
 
                             <div className="font-mono text-accent text-sm font-bold tracking-widest mb-4 flex items-center justify-between">
-                                MODULE 2
-                                <span className="bg-primary/10 text-primary px-3 py-1 rounded-md text-xs">3 JOURS</span>
+                                LEVIER 2
+                                <span className="bg-primary/10 text-primary px-3 py-1 rounded-md text-xs">RÉSEAUX</span>
                             </div>
 
-                            <h3 className="font-heading font-bold text-2xl text-dark mb-4">Ingénierie Réseaux de Chaleur</h3>
-                            <p className="font-body text-text/70 mb-8 h-24">Module technique avancé : dimensionnement, thermodynamique, courbes de charge, et cadre réglementaire.</p>
+                            <h3 className="font-heading font-bold text-2xl text-dark mb-4">Isolation Technique Tertiaire</h3>
+                            <p className="font-body text-text/70 mb-8 h-24">Calorifugeage des tuyauteries existantes, isolation des réseaux de chauffage et des gaines de ventilation.</p>
 
                             <div className="space-y-3 font-mono text-sm text-dark mb-8">
                                 <div className="flex justify-between border-b border-primary/10 pb-2">
-                                    <span className="text-text/50 uppercase">Public</span>
-                                    <span className="font-bold flex-1 text-right">Techniciens, ING</span>
+                                    <span className="text-text/50 uppercase">Potentiel Gain</span>
+                                    <span className="font-bold flex-1 text-right">~5-15% d'énergie</span>
                                 </div>
                                 <div className="flex justify-between border-b border-primary/10 pb-2">
-                                    <span className="text-text/50 uppercase">Format</span>
-                                    <span className="font-bold flex-1 text-right">Présentiel + TP</span>
+                                    <span className="text-text/50 uppercase">CEE applicable</span>
+                                    <span className="font-bold flex-1 text-right">OUI (Fortement primé)</span>
                                 </div>
                             </div>
                             <a href="/contact" className="font-heading font-bold text-primary flex items-center gap-2 group-hover:text-accent transition-colors">
-                                Programme détaillé <ArrowRight className="w-4 h-4" />
+                                Demander un devis <ArrowRight className="w-4 h-4" />
                             </a>
                         </div>
 
@@ -282,43 +282,43 @@ export default function FormationAudit() {
                             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-accent"></div>
 
                             <div className="font-mono text-accent text-sm font-bold tracking-widest mb-4 flex items-center justify-between">
-                                MODULE 3
-                                <span className="bg-primary/10 text-primary px-3 py-1 rounded-md text-xs">2 JOURS</span>
+                                LEVIER 3
+                                <span className="bg-primary/10 text-primary px-3 py-1 rounded-md text-xs">ÉQUIPEMENTS</span>
                             </div>
 
-                            <h3 className="font-heading font-bold text-2xl text-dark mb-4">Montage de Projets ENR</h3>
-                            <p className="font-body text-text/70 mb-8 h-24">Structuration juridique, SPV, sécurisation foncière, appel d'offres CRE et financement participatif local.</p>
+                            <h3 className="font-heading font-bold text-2xl text-dark mb-4">Relamping LED & CVC</h3>
+                            <p className="font-body text-text/70 mb-8 h-24">Modernisation de l'éclairage tertiaire, systèmes de détection intelligents et optimisation du parc de chauffage/climatisation.</p>
 
                             <div className="space-y-3 font-mono text-sm text-dark mb-8">
                                 <div className="flex justify-between border-b border-primary/10 pb-2">
-                                    <span className="text-text/50 uppercase">Public</span>
-                                    <span className="font-bold flex-1 text-right">Chefs de projet MOA</span>
+                                    <span className="text-text/50 uppercase">Potentiel Gain</span>
+                                    <span className="font-bold flex-1 text-right">~50-70% (conso élec)</span>
                                 </div>
                                 <div className="flex justify-between border-b border-primary/10 pb-2">
-                                    <span className="text-text/50 uppercase">Format</span>
-                                    <span className="font-bold flex-1 text-right">Atelier pratique</span>
+                                    <span className="text-text/50 uppercase">CEE applicable</span>
+                                    <span className="font-bold flex-1 text-right">OUI</span>
                                 </div>
                             </div>
                             <a href="/contact" className="font-heading font-bold text-primary flex items-center gap-2 group-hover:text-accent transition-colors">
-                                Programme détaillé <ArrowRight className="w-4 h-4" />
+                                Demander un devis <ArrowRight className="w-4 h-4" />
                             </a>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* CTA Formation */}
+            {/* CTA Final */}
             <section className="bg-primary m-6 rounded-[3rem] overflow-hidden relative fade-up">
                 <div className="absolute -left-32 -bottom-32 w-96 h-96 bg-accent rounded-full opacity-20 blur-3xl mix-blend-screen"></div>
                 <div className="absolute -right-32 -top-32 w-96 h-96 bg-primary-light rounded-full opacity-30 blur-3xl mix-blend-screen"></div>
 
                 <div className="relative z-10 max-w-5xl mx-auto py-24 px-6 text-center text-white">
-                    <h2 className="font-heading font-black text-4xl md:text-5xl mb-6">Vous souhaitez une formation sur-mesure ?</h2>
+                    <h2 className="font-heading font-black text-4xl md:text-5xl mb-6">Passez à l'action avec BATI ENERGY</h2>
                     <p className="font-body text-white/80 text-xl max-w-2xl mx-auto mb-10">
-                        Intra-entreprise, spécifique à votre patrimoine ou orientée sur une filière inédite : nos ingénieurs construisent le syllabus adapté à vos enjeux.
+                        De l'audit énergétique complet jusqu'au montage du dossier CEE et à la réception des travaux, nos ingénieurs prennent en charge votre transition.
                     </p>
                     <a href="/contact" className="btn-magnetic bg-accent text-white px-8 py-4 shadow-xl">
-                        <span>Nous contacter <ArrowRight className="w-5 h-5" /></span>
+                        <span>Lancer mon projet de rénovation <ArrowRight className="w-5 h-5" /></span>
                     </a>
                 </div>
             </section>

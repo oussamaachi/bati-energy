@@ -32,7 +32,7 @@ export default function Navbar() {
                 <li><NavLink to="/" className={({ isActive }) => `hover:text-accent transition-colors ${isActive ? 'text-accent' : ''}`}>Accueil</NavLink></li>
                 <li><NavLink to="/expertises" className={({ isActive }) => `hover:text-accent transition-colors ${isActive ? 'text-accent' : ''}`}>Expertises</NavLink></li>
                 <li><NavLink to="/projets" className={({ isActive }) => `hover:text-accent transition-colors ${isActive ? 'text-accent' : ''}`}>Projets</NavLink></li>
-                <li><NavLink to="/formation-audit" className={({ isActive }) => `hover:text-accent transition-colors ${isActive ? 'text-accent' : ''}`}>Formation &amp; Audit</NavLink></li>
+                <li><NavLink to="/bureau-etudes" className={({ isActive }) => `hover:text-accent transition-colors ${isActive ? 'text-accent' : ''}`}>Bureau d'Études</NavLink></li>
                 <li><NavLink to="/blog" className={({ isActive }) => `hover:text-accent transition-colors ${isActive ? 'text-accent' : ''}`}>Blog</NavLink></li>
                 <li><NavLink to="/a-propos" className={({ isActive }) => `hover:text-accent transition-colors ${isActive ? 'text-accent' : ''}`}>À propos</NavLink></li>
                 <li><NavLink to="/contact" className={({ isActive }) => `hover:text-accent transition-colors ${isActive ? 'text-accent' : ''}`}>Contact</NavLink></li>
@@ -75,7 +75,7 @@ function MobileMenu({ scrolled, isHome }) {
                         <NavLink to="/" className={linkClass}>Accueil</NavLink>
                         <NavLink to="/expertises" className={linkClass}>Expertises</NavLink>
                         <NavLink to="/projets" className={linkClass}>Projets</NavLink>
-                        <NavLink to="/formation-audit" className={linkClass}>Formation &amp; Audit</NavLink>
+                        <NavLink to="/bureau-etudes" className={linkClass}>Bureau d'Études</NavLink>
                         <NavLink to="/blog" className={linkClass}>Blog</NavLink>
                         <NavLink to="/a-propos" className={linkClass}>À propos</NavLink>
                         <NavLink to="/contact" className={linkClass}>Contact</NavLink>

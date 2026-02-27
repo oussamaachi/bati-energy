@@ -151,7 +151,7 @@ export default function Blog() {
                 <div className="absolute inset-0 bg-[linear-gradient(135deg,transparent,rgba(26,92,26,0.5))] mix-blend-screen pointer-events-none"></div>
                 <div className="max-w-3xl mx-auto text-center relative z-10">
                     <Mail className="newsletter-content w-12 h-12 text-accent mx-auto mb-6" />
-                    <h2 className="newsletter-content font-heading font-black text-3xl md:text-4xl mb-4">La veille ENR de nos ingénieurs</h2>
+                    <h2 className="newsletter-content font-heading font-black text-3xl md:text-4xl mb-4">La veille réglementaire de nos ingénieurs</h2>
                     <p className="newsletter-content font-body text-bg/70 text-lg mb-10 max-w-2xl mx-auto">
                         Recevez chaque mois notre sélection technique, réglementaire et stratégique sur la transition énergétique des territoires.
                     </p>

@@ -42,7 +42,7 @@ export default function PolitiqueConfidentialite() {
                         Nom, E-mail, Téléphone, Société, Type de projet. Ces données sont strictement nécessaires pour :
                     </p>
                     <ul className="list-disc pl-6 space-y-2 my-4">
-                        <li>Traiter vos demandes d'études de faisabilité ENR.</li>
+                        <li>Traiter vos demandes d'études d'efficacité énergétique.</li>
                         <li>Vous recontacter suite à votre sollicitation commerciale.</li>
                         <li>Améliorer nos services et notre plateforme.</li>
                     </ul>

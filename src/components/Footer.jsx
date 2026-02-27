@@ -25,7 +25,7 @@ export default function Footer() {
                         <li><Link to="/" className="hover:text-accent transition-colors inline-block hover:-translate-y-0.5 transform">Accueil</Link></li>
                         <li><Link to="/expertises" className="hover:text-accent transition-colors inline-block hover:-translate-y-0.5 transform">Nos Domaines</Link></li>
                         <li><Link to="/projets" className="hover:text-accent transition-colors inline-block hover:-translate-y-0.5 transform">Réalisations</Link></li>
-                        <li><Link to="/formation-audit" className="hover:text-accent transition-colors inline-block hover:-translate-y-0.5 transform">Formation & Audit</Link></li>
+                        <li><Link to="/bureau-etudes" className="hover:text-accent transition-colors inline-block hover:-translate-y-0.5 transform">Bureau d'Études</Link></li>
                     </ul>
                 </div>
 

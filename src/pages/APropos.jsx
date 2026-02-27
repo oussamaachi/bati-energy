@@ -124,9 +124,9 @@ export default function APropos() {
                     <div className="space-y-16">
                         {[
                             { date: "Jan 2023", title: "Création de BATI ENERGY à Montrouge", side: "left" },
-                            { date: "2024", title: "Premiers projets d'ingénierie ENR", side: "right" },
-                            { date: "2025", title: "Expansion conseil territorial", side: "left" },
-                            { date: "2026", title: "Développement pôle Formation & Audit", side: "right" }
+                            { date: "2024", title: "Développement du pôle Audit & Ingénierie", side: "right" },
+                            { date: "2025", title: "Expertise en Valorisation des CEE", side: "left" },
+                            { date: "2026", title: "Déploiement de solutions globales d'efficacité", side: "right" }
                         ].map((item, index) => (
                             <div key={index} className={`timeline-item relative flex flex-col md:flex-row items-start md:items-center ${item.side === 'right' ? 'md:flex-row-reverse' : ''}`}>
                                 <div className="absolute left-[20px] md:left-1/2 w-3 h-3 bg-accent rounded-full border-4 border-bg md:-translate-x-1.5 mt-1.5 md:mt-0 z-10"></div>
@@ -150,7 +150,7 @@ export default function APropos() {
                     <div>
                         <span className="font-mono text-accent text-sm font-bold tracking-widest block mb-4">NOTRE MISSION</span>
                         <p className="font-body text-lg text-text/80 leading-relaxed">
-                            En tant que bureau d'études spécialisé, nous sommes nés d'une conviction simple : la transition énergétique nécessite une approche globale qui dépasse le simple cadre technique. Notre mission est de fournir des audits énergétiques précis, de valoriser vos projets via les CEE et les subventions, et de contribuer concrètement à la gestion durable de nos territoires.
+                            En tant que bureau d'études technique et financier, nous sommes nés d'une conviction simple : la rénovation énergétique performante nécessite une approche intégrée. Notre mission est d'accompagner les acteurs tertiaires et industriels de A à Z. De l'audit réglementaire à la conception des solutions (CVC, Isolation), jusqu'à la maximisation des subventions CEE pour garantir la rentabilité de chaque projet.
                         </p>
                     </div>
                     <div>
@@ -170,9 +170,9 @@ export default function APropos() {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {[
-                        { name: "Directrice Générale", role: "Fondatrice — Ingénieure ENR", img: "/images/camille.png" },
-                        { name: "Directeur Technique", role: "Expert Géothermie & Éolien", img: "/images/thomas.png" },
-                        { name: "Responsable Conseil", role: "Stratégie & Assistance MOA", img: "/images/sarah.png" }
+                        { name: "Directrice Générale", role: "Fondatrice — Ingénieure Efficacité", img: "/images/camille.png" },
+                        { name: "Directeur Technique", role: "Expert Audit & CVC", img: "/images/thomas.png" },
+                        { name: "Responsable Financement", role: "Experte Valorisation CEE", img: "/images/sarah.png" }
                     ].map((member, i) => (
                         <div key={i} className="team-card group relative overflow-hidden rounded-3xl bg-white shadow-lg">
                             <div className="aspect-[4/5] overflow-hidden">
@@ -215,7 +215,7 @@ export default function APropos() {
                     <div className="value-card bg-white p-8 rounded-3xl shadow-sm border border-primary/10">
                         <Lightbulb className="w-8 h-8 text-primary mb-6" />
                         <h3 className="font-heading font-bold text-xl text-dark mb-3">Innovation continue</h3>
-                        <p className="font-body text-sm text-text/70">Une veille technologique constante pour vous proposer les meilleures solutions ENR.</p>
+                        <p className="font-body text-sm text-text/70">Une veille technologique constante pour vous proposer les meilleures solutions d'efficacité énergétique.</p>
                     </div>
                 </div>
             </section>

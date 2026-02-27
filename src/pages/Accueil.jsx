@@ -125,7 +125,7 @@ export default function Accueil() {
                 <div className="absolute inset-0 z-0">
                     <img
                         src="/images/hero_texture.png"
-                        alt="Infrastructures ENR"
+                        alt="Efficacité énergétique bâtiments"
                         className="w-full h-full object-cover object-center transform scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-dark via-primary/50 to-transparent"></div>
@@ -143,7 +143,7 @@ export default function Accueil() {
                             </span>
                         </h1>
                         <p className="hero-anim text-bg/90 font-body text-lg md:text-xl max-w-2xl mt-6 border-l-2 border-accent pl-4">
-                            Bureau d'études et d'ingénierie spécialisé en ENR, Audit Énergétique et environnement — Montrouge, depuis 2023.
+                            Conseil, ingénierie et déploiement de solutions d'efficacité énergétique — Montrouge, depuis 2023.
                         </p>
                         <div className="hero-anim pt-8 flex flex-wrap items-center gap-6">
                             <Link to="/contact" className="btn-magnetic px-8 py-4 text-base shadow-[0_0_30px_rgba(245,160,0,0.3)]">
@@ -161,7 +161,7 @@ export default function Accueil() {
             {/* Stats Bar */}
             <section className="bg-primary py-16 px-6 relative z-20 -mt-8 rounded-t-3xl shadow-2xl">
                 <div className="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8">
-                    <Counter prefix="+" value={50} label="Projets accompagnés" />
+                    <Counter prefix="+" value={50} label="Projets tertiaires & industriels" />
                     <Counter value={3} label="Domaines d'expertise" />
                     <Counter value={100} suffix="%" label="Indépendant" />
                     <Counter value={2023} label="Fondée" />
@@ -173,18 +173,18 @@ export default function Accueil() {
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16">
                         <h2 className="font-heading font-black text-4xl md:text-5xl text-dark mb-4">Nos Pôles d'Excellence</h2>
-                        <p className="font-body text-text/70 max-w-2xl mx-auto text-lg">Une approche intégrée pour maîtriser la complexité de la transition énergétique sur votre territoire.</p>
+                        <p className="font-body text-text/70 max-w-2xl mx-auto text-lg">Une approche globale depuis l'analyse énergétique jusqu'au déploiement et financement de vos travaux.</p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
                         {/* Card 1 */}
                         <div className="expertise-card bg-white p-10 rounded-3xl shadow-lg border border-primary/5 group hover:border-accent/40 transition-colors">
                             <div className="w-16 h-16 rounded-2xl bg-bg flexItems-center justify-center mb-8 flex text-primary group-hover:bg-accent group-hover:text-white transition-colors duration-300">
-                                <Wrench className="w-8 h-8 m-auto" />
+                                <GraduationCap className="w-8 h-8 m-auto" />
                             </div>
-                            <h3 className="font-heading font-bold text-2xl text-dark mb-4">Ingénierie & Études</h3>
-                            <p className="font-body text-text/70 mb-8 leading-relaxed">Études de faisabilité, conception technique et optimisation continue de vos infrastructures ENR.</p>
-                            <Link to="/expertises" className="font-heading font-bold text-sm text-primary group-hover:text-accent transition-colors flex items-center gap-2">
+                            <h3 className="font-heading font-bold text-2xl text-dark mb-4">Bureau d'études & Audit</h3>
+                            <p className="font-body text-text/70 mb-8 leading-relaxed">Audits énergétiques réglementaires et volontaires, diagnostics de performance et plans d'actions.</p>
+                            <Link to="/bureau-etudes" className="font-heading font-bold text-sm text-primary group-hover:text-accent transition-colors flex items-center gap-2">
                                 En savoir plus <ArrowRight className="w-4 h-4" />
                             </Link>
                         </div>
@@ -194,8 +194,8 @@ export default function Accueil() {
                             <div className="w-16 h-16 rounded-2xl bg-bg flexItems-center justify-center mb-8 flex text-primary group-hover:bg-accent group-hover:text-white transition-colors duration-300">
                                 <LineChart className="w-8 h-8 m-auto" />
                             </div>
-                            <h3 className="font-heading font-bold text-2xl text-dark mb-4">Conseil Stratégique</h3>
-                            <p className="font-body text-text/70 mb-8 leading-relaxed">Accompagnement de la maîtrise d'ouvrage, ingénierie financière et respect des cadres normatifs.</p>
+                            <h3 className="font-heading font-bold text-2xl text-dark mb-4">Valorisation des CEE</h3>
+                            <p className="font-body text-text/70 mb-8 leading-relaxed">Maximisation de vos primes CEE et structuration financière pour réduire significativement votre reste à charge.</p>
                             <Link to="/expertises" className="font-heading font-bold text-sm text-primary group-hover:text-accent transition-colors flex items-center gap-2">
                                 En savoir plus <ArrowRight className="w-4 h-4" />
                             </Link>
@@ -204,11 +204,11 @@ export default function Accueil() {
                         {/* Card 3 */}
                         <div className="expertise-card bg-white p-10 rounded-3xl shadow-lg border border-primary/5 group hover:border-accent/40 transition-colors">
                             <div className="w-16 h-16 rounded-2xl bg-bg flexItems-center justify-center mb-8 flex text-primary group-hover:bg-accent group-hover:text-white transition-colors duration-300">
-                                <GraduationCap className="w-8 h-8 m-auto" />
+                                <Wrench className="w-8 h-8 m-auto" />
                             </div>
-                            <h3 className="font-heading font-bold text-2xl text-dark mb-4">Bureau d'études & Audit</h3>
-                            <p className="font-body text-text/70 mb-8 leading-relaxed">Audits énergétiques, valorisation de vos aides (CEE, subventions) et transfert de compétences.</p>
-                            <Link to="/formation-audit" className="font-heading font-bold text-sm text-primary group-hover:text-accent transition-colors flex items-center gap-2">
+                            <h3 className="font-heading font-bold text-2xl text-dark mb-4">Solutions d'efficacité</h3>
+                            <p className="font-body text-text/70 mb-8 leading-relaxed">Déploiement de solutions performantes : Isolation globale, Relamping LED et optimisation CVC.</p>
+                            <Link to="/expertises" className="font-heading font-bold text-sm text-primary group-hover:text-accent transition-colors flex items-center gap-2">
                                 En savoir plus <ArrowRight className="w-4 h-4" />
                             </Link>
                         </div>
@@ -230,13 +230,13 @@ export default function Accueil() {
                     <p className="font-body text-bg/60 text-lg md:text-xl font-medium mb-12 uppercase tracking-widest">Notre Vision</p>
                     <div className="space-y-8">
                         <p className="font-body text-xl md:text-2xl text-bg/80 font-light leading-relaxed max-w-3xl mx-auto">
-                            La plupart des bureaux d'études se concentrent sur <span className="underline decoration-primary/50 underline-offset-4">les équipements</span>.
+                            La plupart des acteurs s'arrêtent au <span className="underline decoration-primary/50 underline-offset-4">conseil théorique</span>.
                         </p>
                         <p className="font-serif italic text-4xl md:text-5xl lg:text-7xl leading-tight">
-                            {"Chez BATI ENERGY, nous nous concentrons sur : l'impact réel du ".split(" ").map((word, i) => (
+                            {"Chez BATI ENERGY, nous maximisons vos économies avec la force des ".split(" ").map((word, i) => (
                                 <span key={i} className="manifesto-word inline-block mr-[0.3em]">{word}</span>
                             ))}
-                            <span className="manifesto-word inline-block text-accent">territoire.</span>
+                            <span className="manifesto-word inline-block text-accent">CEE.</span>
                         </p>
                     </div>
                     <div className="mt-20">
@@ -263,37 +263,37 @@ export default function Accueil() {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {/* Project 1 */}
                         <div className="project-card group relative h-96 rounded-3xl overflow-hidden cursor-pointer">
-                            <img src="/images/formation.png" alt="Formation ENR" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                            <img src="/images/projet_audit.png" alt="Audit Energétique Industriel" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                             <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
 
                             <div className="absolute inset-0 p-8 flex flex-col justify-end">
-                                <span className="font-mono text-accent text-sm mb-3 font-semibold tracking-wider">FORMATION</span>
-                                <h3 className="font-heading font-bold text-2xl text-white mb-1">Programme Formation ENR</h3>
-                                <p className="font-body text-bg/70 text-sm">Hauts-de-Seine — 2025</p>
+                                <span className="font-mono text-accent text-sm mb-3 font-semibold tracking-wider">AUDIT TERTIAIRE</span>
+                                <h3 className="font-heading font-bold text-2xl text-white mb-1">Audit Réglementaire 40 000 m²</h3>
+                                <p className="font-body text-bg/70 text-sm">Essonne — 2026</p>
                             </div>
                         </div>
 
                         {/* Project 2 */}
                         <div className="project-card group relative h-96 rounded-3xl overflow-hidden cursor-pointer">
-                            <img src="/images/projet_territoire.png" alt="Projet Territoire" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                            <img src="/images/formation.png" alt="Rénovation Globale CEE" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                             <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
 
                             <div className="absolute inset-0 p-8 flex flex-col justify-end">
-                                <span className="font-mono text-accent text-sm mb-3 font-semibold tracking-wider">CONSEIL</span>
-                                <h3 className="font-heading font-bold text-2xl text-white mb-1">Plan Territorial ENR</h3>
-                                <p className="font-body text-bg/70 text-sm">Métropole du Grand Paris — 2025</p>
+                                <span className="font-mono text-accent text-sm mb-3 font-semibold tracking-wider">VALORISATION CEE</span>
+                                <h3 className="font-heading font-bold text-2xl text-white mb-1">Financement CEE Industrie</h3>
+                                <p className="font-body text-bg/70 text-sm">Seine-et-Marne — 2024</p>
                             </div>
                         </div>
 
                         {/* Project 3 */}
                         <div className="project-card group relative h-96 rounded-3xl overflow-hidden cursor-pointer">
-                            <img src="/images/projet_eolien.png" alt="Projet Éolien" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                            <img src="/images/bureau.png" alt="Relamping LED" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                             <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
 
                             <div className="absolute inset-0 p-8 flex flex-col justify-end">
-                                <span className="font-mono text-accent text-sm mb-3 font-semibold tracking-wider">ÉOLIEN</span>
-                                <h3 className="font-heading font-bold text-2xl text-white mb-1">Étude Éolienne Offshore</h3>
-                                <p className="font-body text-bg/70 text-sm">Normandie — 2025</p>
+                                <span className="font-mono text-accent text-sm mb-3 font-semibold tracking-wider">SOLUTIONS EFFICACITÉ</span>
+                                <h3 className="font-heading font-bold text-2xl text-white mb-1">Isolation et Relamping LED</h3>
+                                <p className="font-body text-bg/70 text-sm">Métropole du Grand Paris — 2025</p>
                             </div>
                         </div>
                     </div>
@@ -305,10 +305,10 @@ export default function Accueil() {
                 <div className="max-w-4xl mx-auto text-center">
                     <Quote className="w-16 h-16 mx-auto text-primary/20 mb-8" />
                     <p className="font-serif italic text-3xl md:text-4xl text-dark leading-relaxed mb-8">
-                        "L'approche systémique de BATI ENERGY nous a permis de débloquer notre projet d'aménagement d'éco-quartier avec 6 mois d'avance sur le planning prévisionnel."
+                        "L'approche globale de BATI ENERGY — audit, financement CEE et pilotage des travaux — nous a permis de réduire de 35% notre facture énergétique en moins de 18 mois."
                     </p>
-                    <div className="font-body font-bold text-primary">Directeur Développement</div>
-                    <div className="font-mono text-xs text-text/50 mt-1">Etablissement Public Foncier</div>
+                    <div className="font-body font-bold text-primary">Directeur Immobilier</div>
+                    <div className="font-mono text-xs text-text/50 mt-1">Groupe Tertiaire — Île-de-France</div>
                 </div>
             </section>
 

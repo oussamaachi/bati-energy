@@ -230,7 +230,7 @@ export default function BlogPost() {
                             {/* CTA card */}
                             <div className="bg-dark rounded-2xl p-6 text-white shadow-lg">
                                 <p className="font-mono text-xs text-accent uppercase tracking-widest mb-3">Expert BATI ENERGY</p>
-                                <h3 className="font-heading font-black text-lg mb-3 leading-snug">Un projet ENR ? Parlons-en.</h3>
+                                <h3 className="font-heading font-black text-lg mb-3 leading-snug">Un projet d'efficacité énergétique ? Parlons-en.</h3>
                                 <p className="font-body text-sm text-white/60 mb-6 leading-relaxed">
                                     Nos ingénieurs analysent votre situation et vous proposent un plan d'action sur-mesure.
                                 </p>

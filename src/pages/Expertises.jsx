@@ -7,7 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 // Custom Interactive Component 1: Diagnostic Shuffler
 const DiagnosticShuffler = () => {
-    const cards = ['Audit énergétique', 'Bureau d\'études', 'Valorisation CEE', 'Optimisation ENR'];
+    const cards = ['Audit énergétique', 'Bureau d\'études', 'Valorisation CEE', 'Performance Tertiaire'];
     const [activeIndex, setActiveIndex] = useState(0);
 
     useEffect(() => {
@@ -53,9 +53,9 @@ const DiagnosticShuffler = () => {
 // Custom Interactive Component 2: Telemetry Typewriter
 const TelemetryTypewriter = () => {
     const lines = [
-        "> Analyse réglementaire en cours...",
-        "> Structuration projet éolien : OK ✓",
-        "> Recommandation transmise au MOA...",
+        "> Analyse réglementaire Décret Tertiaire...",
+        "> Audit énergétique usine : OK ✓",
+        "> Recommandation isolation transmise...",
         "> Veille 2026 : CEE 6ème période intégrée"
     ];
 
@@ -221,8 +221,8 @@ export default function Expertises() {
             <section ref={heroRef} className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden bg-dark">
                 <div className="absolute inset-0 opacity-30">
                     <img
-                        src="/images/projet_eolien.png"
-                        alt="Infrastructures ENR"
+                        src="/images/bureau.png"
+                        alt="Expertise Efficacité Énergétique"
                         className="w-full h-full object-cover object-center"
                     />
                     <div className="absolute inset-0 bg-dark/70"></div>
@@ -240,15 +240,17 @@ export default function Expertises() {
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 lg:gap-24">
                     <div className="w-full md:w-1/2 order-2 md:order-1">
                         <span className="font-mono text-accent text-sm font-bold tracking-widest block mb-4">PÔLE 01</span>
-                        <h2 className="font-heading font-black text-4xl lg:text-5xl text-dark mb-6 leading-tight">Ingénierie & Études Techniques</h2>
+                        <h2 className="font-heading font-black text-4xl lg:text-5xl text-dark mb-6 leading-tight">Bureau d'études & Audit</h2>
                         <ul className="space-y-4 font-body text-lg text-text/80 mb-8 border-l-2 border-primary/20 pl-6">
-                            <li>Études techniques approfondies</li>
-                            <li>Ingénierie de projets ENR</li>
-                            <li>Analyse, audit et optimisation systèmes</li>
-                            <li>Conception de solutions innovantes</li>
+                            <li>Audits énergétiques réglementaires et volontaires</li>
+                            <li>Diagnostics de performance des bâtiments (enveloppe, équipements, usages)</li>
+                            <li>Études de faisabilité et plans d'actions priorisés</li>
+                            <li>Optimisation des contrats et des abonnements énergie</li>
+                            <li>Suivi et pilotage des consommations</li>
+                            <li>Accompagnement à la mise en conformité avec le Décret Tertiaire</li>
                         </ul>
-                        <a href="/contact" className="font-heading font-bold text-primary hover:text-accent transition-colors flex items-center gap-2">
-                            Demander notre brochure <ArrowRight className="w-4 h-4" />
+                        <a href="/bureau-etudes" className="font-heading font-bold text-primary hover:text-accent transition-colors flex items-center gap-2">
+                            Découvrir notre démarche d'audit <ArrowRight className="w-4 h-4" />
                         </a>
                     </div>
                     <div className="w-full md:w-1/2 order-1 md:order-2">
@@ -256,7 +258,7 @@ export default function Expertises() {
                             <DiagnosticShuffler />
                         </div>
                         <div className="mt-8 rounded-[2.5rem] overflow-hidden shadow-2xl h-80">
-                            <img src="/images/projet_audit.png" alt="Laboratoire ENR" className="w-full h-full object-cover" />
+                            <img src="/images/projet_audit.png" alt="Bureau d'études audit énergétique" className="w-full h-full object-cover" />
                         </div>
                     </div>
                 </div>
@@ -267,18 +269,21 @@ export default function Expertises() {
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 lg:gap-24">
                     <div className="w-full md:w-1/2">
                         <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl h-80 mb-8">
-                            <img src="/images/bureau.png" alt="Réunion stratégique" className="w-full h-full object-cover" />
+                            <img src="/images/formation.png" alt="Réunion stratégique" className="w-full h-full object-cover" />
                         </div>
                         <TelemetryTypewriter />
                     </div>
                     <div className="w-full md:w-1/2">
                         <span className="font-mono text-accent text-sm font-bold tracking-widest block mb-4">PÔLE 02</span>
-                        <h2 className="font-heading font-black text-4xl lg:text-5xl text-dark mb-6 leading-tight">Conseil & Assistance Stratégique</h2>
+                        <h2 className="font-heading font-black text-4xl lg:text-5xl text-dark mb-6 leading-tight">Valorisation des CEE</h2>
+                        <p className="font-body text-lg text-text/80 mb-6">
+                            Les CEE constituent un levier financier puissant pour réduire significativement le coût de vos investissements.
+                        </p>
                         <ul className="space-y-4 font-body text-lg text-text/80 mb-8 border-l-2 border-primary/20 pl-6">
-                            <li>Accompagnement maîtres d'ouvrage</li>
-                            <li>Études de faisabilité technico-économique</li>
-                            <li>Structuration de projets énergétiques</li>
-                            <li>Conseil réglementaire et veille normative</li>
+                            <li>Identification des opérations éligibles</li>
+                            <li>Montage et gestion complète des dossiers CEE</li>
+                            <li>Maximisation des primes sur l'ensemble des postes</li>
+                            <li>Articulation avec d'autres dispositifs (ADEME, etc.)</li>
                         </ul>
                     </div>
                 </div>
@@ -289,19 +294,17 @@ export default function Expertises() {
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 lg:gap-24">
                     <div className="w-full md:w-1/2 order-2 md:order-1">
                         <span className="font-mono text-accent text-sm font-bold tracking-widest block mb-4">PÔLE 03</span>
-                        <h2 className="font-heading font-black text-4xl lg:text-5xl text-dark mb-6 leading-tight">Bureau d'Études, Audit & Formation</h2>
+                        <h2 className="font-heading font-black text-4xl lg:text-5xl text-dark mb-6 leading-tight">Solutions d'efficacité énergétique</h2>
                         <ul className="space-y-4 font-body text-lg text-text/80 mb-8 border-l-2 border-primary/20 pl-6">
-                            <li>Audits énergétiques réglementaires</li>
-                            <li>Ingénierie financière et valorisation CEE (6ème période)</li>
-                            <li>Programmes de formation sur-mesure</li>
-                            <li>Transfert de compétences pour les exploitants</li>
-                            <li>Plans de communication autour des projets ENR</li>
+                            <li><strong>Isolation Thermique :</strong> Combles, murs (ITI/ITE), toitures terrasses, planchers bas et calorifugeage.</li>
+                            <li><strong>Éclairage & équipements :</strong> Relamping LED professionnel et gestion intelligente.</li>
+                            <li><strong>Optimisation CVC :</strong> Chauffage, ventilation, climatisation.</li>
                         </ul>
                         <Scheduler />
                     </div>
                     <div className="w-full md:w-1/2 order-1 md:order-2">
                         <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl h-[40rem]">
-                            <img src="/images/formation.png" alt="Formation professionnelle" className="w-full h-full object-cover" />
+                            <img src="/images/projet_territoire.png" alt="Solutions Efficacité Energétique" className="w-full h-full object-cover" />
                             <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-dark to-transparent opacity-80"></div>
                         </div>
                     </div>
@@ -312,7 +315,7 @@ export default function Expertises() {
             <section ref={el => sectionRefs.current[3] = el} className="py-24 px-6 max-w-5xl mx-auto text-center">
                 <h2 className="font-serif italic text-4xl text-dark mb-12">Nos Secteurs d'Intervention</h2>
                 <div className="flex flex-wrap items-center justify-center gap-4">
-                    {['Collectivités', 'Entreprises privées', 'Structures publiques', 'Promoteurs', 'Industrie', 'Aménagement territorial'].map((sector, i) => (
+                    {['Bâtiments Tertiaires', 'Bâtiments Industriels', 'Collectivités', 'Structures Publiques', 'Copropriétés'].map((sector, i) => (
                         <div key={i} className="px-6 py-3 rounded-full border border-primary/20 bg-white font-mono text-sm font-bold text-dark shadow-sm hover:border-accent hover:shadow-md transition-all cursor-default">
                             {sector}
                         </div>

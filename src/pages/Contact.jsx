@@ -24,45 +24,55 @@ const useCountUp = (end, duration = 1.5, start = 0, isDecimal = false) => {
     return target;
 };
 
-const EnrCalculator = () => {
-    const [projectType, setProjectType] = useState('Géothermie'); // Géothermie, Éolien, Mixte ENR, Audit seul
-    const [power, setPower] = useState(100); // 10 kWc to 500 kWc
-    const [structureType, setStructureType] = useState('Entreprise'); // Entreprise, Collectivité, Industriel
+const EfficiencyCalculator = () => {
+    const [projectType, setProjectType] = useState('Relamping LED'); // Relamping LED, Isolation, CVC / GTB, Audit global
+    const [surface, setSurface] = useState(1000); // 500 to 10000 m2
+    const [structureType, setStructureType] = useState('Tertiaire'); // Tertiaire, Industriel, Collectivité
 
     // Derived values for animation
-    const [results, setResults] = useState({ prod: 0, savings: 0, co2: 0, roiMin: 0, roiMax: 0 });
+    const [results, setResults] = useState({ savingsAmount: 0, ceeEstimate: 0, co2: 0, roiMin: 0, roiMax: 0 });
 
     useEffect(() => {
-        // Basic mock calculation logic (fictitious but logical for demonstration)
-        if (projectType === 'Audit seul') {
-            setResults({ prod: 0, savings: power * 15, co2: power * 0.1, roiMin: 1, roiMax: 2 });
+        if (projectType === 'Audit global') {
+            setResults({ savingsAmount: surface * 15, ceeEstimate: 0, co2: surface * 0.02, roiMin: 1, roiMax: 2 });
             return;
         }
 
-        let baseProd = power * 1.1; // MWh/an per kWc
-        if (projectType === 'Éolien') baseProd *= 1.4;
-        if (projectType === 'Mixte ENR') baseProd *= 1.3;
+        let baseSavingsPerM2 = 0;
+        let baseCeePerM2 = 0;
+        let baseCo2PerM2 = 0;
+        let roiBase = 0;
 
-        let tariff = structureType === 'Industriel' ? 70 : (structureType === 'Collectivité' ? 90 : 110); // €/MWh
-        let baseSavings = baseProd * tariff;
+        if (projectType === 'Relamping LED') {
+            baseSavingsPerM2 = 12;
+            baseCeePerM2 = 4;
+            baseCo2PerM2 = 0.015;
+            roiBase = 2;
+        } else if (projectType === 'Isolation') {
+            baseSavingsPerM2 = 25;
+            baseCeePerM2 = 15;
+            baseCo2PerM2 = 0.04;
+            roiBase = 6;
+        } else if (projectType === 'CVC / GTB') {
+            baseSavingsPerM2 = 30;
+            baseCeePerM2 = 20;
+            baseCo2PerM2 = 0.05;
+            roiBase = 4;
+        }
 
-        let baseCo2 = baseProd * 0.05; // tonnes CO2 / MWh (very rough grid average offset here)
-        if (projectType === 'Géothermie') baseCo2 *= 1.2;
-
-        let roiBase = structureType === 'Collectivité' ? 8 : (structureType === 'Industriel' ? 6 : 7);
-        if (projectType === 'Mixte ENR') roiBase += 2;
+        let structureMultiplier = structureType === 'Industriel' ? 1.3 : (structureType === 'Collectivité' ? 0.9 : 1.0);
 
         setResults({
-            prod: baseProd,
-            savings: baseSavings,
-            co2: baseCo2,
+            savingsAmount: surface * baseSavingsPerM2 * structureMultiplier,
+            ceeEstimate: surface * baseCeePerM2 * structureMultiplier,
+            co2: surface * baseCo2PerM2 * structureMultiplier,
             roiMin: Math.max(roiBase - 1, 1),
-            roiMax: roiBase + 1
+            roiMax: roiBase + 1.5
         });
-    }, [projectType, power, structureType]);
+    }, [projectType, surface, structureType]);
 
-    const animProd = useCountUp(results.prod, 1.5, 0);
-    const animSavings = useCountUp(results.savings, 1.5, 0);
+    const animSavings = useCountUp(results.savingsAmount, 1.5, 0);
+    const animCee = useCountUp(results.ceeEstimate, 1.5, 0);
     const animCo2 = useCountUp(results.co2, 1.5, 0);
     const animRoiMin = useCountUp(results.roiMin, 1, 0, true);
     const animRoiMax = useCountUp(results.roiMax, 1, 0, true);
@@ -75,8 +85,8 @@ const EnrCalculator = () => {
 
             <div className="relative z-10">
                 <div className="text-center mb-10">
-                    <h3 className="font-heading font-black text-3xl text-dark mb-4">Calculateur d'Impact ENR</h3>
-                    <p className="font-body text-text/70">Estimez le potentiel de votre projet en 3 étapes simples.</p>
+                    <h3 className="font-heading font-black text-3xl text-dark mb-4">Simulateur de Rénovation & CEE</h3>
+                    <p className="font-body text-text/70">Estimez vos économies et vos aides financières potentielles en 3 clics.</p>
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -84,9 +94,9 @@ const EnrCalculator = () => {
                     <div className="space-y-8">
                         {/* Step 1 */}
                         <div>
-                            <div className="font-mono text-primary text-sm font-bold tracking-widest mb-3">ÉTAPE 1 — TYPE DE PROJET</div>
+                            <div className="font-mono text-primary text-sm font-bold tracking-widest mb-3">ÉTAPE 1 — LOT TECHNIQUE</div>
                             <div className="flex flex-wrap gap-3">
-                                {['Géothermie', 'Éolien', 'Mixte ENR', 'Audit seul'].map(type => (
+                                {['Relamping LED', 'Isolation', 'CVC / GTB', 'Audit global'].map(type => (
                                     <button
                                         key={type}
                                         onClick={() => setProjectType(type)}
@@ -104,32 +114,32 @@ const EnrCalculator = () => {
                         {/* Step 2 */}
                         <div>
                             <div className="font-mono text-primary text-sm font-bold tracking-widest mb-3 flex justify-between">
-                                <span>ÉTAPE 2 — PUISSANCE VISÉE</span>
-                                <span className="text-accent">{power} kWc</span>
+                                <span>ÉTAPE 2 — SURFACE CONCERNÉE</span>
+                                <span className="text-accent">{surface} m²</span>
                             </div>
                             <input
                                 type="range"
-                                min="10"
-                                max="500"
-                                step="10"
-                                value={power}
-                                onChange={(e) => setPower(parseInt(e.target.value))}
+                                min="500"
+                                max="10000"
+                                step="100"
+                                value={surface}
+                                onChange={(e) => setSurface(parseInt(e.target.value))}
                                 className="w-full h-2 bg-primary/20 rounded-lg appearance-none cursor-pointer accent-accent"
                             />
                             <div className="flex justify-between text-xs text-text/50 font-mono mt-2">
-                                <span>10 kWc (Toiture)</span>
-                                <span>500 kWc (Centrale)</span>
+                                <span>500 m²</span>
+                                <span>10 000 m² +</span>
                             </div>
                         </div>
 
                         {/* Step 3 */}
                         <div>
-                            <div className="font-mono text-primary text-sm font-bold tracking-widest mb-3">ÉTAPE 3 — VOTRE STRUCTURE</div>
+                            <div className="font-mono text-primary text-sm font-bold tracking-widest mb-3">ÉTAPE 3 — SECTEUR D'ACTIVITÉ</div>
                             <div className="flex flex-wrap gap-3">
                                 {[
-                                    { id: 'Entreprise', icon: Building2 },
-                                    { id: 'Collectivité', icon: Trees },
-                                    { id: 'Industriel', icon: Zap }
+                                    { id: 'Tertiaire', icon: Building2 },
+                                    { id: 'Industriel', icon: Zap },
+                                    { id: 'Collectivité', icon: Trees }
                                 ].map(type => (
                                     <button
                                         key={type.id}
@@ -151,30 +161,26 @@ const EnrCalculator = () => {
                         <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/10 opacity-50 blur-xl mix-blend-screen pointer-events-none"></div>
 
                         <div className="relative z-10 grid grid-cols-2 gap-8">
-                            {projectType !== 'Audit seul' ? (
+                            {projectType !== 'Audit global' ? (
                                 <>
-                                    <div>
-                                        <div className="font-mono text-xs text-white/50 tracking-widest mb-2">PRODUCTION ESTIMÉE</div>
-                                        <div className="font-heading font-black text-3xl md:text-4xl text-white">{animProd} <span className="text-xl text-primary-light">MWh/an</span></div>
+                                    <div className="col-span-2">
+                                        <div className="font-mono text-xs text-white/50 tracking-widest mb-2">POTENTIEL PRIMES CEE</div>
+                                        <div className="font-heading font-black text-4xl md:text-5xl text-accent">~ {new Intl.NumberFormat('fr-FR').format(animCee)} <span className="text-2xl">€</span></div>
                                     </div>
                                     <div>
-                                        <div className="font-mono text-xs text-white/50 tracking-widest mb-2">ÉCONOMIES NETTES</div>
-                                        <div className="font-heading font-black text-3xl md:text-4xl text-accent">{new Intl.NumberFormat('fr-FR').format(animSavings)} <span className="text-xl">€/an</span></div>
+                                        <div className="font-mono text-xs text-white/50 tracking-widest mb-2">ÉCONOMIES D'ÉNERGIE (AN)</div>
+                                        <div className="font-heading font-black text-2xl md:text-3xl text-white">{new Intl.NumberFormat('fr-FR').format(animSavings)} <span className="text-lg">€</span></div>
                                     </div>
                                     <div>
-                                        <div className="font-mono text-xs text-white/50 tracking-widest mb-2">RÉDUCTION CO₂</div>
-                                        <div className="font-heading font-black text-3xl md:text-4xl text-white">{animCo2} <span className="text-xl text-primary-light">t/an</span></div>
-                                    </div>
-                                    <div>
-                                        <div className="font-mono text-xs text-white/50 tracking-widest mb-2">R.O.I ESTIMÉ</div>
-                                        <div className="font-heading font-black text-3xl md:text-4xl text-accent">{animRoiMin} à {animRoiMax} <span className="text-xl">ans</span></div>
+                                        <div className="font-mono text-xs text-white/50 tracking-widest mb-2">R.O.I APRÈS AIDES</div>
+                                        <div className="font-heading font-black text-2xl md:text-3xl text-white">{animRoiMin} à {animRoiMax} <span className="text-lg">ans</span></div>
                                     </div>
                                 </>
                             ) : (
-                                <div className="col-span-2 text-center py-8">
-                                    <div className="font-mono text-xs text-white/50 tracking-widest mb-4">GAIN POTENTIEL EN OPTIMISATION OPEX</div>
-                                    <div className="font-heading font-black text-5xl text-accent mb-4">{new Intl.NumberFormat('fr-FR').format(animSavings)} €/an</div>
-                                    <div className="font-body text-white/70 max-w-sm mx-auto">Basé sur une estimation de 15% d'économies réalisables suite à un audit complet approfondi.</div>
+                                <div className="col-span-2 text-center py-4">
+                                    <div className="font-mono text-xs text-white/50 tracking-widest mb-4">GAIN MOYEN SUITE À L'AUDIT</div>
+                                    <div className="font-heading font-black text-4xl text-accent mb-4">- {new Intl.NumberFormat('fr-FR').format(animSavings)} €/an</div>
+                                    <div className="font-body text-white/70 text-sm max-w-sm mx-auto">Basé sur une estimation de 20% d'économies réalisables en optimisant vos installations (sans CAPEX majeur).</div>
                                 </div>
                             )}
                         </div>
@@ -182,9 +188,9 @@ const EnrCalculator = () => {
                 </div>
 
                 <div className="text-center mt-12 pt-8 border-t border-primary/10">
-                    <p className="font-body text-text/70 mb-6 font-medium">Ces chiffres vous intéressent ? Affinons-les ensemble.</p>
+                    <p className="font-body text-text/70 mb-6 font-medium">Les CEE fluctuent. Sécurisons votre prime dès aujourd'hui.</p>
                     <a href="#contact-form" className="btn-magnetic px-8 py-4">
-                        <span>Demander une étude précise <ArrowRight className="w-5 h-5" /></span>
+                        <span>Lancer une vérification d'éligibilité <ArrowRight className="w-5 h-5" /></span>
                     </a>
                 </div>
             </div>
@@ -273,10 +279,9 @@ export default function Contact() {
                                 <div className="relative">
                                     <select id="besoin" className="w-full bg-white border border-primary/20 rounded-xl px-5 py-4 appearance-none focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all font-body text-dark cursor-pointer">
                                         <option value="">Sélectionnez un domaine d'intervention</option>
-                                        <option value="etudes">Étude technique (Faisabilité, Géothermie, Éolien...)</option>
-                                        <option value="conseil">Conseil stratégique & AMO</option>
-                                        <option value="audit">Audit énergétique & Valorisation CEE</option>
-                                        <option value="formation">Formation professionnelle</option>
+                                        <option value="audit">Bureau d'études & Audit énergétique</option>
+                                        <option value="cee">Montage & Valorisation dossier CEE</option>
+                                        <option value="travaux">Réalisation Travaux (Isolation, CVC, LED)</option>
                                         <option value="autre">Autre demande</option>
                                     </select>
                                     <div className="absolute inset-y-0 right-5 flex items-center pointer-events-none">
@@ -372,7 +377,7 @@ export default function Contact() {
 
             {/* Interactive Calculator Section */}
             <section className="py-24 px-6 border-t border-primary/10">
-                <EnrCalculator />
+                <EfficiencyCalculator />
             </section>
         </div>
     );

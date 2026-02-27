@@ -7,128 +7,128 @@ gsap.registerPlugin(ScrollTrigger);
 
 const projectsData = [
     {
+        id: 1,
+        title: "Audit Réglementaire Tertiaire",
+        category: "Audit",
+        location: "Essonne",
+        year: "2026",
+        image: "/images/projet_audit.png",
+        gallery: [
+            "/images/projet_audit.png",
+            "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000&auto=format&fit=crop",
+            "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000&auto=format&fit=crop"
+        ],
+        shortDesc: "Audit réglementaire complet pour un parc de bureaux de 40 000 m².",
+        fullDesc: "Accompagnement d'un gestionnaire immobilier dans la mise en conformité avec le Décret Tertiaire et BACS. Réalisation des audits énergétiques obligatoires, modélisation des plans d'actions et déclaration sur la plateforme OPERAT.",
+        tags: ["Décret Tertiaire", "OPERAT", "BACS", "Plan Climat"],
+        results: [
+            { label: "Surfaces", value: "40k m²", icon: Leaf },
+            { label: "Sites", value: "3 impliqués", icon: Clock },
+            { label: "Baisse visée", value: "-40% (2030)", icon: Zap }
+        ],
+        testimonial: {
+            quote: "Une expertise pointue et un plan d'actions clair qui sécurisent notre trajectoire Décret Tertiaire.",
+            author: "Direction RSE & Immobilier",
+            role: "Foncière Privée"
+        }
+    },
+    {
         id: 2,
-        title: "Plan Territorial ENR",
-        category: "Conseil territorial",
-        location: "Métropole du Grand Paris",
+        title: "Financement CEE Industrie",
+        category: "Valorisation CEE",
+        location: "Seine-et-Marne",
+        year: "2024",
+        image: "/images/formation.png",
+        gallery: [
+            "/images/formation.png",
+            "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2000&auto=format&fit=crop",
+            "https://images.unsplash.com/photo-1549449859-99e71fd035b8?q=80&w=2000&auto=format&fit=crop"
+        ],
+        shortDesc: "Valorisation des primes CEE pour la rénovation d'un site industriel.",
+        fullDesc: "Montage intégral du dossier de Certificats d'Économies d'Énergie pour le remplacement de groupes froids (systèmes de récupération de chaleur) et l'isolation des réseaux. Optimisation de la prime pour couvrir une part majoritaire de l'investissement.",
+        tags: ["Fiche IND-UT-117", "Chaleur de récupération", "Subventions"],
+        results: [
+            { label: "Prime CEE", value: "850 K€", icon: Euro },
+            { label: "Couverture", value: "65% du CAPEX", icon: Euro },
+            { label: "Instruction", value: "3 mois", icon: Clock }
+        ]
+    },
+    {
+        id: 3,
+        title: "Audit Énergétique Industriel",
+        category: "Audit",
+        location: "Hauts-de-France",
         year: "2025",
         image: "/images/projet_territoire.png",
         gallery: [
             "/images/projet_territoire.png",
-            "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000&auto=format&fit=crop"
+            "https://images.unsplash.com/photo-1531835551805-16d8f8d67f5b?q=80&w=2000&auto=format&fit=crop",
+            "https://images.unsplash.com/photo-1466611653911-95081537e5b7?q=80&w=2000&auto=format&fit=crop"
         ],
-        shortDesc: "Schéma directeur des énergies renouvelables à l'échelle métropolitaine.",
-        fullDesc: "Accompagnement de la collectivité dans la définition de sa stratégie de transition énergétique. Cartographie des gisements (géothermie, réseaux de chaleur, éolien), modélisation des scénarios technico-économiques et rédaction du masterplan.",
-        tags: ["Stratégie", "SIG", "Concertation", "Plan Climat"],
-        results: [
-            { label: "Couverture ENR", value: "32% visés", icon: Leaf },
-            { label: "Communes", value: "12 impliquées", icon: Clock },
-            { label: "Investissement", value: "45 M€", icon: Euro }
-        ],
-        testimonial: {
-            quote: "Un accompagnement stratégique clair et chiffré qui a fédéré l'ensemble des maires autour du Plan Climat.",
-            author: "Vice-présidence Transition Écologique",
-            role: "Métropole du Grand Paris"
-        }
-    },
-    {
-        id: 3,
-        title: "Étude Éolienne Offshore",
-        category: "Éolien",
-        location: "Normandie",
-        year: "2025",
-        image: "/images/projet_eolien.png",
-        gallery: [
-            "/images/projet_eolien.png",
-            "https://images.unsplash.com/photo-1466611653911-95081537e5b7?q=80&w=2000&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1549449859-99e71fd035b8?q=80&w=2000&auto=format&fit=crop"
-        ],
-        shortDesc: "Avant-projet détaillé pour le raccordement d'un parc offshore.",
-        fullDesc: "Mission d'assistance technique pour le dimensionnement du poste électrique de raccordement d'un futur parc éolien en mer. Modélisation dynamique des flux et optimisation des pertes en ligne sur le câble sous-marin HVDC.",
-        tags: ["HVDC", "Offshore", "Réseau de transport", "BIM"],
-        results: [
-            { label: "Capacité", value: "450 MW", icon: Zap },
-            { label: "Câble", value: "35 km", icon: Clock },
-            { label: "Tension", value: "225 kV", icon: Zap }
-        ]
-    },
-    {
-        id: 4,
-        title: "Audit Énergétique Industriel",
-        category: "Audit",
-        location: "Seine-et-Marne",
-        year: "2024",
-        image: "/images/projet_audit.png",
-        gallery: [
-            "/images/projet_audit.png",
-            "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2000&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1531835551805-16d8f8d67f5b?q=80&w=2000&auto=format&fit=crop"
-        ],
-        shortDesc: "Optimisation des utilités sur un site classé Seveso.",
-        fullDesc: "Réalisation d'un audit énergétique approfondi (norme EN 16247) sur un site chimique industriel complet. Identification de gisements de récupération de chaleur fatale sur les compresseurs et optimisation de la chaufferie vapeur.",
-        tags: ["Chaleur fatale", "ISO 50001", "Process thermiques", "Vapeur"],
+        shortDesc: "Optimisation des utilités sur un site de production.",
+        fullDesc: "Réalisation d'un audit énergétique approfondi (norme EN 16247). Identification de gisements d'économies sur la chaufferie vapeur, l'air comprimé, et proposition d'un plan de comptage conforme à l'ISO 50001.",
+        tags: ["ISO 50001", "Process thermiques", "Vapeur", "Air comprimé"],
         results: [
             { label: "Économies", value: "18%", icon: Leaf },
             { label: "ROI moyen", value: "2.4 ans", icon: Clock },
-            { label: "Subventions", value: "65 K€ CEE", icon: Euro }
+            { label: "Gisements", value: "7 identifiés", icon: Zap }
         ],
         testimonial: {
             quote: "L'audit a révélé des gisements d'économies insoupçonnés, rentabilisés en moins de 3 ans. Bati Energy a su comprendre nos contraintes industrielles.",
             author: "Direction d'Exploitation",
-            role: "Site Industriel Classé — Seine-et-Marne"
+            role: "Site Industriel — Hauts-de-France"
         }
     },
     {
-        id: 5,
-        title: "Programme Formation ENR",
-        category: "Formation",
-        location: "Hauts-de-Seine",
+        id: 4,
+        title: "Relamping LED National",
+        category: "Efficacité Énergétique",
+        location: "National",
         year: "2025",
-        image: "/images/formation.png",
+        image: "/images/bureau.png",
         gallery: [
-            "/images/formation.png",
+            "/images/bureau.png",
             "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2000&auto=format&fit=crop",
             "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2000&auto=format&fit=crop"
         ],
-        shortDesc: "Montée en compétences des équipes techniques de l'EPCI.",
-        fullDesc: "Déploiement d'un parcours de formation sur mesure d'une semaine pour 25 techniciens et ingénieurs de la métropole, axé sur le suivi d'exploitation des réseaux de chaleur urbains et l'éolien.",
-        tags: ["Présentiel", "Ingénierie Pédagogique", "Exploitation"],
+        shortDesc: "Remplacement de l'éclairage sur 150 agences commerciales.",
+        fullDesc: "Accompagnement maître d'ouvrage pour le déploiement national de luminaires LED avec détection intelligente. Audit initial par échantillonnage, rédaction du cahier des charges, choix des prestataires et réception des travaux.",
+        tags: ["Relamping", "Détection", "Réseau d'agences"],
         results: [
-            { label: "Session", value: "5 jours", icon: Clock },
-            { label: "Stagiaires", value: "25 agents", icon: Zap },
-            { label: "Satisfaction", value: "9.6/10", icon: Leaf }
+            { label: "Agences", value: "150 sites", icon: Clock },
+            { label: "Conso Éclairage", value: "-65%", icon: Zap },
+            { label: "Retour invest.", value: "1.8 an", icon: Leaf }
         ]
     },
     {
-        id: 6,
-        title: "Optimisation Thermique",
-        category: "Audit",
-        location: "Essonne",
+        id: 5,
+        title: "Rénovation Globale CEE & CVC",
+        category: "Efficacité Énergétique",
+        location: "Métropole du Grand Paris",
         year: "2026",
-        image: "/images/projet_territoire.png",
+        image: "/images/hero_texture.png",
         gallery: [
-            "/images/projet_territoire.png",
+            "/images/hero_texture.png",
             "https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=2000&auto=format&fit=crop",
             "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000&auto=format&fit=crop"
         ],
-        shortDesc: "Modélisation dynamique globale d'un grand ensemble tertiaire.",
-        fullDesc: "Diagnostic complet de la performance thermique d'un campus de bureaux de 40 000 m². Simulation Thermique Dynamique (STD) pour orienter la rénovation de la GTB et l'optimisation énergétique globale.",
-        tags: ["STD", "GTB", "Tertiaire", "Décret Bap"],
+        shortDesc: "Optimisation de l'enveloppe et des systèmes sur un immeuble des années 90.",
+        fullDesc: "Mission complète (AMO et ingénierie) : isolation des toitures terrasses, calorifugeage, et mise à niveau de la GTB. Valorisation CEE intégrée au plan de financement en amont pour maximiser le passage à l'acte.",
+        tags: ["Isolation Enveloppe", "Calorifugeage", "GTB", "Rénovation globale"],
         results: [
-            { label: "Surface", value: "40 k m²", icon: Zap },
-            { label: "Gain estimé", value: "-25% énergie", icon: Leaf },
+            { label: "Investissement", value: "1.2 M€", icon: Euro },
+            { label: "Gain estimé", value: "-35% énergie", icon: Leaf },
             { label: "Évitement CO2", value: "110 t/an", icon: Leaf }
         ],
         testimonial: {
-            quote: "Leur modélisation détaillée nous a permis d'optimiser notre investissement tout en répondant aux exigences du décret tertiaire.",
+            quote: "Le couplage ingénierie et recherche de financements (CEE) de Bati Energy a rendu cette rénovation lourde financièrement viable.",
             author: "Direction Immobilière",
-            role: "Parc Tertiaire Privé — Essonne"
+            role: "Siège Social — Paris"
         }
     }
 ];
 
-const categories = ["Tous", "Éolien", "Conseil territorial", "Formation", "Audit"];
+const categories = ["Tous", "Audit", "Valorisation CEE", "Efficacité Énergétique"];
 
 const ImageSlider = ({ images }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
