@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { ShieldCheck } from 'lucide-react';
 
 export default function PolitiqueConfidentialite() {
@@ -24,10 +24,10 @@ export default function PolitiqueConfidentialite() {
                     <h2 className="font-heading font-bold text-2xl text-dark mt-12 mb-4">1. Éditeur du site</h2>
                     <p>
                         Le site internet <strong>bati-energy.fr</strong> est édité par la société <strong>BATI ENERGY SAS</strong>.<br />
-                        Siège social : 45 avenue Pierre Brossolette, 92120 Montrouge, France.<br />
-                        Capital social : 50 000 €<br />
-                        RCS : Nanterre<br />
-                        Email : <a href="mailto:contact@bati-energy.fr" className="underline hover:text-primary">contact@bati-energy.fr</a>
+                        Siège social : 45 avenue Pierre Brossolette, 92120 Montrouge, France.<br />
+                        Capital social : 50 000 €<br />
+                        RCS : Nanterre<br />
+                        Email : <a href="mailto:contact@bati-energy.fr" className="underline hover:text-primary">contact@bati-energy.fr</a>
                     </p>
 
                     <h2 className="font-heading font-bold text-2xl text-dark mt-12 mb-4">2. Hébergement</h2>
@@ -67,3 +67,5 @@ export default function PolitiqueConfidentialite() {
         </div>
     );
 }
+
+

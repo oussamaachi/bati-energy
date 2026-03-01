@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight, X, ChevronLeft, ChevronRight, Quote, Leaf, Euro, Clock, Zap } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -164,13 +165,17 @@ const ImageSlider = ({ images }) => {
 
             {/* Navigation Arrows */}
             <button
+                type="button"
                 onClick={prevSlide}
+                aria-label="Image précédente"
                 className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center rounded-full bg-dark/30 hover:bg-primary backdrop-blur-md text-white border border-white/20 opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-xl"
             >
                 <ChevronLeft className="w-6 h-6" />
             </button>
             <button
+                type="button"
                 onClick={nextSlide}
+                aria-label="Image suivante"
                 className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center rounded-full bg-dark/30 hover:bg-primary backdrop-blur-md text-white border border-white/20 opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-xl"
             >
                 <ChevronRight className="w-6 h-6" />
@@ -180,8 +185,10 @@ const ImageSlider = ({ images }) => {
             <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex space-x-3 z-20">
                 {images.map((_, idx) => (
                     <button
+                        type="button"
                         key={idx}
                         onClick={() => setCurrentIndex(idx)}
+                        aria-label={`Aller à l'image ${idx + 1}`}
                         className={`transition-all duration-300 rounded-full ${currentIndex === idx
                             ? 'w-8 h-2.5 bg-primary shadow-[0_0_10px_rgba(255,87,34,0.7)]'
                             : 'w-2.5 h-2.5 bg-white/50 hover:bg-white/80'
@@ -261,6 +268,23 @@ export default function Projets() {
         }
     }, [selectedProject]);
 
+    useEffect(() => {
+        if (!selectedProject) return;
+
+        const onKeyDown = (event) => {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        };
+
+        window.addEventListener('keydown', onKeyDown);
+        return () => window.removeEventListener('keydown', onKeyDown);
+    }, [selectedProject]);
+
+    useEffect(() => () => {
+        document.body.style.overflow = 'auto';
+    }, []);
+
     return (
         <div className="bg-bg min-h-screen">
             {/* Hero Interne */}
@@ -288,7 +312,7 @@ export default function Projets() {
                             <button
                                 key={cat}
                                 onClick={() => setActiveFilter(cat)}
-                                className={`flex-shrink-0 px-6 py-2.5 rounded-full font-mono text-sm font-bold transition-all duration-300 ${activeFilter === cat
+                                className={`flex-shrink-0 px-6 py-2.5 rounded-full font-body text-sm tracking-wide font-bold transition-all duration-300 ${activeFilter === cat
                                     ? 'bg-primary text-white scale-105 shadow-md shadow-primary/30'
                                     : 'bg-white text-text border border-primary/10 hover:border-primary hover:text-primary hover:shadow-sm'
                                     }`}
@@ -336,10 +360,12 @@ export default function Projets() {
                     {/* Backdrop click layer */}
                     <div className="absolute inset-0" onClick={closeModal}></div>
 
-                    <div className="project-modal relative w-full lg:w-[65vw] xl:w-[55vw] h-[100dvh] bg-bg shadow-2xl flex flex-col pt-safe overflow-hidden">
+                    <div className="project-modal relative w-full lg:w-[65vw] xl:w-[55vw] h-[100dvh] bg-bg shadow-2xl flex flex-col pt-[env(safe-area-inset-top)] overflow-hidden">
                         {/* Close Button */}
                         <button
+                            type="button"
                             onClick={closeModal}
+                            aria-label="Fermer le projet"
                             className="absolute top-6 right-6 z-50 w-12 h-12 rounded-full bg-dark/30 backdrop-blur border border-white/20 flex items-center justify-center text-white hover:bg-primary hover:border-primary hover:scale-105 transition-all duration-300 shadow-lg"
                         >
                             <X className="w-6 h-6" />
@@ -357,10 +383,10 @@ export default function Projets() {
                                 <div className="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent pointer-events-none"></div>
                                 <div className="absolute bottom-0 left-0 p-8 md:p-14 text-white pointer-events-none">
                                     <div className="flex items-center gap-3 mb-4">
-                                        <span className="font-mono bg-white/20 text-white border border-white/40 px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase backdrop-blur-sm">
+                                        <span className="font-body bg-white/20 text-white border border-white/40 px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase backdrop-blur-sm">
                                             {selectedProject.category}
                                         </span>
-                                        <span className="font-mono text-white/70 text-sm">{selectedProject.year}</span>
+                                        <span className="font-body text-white/70 text-sm font-semibold tracking-wide uppercase">{selectedProject.year}</span>
                                     </div>
                                     <h2 className="font-heading font-black text-4xl md:text-5xl lg:text-5xl xl:text-6xl text-white mb-2 leading-tight drop-shadow-lg">
                                         {selectedProject.title}
@@ -389,7 +415,7 @@ export default function Projets() {
                                             </h4>
                                             <div className="flex flex-wrap gap-2">
                                                 {selectedProject.tags.map(tag => (
-                                                    <span key={tag} className="px-4 py-2 bg-white border border-primary/10 text-dark font-mono text-sm font-semibold rounded-lg shadow-sm hover:border-primary/30 transition-colors">
+                                                    <span key={tag} className="px-4 py-2 bg-white border border-primary/10 text-dark font-body text-sm font-semibold rounded-lg shadow-sm hover:border-primary/30 transition-colors">
                                                         {tag}
                                                     </span>
                                                 ))}
@@ -435,10 +461,10 @@ export default function Projets() {
                                         })}
 
                                         <div className="mt-8 pt-8 border-t border-primary/10">
-                                            <a href="/contact" className="w-full flex items-center justify-between px-6 py-4 bg-primary text-white font-bold rounded-xl hover:bg-dark transition-colors duration-300 shadow-md hover:shadow-xl group">
+                                            <Link to="/contact" className="w-full flex items-center justify-between px-6 py-4 bg-primary text-white font-bold rounded-xl hover:bg-dark transition-colors duration-300 shadow-md hover:shadow-xl group">
                                                 <span>Nous consulter</span>
                                                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                                            </a>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
@@ -450,3 +476,4 @@ export default function Projets() {
         </div>
     );
 }
+

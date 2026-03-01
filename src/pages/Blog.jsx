@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { ArrowRight, Clock, Calendar, Mail } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -178,3 +178,4 @@ export default function Blog() {
         </div>
     );
 }
+

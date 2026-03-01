@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Wrench, LineChart, GraduationCap, Quote } from 'lucide-react';
 import gsap from 'gsap';
@@ -187,7 +187,7 @@ export default function Accueil() {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
                         {/* Card 1 */}
                         <div className="expertise-card bg-white p-10 rounded-3xl shadow-lg border border-primary/5 group hover:border-accent/40 transition-colors">
-                            <div className="w-16 h-16 rounded-2xl bg-bg flexItems-center justify-center mb-8 flex text-primary group-hover:bg-accent group-hover:text-white transition-colors duration-300">
+                            <div className="w-16 h-16 rounded-2xl bg-bg flex items-center justify-center mb-8 text-primary group-hover:bg-accent group-hover:text-white transition-colors duration-300">
                                 <GraduationCap className="w-8 h-8 m-auto" />
                             </div>
                             <h3 className="font-heading font-bold text-2xl text-dark mb-4">Bureau d'études & Audit</h3>
@@ -199,7 +199,7 @@ export default function Accueil() {
 
                         {/* Card 2 */}
                         <div className="expertise-card bg-white p-10 rounded-3xl shadow-lg border border-primary/5 group hover:border-accent/40 transition-colors">
-                            <div className="w-16 h-16 rounded-2xl bg-bg flexItems-center justify-center mb-8 flex text-primary group-hover:bg-accent group-hover:text-white transition-colors duration-300">
+                            <div className="w-16 h-16 rounded-2xl bg-bg flex items-center justify-center mb-8 text-primary group-hover:bg-accent group-hover:text-white transition-colors duration-300">
                                 <LineChart className="w-8 h-8 m-auto" />
                             </div>
                             <h3 className="font-heading font-bold text-2xl text-dark mb-4">Valorisation des CEE</h3>
@@ -211,7 +211,7 @@ export default function Accueil() {
 
                         {/* Card 3 */}
                         <div className="expertise-card bg-white p-10 rounded-3xl shadow-lg border border-primary/5 group hover:border-accent/40 transition-colors">
-                            <div className="w-16 h-16 rounded-2xl bg-bg flexItems-center justify-center mb-8 flex text-primary group-hover:bg-accent group-hover:text-white transition-colors duration-300">
+                            <div className="w-16 h-16 rounded-2xl bg-bg flex items-center justify-center mb-8 text-primary group-hover:bg-accent group-hover:text-white transition-colors duration-300">
                                 <Wrench className="w-8 h-8 m-auto" />
                             </div>
                             <h3 className="font-heading font-bold text-2xl text-dark mb-4">Solutions d'efficacité</h3>
@@ -335,3 +335,4 @@ export default function Accueil() {
         </div>
     );
 }
+

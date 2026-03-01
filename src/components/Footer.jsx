@@ -1,6 +1,5 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
-import { Leaf, MapPin, Mail, Clock } from 'lucide-react';
+import { MapPin, Mail, Clock } from 'lucide-react';
 
 export default function Footer() {
     return (
@@ -75,3 +74,4 @@ export default function Footer() {
         </footer>
     );
 }
+

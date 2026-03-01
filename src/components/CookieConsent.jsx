@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ShieldCheck, X } from 'lucide-react';
 import gsap from 'gsap';
@@ -74,3 +74,4 @@ export default function CookieConsent() {
         </div>
     );
 }
+

@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
+﻿import { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight, MapPin, Mail, Clock, Send, Calculator, Zap, Building2, Trees } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -25,7 +26,7 @@ const useCountUp = (end, duration = 1.5, start = 0, isDecimal = false) => {
 };
 
 const EfficiencyCalculator = () => {
-    const [projectType, setProjectType] = useState('Photovoltaïque'); // Photovoltaïque, PAC, Isolation, Audit
+    const [projectType, setProjectType] = useState('PhotovoltaÃ¯que'); // PhotovoltaÃ¯que, PAC, Isolation, Audit
     const [surface, setSurface] = useState(100); // 50 to 10000 m2
     const [structureType, setStructureType] = useState('Particulier'); // Particulier, Tertiaire, Industriel
 
@@ -43,7 +44,7 @@ const EfficiencyCalculator = () => {
         let baseCo2PerM2 = 0;
         let roiBase = 0;
 
-        if (projectType === 'Photovoltaïque') {
+        if (projectType === 'PhotovoltaÃ¯que') {
             baseSavingsPerM2 = 20; // Example values for simulation
             baseCeePerM2 = 0;      // Often different mechanisms for PV
             baseCo2PerM2 = 0.03;
@@ -53,14 +54,14 @@ const EfficiencyCalculator = () => {
             baseCeePerM2 = 15;
             baseCo2PerM2 = 0.04;
             roiBase = 6;
-        } else if (projectType === 'Pompes à Chaleur') {
+        } else if (projectType === 'Pompes Ã  Chaleur') {
             baseSavingsPerM2 = 30;
             baseCeePerM2 = 25; // High CEE for PAC replacements
             baseCo2PerM2 = 0.05;
             roiBase = 5;
         }
 
-        let structureMultiplier = structureType === 'Industriel' ? 1.3 : (structureType === 'Collectivité' ? 0.9 : 1.0);
+        let structureMultiplier = structureType === 'Industriel' ? 1.3 : (structureType === 'CollectivitÃ©' ? 0.9 : 1.0);
 
         setResults({
             savingsAmount: surface * baseSavingsPerM2 * structureMultiplier,
@@ -73,7 +74,6 @@ const EfficiencyCalculator = () => {
 
     const animSavings = useCountUp(results.savingsAmount, 1.5, 0);
     const animCee = useCountUp(results.ceeEstimate, 1.5, 0);
-    const animCo2 = useCountUp(results.co2, 1.5, 0);
     const animRoiMin = useCountUp(results.roiMin, 1, 0, true);
     const animRoiMax = useCountUp(results.roiMax, 1, 0, true);
 
@@ -85,8 +85,8 @@ const EfficiencyCalculator = () => {
 
             <div className="relative z-10">
                 <div className="text-center mb-10">
-                    <h3 className="font-heading font-black text-3xl text-dark mb-4">Simulateur de Rénovation & CEE</h3>
-                    <p className="font-body text-text/70">Estimez vos économies et vos aides financières potentielles en 3 clics.</p>
+                    <h3 className="font-heading font-black text-3xl text-dark mb-4">Simulateur de RÃ©novation & CEE</h3>
+                    <p className="font-body text-text/70">Estimez vos Ã©conomies et vos aides financiÃ¨res potentielles en 3 clics.</p>
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -94,9 +94,9 @@ const EfficiencyCalculator = () => {
                     <div className="space-y-8">
                         {/* Step 1 */}
                         <div>
-                            <div className="font-mono text-primary text-sm font-bold tracking-widest mb-3">ÉTAPE 1 — LOT TECHNIQUE</div>
+                            <div className="font-mono text-primary text-sm font-bold tracking-widest mb-3">Ã‰TAPE 1 â€” LOT TECHNIQUE</div>
                             <div className="flex flex-wrap gap-3">
-                                {['Photovoltaïque', 'Pompes à Chaleur', 'Isolation', 'Audit global'].map(type => (
+                                {['PhotovoltaÃ¯que', 'Pompes Ã  Chaleur', 'Isolation', 'Audit global'].map(type => (
                                     <button
                                         key={type}
                                         onClick={() => setProjectType(type)}
@@ -114,8 +114,8 @@ const EfficiencyCalculator = () => {
                         {/* Step 2 */}
                         <div>
                             <div className="font-mono text-primary text-sm font-bold tracking-widest mb-3 flex justify-between">
-                                <span>ÉTAPE 2 — SURFACE CONCERNÉE</span>
-                                <span className="text-accent">{surface} m²</span>
+                                <span>Ã‰TAPE 2 â€” SURFACE CONCERNÃ‰E</span>
+                                <span className="text-accent">{surface} mÂ²</span>
                             </div>
                             <input
                                 type="range"
@@ -127,14 +127,14 @@ const EfficiencyCalculator = () => {
                                 className="w-full h-2 bg-primary/20 rounded-lg appearance-none cursor-pointer accent-accent"
                             />
                             <div className="flex justify-between text-xs text-text/50 font-mono mt-2">
-                                <span>50 m²</span>
-                                <span>10 000 m² +</span>
+                                <span>50 mÂ²</span>
+                                <span>10 000 mÂ² +</span>
                             </div>
                         </div>
 
                         {/* Step 3 */}
                         <div>
-                            <div className="font-mono text-primary text-sm font-bold tracking-widest mb-3">ÉTAPE 3 — SECTEUR D'ACTIVITÉ</div>
+                            <div className="font-mono text-primary text-sm font-bold tracking-widest mb-3">Ã‰TAPE 3 â€” SECTEUR D'ACTIVITÃ‰</div>
                             <div className="flex flex-wrap gap-3">
                                 {[
                                     { id: 'Particulier', icon: Building2 }, // Reusing Building2 temporarily or adjusting icon
@@ -165,22 +165,22 @@ const EfficiencyCalculator = () => {
                                 <>
                                     <div className="col-span-2">
                                         <div className="font-mono text-xs text-white/50 tracking-widest mb-2">POTENTIEL PRIMES CEE</div>
-                                        <div className="font-heading font-black text-4xl md:text-5xl text-accent">~ {new Intl.NumberFormat('fr-FR').format(animCee)} <span className="text-2xl">€</span></div>
+                                        <div className="font-heading font-black text-4xl md:text-5xl text-accent">~ {new Intl.NumberFormat('fr-FR').format(animCee)} <span className="text-2xl">â‚¬</span></div>
                                     </div>
                                     <div>
-                                        <div className="font-mono text-xs text-white/50 tracking-widest mb-2">ÉCONOMIES D'ÉNERGIE (AN)</div>
-                                        <div className="font-heading font-black text-2xl md:text-3xl text-white">{new Intl.NumberFormat('fr-FR').format(animSavings)} <span className="text-lg">€</span></div>
+                                        <div className="font-mono text-xs text-white/50 tracking-widest mb-2">Ã‰CONOMIES D'Ã‰NERGIE (AN)</div>
+                                        <div className="font-heading font-black text-2xl md:text-3xl text-white">{new Intl.NumberFormat('fr-FR').format(animSavings)} <span className="text-lg">â‚¬</span></div>
                                     </div>
                                     <div>
-                                        <div className="font-mono text-xs text-white/50 tracking-widest mb-2">R.O.I APRÈS AIDES</div>
-                                        <div className="font-heading font-black text-2xl md:text-3xl text-white">{animRoiMin} à {animRoiMax} <span className="text-lg">ans</span></div>
+                                        <div className="font-mono text-xs text-white/50 tracking-widest mb-2">R.O.I APRÃˆS AIDES</div>
+                                        <div className="font-heading font-black text-2xl md:text-3xl text-white">{animRoiMin} Ã  {animRoiMax} <span className="text-lg">ans</span></div>
                                     </div>
                                 </>
                             ) : (
                                 <div className="col-span-2 text-center py-4">
-                                    <div className="font-mono text-xs text-white/50 tracking-widest mb-4">GAIN MOYEN SUITE À L'AUDIT</div>
-                                    <div className="font-heading font-black text-4xl text-accent mb-4">- {new Intl.NumberFormat('fr-FR').format(animSavings)} €/an</div>
-                                    <div className="font-body text-white/70 text-sm max-w-sm mx-auto">Basé sur une estimation de 20% d'économies réalisables en optimisant vos installations (sans CAPEX majeur).</div>
+                                    <div className="font-mono text-xs text-white/50 tracking-widest mb-4">GAIN MOYEN SUITE Ã€ L'AUDIT</div>
+                                    <div className="font-heading font-black text-4xl text-accent mb-4">- {new Intl.NumberFormat('fr-FR').format(animSavings)} â‚¬/an</div>
+                                    <div className="font-body text-white/70 text-sm max-w-sm mx-auto">BasÃ© sur une estimation de 20% d'Ã©conomies rÃ©alisables en optimisant vos installations (sans CAPEX majeur).</div>
                                 </div>
                             )}
                         </div>
@@ -188,9 +188,9 @@ const EfficiencyCalculator = () => {
                 </div>
 
                 <div className="text-center mt-12 pt-8 border-t border-primary/10">
-                    <p className="font-body text-text/70 mb-6 font-medium">Les CEE fluctuent. Sécurisons votre prime dès aujourd'hui.</p>
+                    <p className="font-body text-text/70 mb-6 font-medium">Les CEE fluctuent. SÃ©curisons votre prime dÃ¨s aujourd'hui.</p>
                     <a href="#contact-form" className="btn-magnetic px-8 py-4">
-                        <span>Lancer une vérification d'éligibilité <ArrowRight className="w-5 h-5" /></span>
+                        <span>Lancer une vÃ©rification d'Ã©ligibilitÃ© <ArrowRight className="w-5 h-5" /></span>
                     </a>
                 </div>
             </div>
@@ -230,7 +230,7 @@ export default function Contact() {
                 <div className="absolute inset-0 opacity-20">
                     <img
                         src="/images/bureau.png"
-                        alt="Réunion équipe"
+                        alt="RÃ©union Ã©quipe"
                         className="w-full h-full object-cover object-center grayscale"
                     />
                 </div>
@@ -247,8 +247,8 @@ export default function Contact() {
                     {/* Colonne Gauche - Formulaire */}
                     <div className="w-full lg:w-3/5">
                         <div className="mb-10">
-                            <h2 className="font-heading font-black text-3xl md:text-4xl text-dark mb-4">Consultez notre Bureau d'Études</h2>
-                            <p className="font-body text-text/70 text-lg">Nos ingénieurs vous recontactent sous 48h ouvrées avec une première analyse de faisabilité énergétique et d'éligibilité CEE.</p>
+                            <h2 className="font-heading font-black text-3xl md:text-4xl text-dark mb-4">Consultez notre Bureau d'Ã‰tudes</h2>
+                            <p className="font-body text-text/70 text-lg">Nos ingÃ©nieurs vous recontactent sous 48h ouvrÃ©es avec une premiÃ¨re analyse de faisabilitÃ© Ã©nergÃ©tique et d'Ã©ligibilitÃ© CEE.</p>
                         </div>
 
                         <form onSubmit={handleSubmit} className="space-y-6">
@@ -265,11 +265,11 @@ export default function Contact() {
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
-                                    <label htmlFor="telephone" className="block font-mono text-xs font-bold text-dark tracking-widest mb-2 uppercase">Téléphone</label>
+                                    <label htmlFor="telephone" className="block font-mono text-xs font-bold text-dark tracking-widest mb-2 uppercase">TÃ©lÃ©phone</label>
                                     <input type="tel" id="telephone" className="w-full bg-white border border-primary/20 rounded-xl px-5 py-4 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all font-body text-dark placeholder:text-text/30" placeholder="+33 6 00 00 00 00" />
                                 </div>
                                 <div>
-                                    <label htmlFor="societe" className="block font-mono text-xs font-bold text-dark tracking-widest mb-2 uppercase">Organisation / Société</label>
+                                    <label htmlFor="societe" className="block font-mono text-xs font-bold text-dark tracking-widest mb-2 uppercase">Organisation / SociÃ©tÃ©</label>
                                     <input type="text" id="societe" className="w-full bg-white border border-primary/20 rounded-xl px-5 py-4 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all font-body text-dark placeholder:text-text/30" placeholder="Mairie de..." />
                                 </div>
                             </div>
@@ -278,12 +278,12 @@ export default function Contact() {
                                 <label htmlFor="besoin" className="block font-mono text-xs font-bold text-dark tracking-widest mb-2 uppercase">Type de besoin</label>
                                 <div className="relative">
                                     <select id="besoin" className="w-full bg-white border border-primary/20 rounded-xl px-5 py-4 appearance-none focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all font-body text-dark cursor-pointer">
-                                        <option value="">Sélectionnez un domaine d'intervention</option>
-                                        <option value="solaire">Installation Photovoltaïque</option>
-                                        <option value="pac">Pompes à Chaleur (Air-Air, Air-Eau)</option>
-                                        <option value="audit">Bureau d'études & Audit énergétique</option>
-                                        <option value="cee">Montage & Valorisation dossier C2E</option>
-                                        <option value="travaux">Isolation & Efficacité globale</option>
+                                        <option value="">SÃ©lectionnez un domaine d'intervention</option>
+                                        <option value="solaire">Installation PhotovoltaÃ¯que</option>
+                                        <option value="pac">Pompes Ã  Chaleur (Air-Air, Air-Eau)</option>
+                                        <option value="audit">Bureau d'Ã©tudes & Audit Ã©nergÃ©tique</option>
+                                        <option value="cee">Montage & Valorisation dossier CEE</option>
+                                        <option value="travaux">Isolation & EfficacitÃ© globale</option>
                                         <option value="autre">Autre demande</option>
                                     </select>
                                     <div className="absolute inset-y-0 right-5 flex items-center pointer-events-none">
@@ -294,13 +294,13 @@ export default function Contact() {
 
                             <div>
                                 <label htmlFor="description" className="block font-mono text-xs font-bold text-dark tracking-widest mb-2 uppercase">Description du projet</label>
-                                <textarea id="description" rows="4" className="w-full bg-white border border-primary/20 rounded-xl px-5 py-4 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all font-body text-dark placeholder:text-text/30 resize-y" placeholder="Objectifs, contraintes, timing visé..."></textarea>
+                                <textarea id="description" rows="4" className="w-full bg-white border border-primary/20 rounded-xl px-5 py-4 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all font-body text-dark placeholder:text-text/30 resize-y" placeholder="Objectifs, contraintes, timing visÃ©..."></textarea>
                             </div>
 
                             <div className="flex items-start gap-4">
                                 <input type="checkbox" id="rgpd" required className="mt-1 w-5 h-5 rounded border-primary/20 text-accent focus:ring-accent cursor-pointer" />
                                 <label htmlFor="rgpd" className="font-body text-sm text-text/70 leading-relaxed cursor-pointer">
-                                    J'accepte que les données saisies dans ce formulaire soient utilisées pour me recontacter dans le cadre de ma demande. <a href="/politique-confidentialite" className="underline decoration-primary/30 underline-offset-2 hover:text-primary transition-colors">Politique de confidentialité</a>.
+                                    J'accepte que les donnÃ©es saisies dans ce formulaire soient utilisÃ©es pour me recontacter dans le cadre de ma demande. <Link to="/politique-confidentialite" className="underline decoration-primary/30 underline-offset-2 hover:text-primary transition-colors">Politique de confidentialitÃ©</Link>.
                                 </label>
                             </div>
 
@@ -315,9 +315,9 @@ export default function Contact() {
                                         {formState === 'submitting' ? (
                                             <>Traitement en cours <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div></>
                                         ) : formState === 'success' ? (
-                                            <>Demande envoyée avec succès ✓</>
+                                            <>Demande envoyÃ©e avec succÃ¨s âœ“</>
                                         ) : (
-                                            <>Demander une étude gratuite <Send className="w-5 h-5" /></>
+                                            <>Demander une Ã©tude gratuite <Send className="w-5 h-5" /></>
                                         )}
                                     </span>
                                 </button>
@@ -338,7 +338,7 @@ export default function Contact() {
                                         <MapPin className="w-6 h-6" />
                                     </div>
                                     <div>
-                                        <h4 className="font-mono text-xs tracking-widest text-white/50 mb-2 font-bold uppercase">Siège Social</h4>
+                                        <h4 className="font-mono text-xs tracking-widest text-white/50 mb-2 font-bold uppercase">SiÃ¨ge Social</h4>
                                         <p className="font-body text-lg font-medium leading-relaxed">45 avenue Pierre Brossolette<br />92120 Montrouge, France</p>
                                     </div>
                                 </li>
@@ -359,7 +359,7 @@ export default function Contact() {
                                     </div>
                                     <div>
                                         <h4 className="font-mono text-xs tracking-widest text-white/50 mb-2 font-bold uppercase">Horaires d'ouverture</h4>
-                                        <p className="font-body text-lg font-medium leading-relaxed">Lun–Ven : 09:00 – 18:00<br /><span className="text-white/60">Fermé le week-end et jours fériés</span></p>
+                                        <p className="font-body text-lg font-medium leading-relaxed">Lunâ€“Ven : 09:00 â€“ 18:00<br /><span className="text-white/60">FermÃ© le week-end et jours fÃ©riÃ©s</span></p>
                                     </div>
                                 </li>
                             </ul>
@@ -384,3 +384,7 @@ export default function Contact() {
         </div>
     );
 }
+
+
+
+

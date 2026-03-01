@@ -1,4 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle2, ClipboardCheck, Search, FileText, Lightbulb } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -245,9 +246,9 @@ export default function FormationAudit() {
                                     <span className="font-bold flex-1 text-right">OUI</span>
                                 </div>
                             </div>
-                            <a href="/contact" className="font-heading font-bold text-primary flex items-center gap-2 group-hover:text-accent transition-colors">
+                            <Link to="/contact" className="font-heading font-bold text-primary flex items-center gap-2 group-hover:text-accent transition-colors">
                                 Demander un devis <ArrowRight className="w-4 h-4" />
-                            </a>
+                            </Link>
                         </div>
 
                         {/* Card 2 */}
@@ -272,9 +273,9 @@ export default function FormationAudit() {
                                     <span className="font-bold flex-1 text-right">OUI (Fortement primé)</span>
                                 </div>
                             </div>
-                            <a href="/contact" className="font-heading font-bold text-primary flex items-center gap-2 group-hover:text-accent transition-colors">
+                            <Link to="/contact" className="font-heading font-bold text-primary flex items-center gap-2 group-hover:text-accent transition-colors">
                                 Demander un devis <ArrowRight className="w-4 h-4" />
-                            </a>
+                            </Link>
                         </div>
 
                         {/* Card 3 */}
@@ -299,9 +300,9 @@ export default function FormationAudit() {
                                     <span className="font-bold flex-1 text-right">OUI</span>
                                 </div>
                             </div>
-                            <a href="/contact" className="font-heading font-bold text-primary flex items-center gap-2 group-hover:text-accent transition-colors">
+                            <Link to="/contact" className="font-heading font-bold text-primary flex items-center gap-2 group-hover:text-accent transition-colors">
                                 Demander un devis <ArrowRight className="w-4 h-4" />
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -317,11 +318,13 @@ export default function FormationAudit() {
                     <p className="font-body text-white/80 text-xl max-w-2xl mx-auto mb-10">
                         De l'audit énergétique complet jusqu'au montage du dossier CEE et à la réception des travaux, nos ingénieurs prennent en charge votre transition.
                     </p>
-                    <a href="/contact" className="btn-magnetic bg-accent text-white px-8 py-4 shadow-xl">
+                    <Link to="/contact" className="btn-magnetic bg-accent text-white px-8 py-4 shadow-xl">
                         <span>Lancer mon projet de rénovation <ArrowRight className="w-5 h-5" /></span>
-                    </a>
+                    </Link>
                 </div>
             </section>
         </div>
     );
 }
+
+

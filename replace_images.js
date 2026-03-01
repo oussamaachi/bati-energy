@@ -1,5 +1,6 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'node:fs';
+import path from 'node:path';
+
 const srcDir = path.join(process.cwd(), 'src');
 
 const replacements = {

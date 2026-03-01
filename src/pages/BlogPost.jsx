@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Clock, Calendar, Share2, Tag, BookOpen } from 'lucide-react';
 import gsap from 'gsap';
@@ -120,7 +120,7 @@ export default function BlogPost() {
                         {/* Text */}
                         <div className="space-y-6">
                             <div className="post-fade">
-                                <span className="inline-block px-4 py-1.5 rounded-full bg-accent/20 text-accent font-mono text-xs font-bold uppercase tracking-widest border border-accent/30">
+                                <span className="inline-block px-4 py-1.5 rounded-full bg-accent/20 text-accent font-body text-xs font-bold uppercase tracking-widest border border-accent/30">
                                     {article.category}
                                 </span>
                             </div>
@@ -158,7 +158,7 @@ export default function BlogPost() {
                                 <div className="absolute inset-0 bg-gradient-to-br from-dark/20 to-transparent" />
                             </div>
                             {/* floating category badge on image */}
-                            <div className="absolute -bottom-4 -left-4 bg-primary text-white font-mono text-xs font-bold px-4 py-2 rounded-xl shadow-lg shadow-primary/30 uppercase tracking-widest">
+                            <div className="absolute -bottom-4 -left-4 bg-primary text-white font-body text-xs font-bold px-4 py-2 rounded-xl shadow-lg shadow-primary/30 uppercase tracking-widest">
                                 {article.category}
                             </div>
                         </div>
@@ -190,7 +190,7 @@ export default function BlogPost() {
                                     <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
                                         <Tag className="w-4 h-4 text-primary" />
                                     </div>
-                                    <span className="font-mono text-sm text-dark/50 uppercase tracking-widest">{article.category}</span>
+                                    <span className="font-body font-bold text-sm text-dark/50 uppercase tracking-widest">{article.category}</span>
                                 </div>
                                 <div className="flex items-center gap-4">
                                     <span className="font-body text-sm font-semibold text-dark/60">Partager :</span>
@@ -272,3 +272,4 @@ export default function BlogPost() {
         </div>
     );
 }
+

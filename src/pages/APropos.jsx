@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+﻿import { useEffect, useRef } from 'react';
 import { Target, Leaf, HeartHandshake, Lightbulb, Linkedin } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -102,7 +102,7 @@ export default function APropos() {
                     </div>
                     <h1 className="hero-text font-serif italic text-5xl md:text-7xl text-white mb-6">Qui sommes-nous ?</h1>
                     <div className="hero-text font-mono text-xs text-white/50 tracking-wide uppercase">
-                        Accueil <span className="mx-2 text-accent">/</span> À Propos
+                        Accueil <span className="mx-2 text-accent">/</span> Ã€ Propos
                     </div>
                 </div>
             </section>
@@ -123,10 +123,10 @@ export default function APropos() {
 
                     <div className="space-y-16">
                         {[
-                            { date: "Jan 2023", title: "Création de BATI ENERGY à Montrouge", side: "left" },
-                            { date: "2024", title: "Développement du pôle Audit & Ingénierie", side: "right" },
-                            { date: "2025", title: "Expertise en Pompes à Chaleur (PAC)", side: "left" },
-                            { date: "2026", title: "Déploiement de solutions Photovoltaïques", side: "right" }
+                            { date: "Jan 2023", title: "CrÃ©ation de BATI ENERGY Ã  Montrouge", side: "left" },
+                            { date: "2024", title: "DÃ©veloppement du pÃ´le Audit & IngÃ©nierie", side: "right" },
+                            { date: "2025", title: "Expertise en Pompes Ã  Chaleur (PAC)", side: "left" },
+                            { date: "2026", title: "DÃ©ploiement de solutions PhotovoltaÃ¯ques", side: "right" }
                         ].map((item, index) => (
                             <div key={index} className={`timeline-item relative flex flex-col md:flex-row items-start md:items-center ${item.side === 'right' ? 'md:flex-row-reverse' : ''}`}>
                                 <div className="absolute left-[20px] md:left-1/2 w-3 h-3 bg-accent rounded-full border-4 border-bg md:-translate-x-1.5 mt-1.5 md:mt-0 z-10"></div>
@@ -150,12 +150,12 @@ export default function APropos() {
                     <div>
                         <span className="font-mono text-accent text-sm font-bold tracking-widest block mb-4">NOTRE MISSION</span>
                         <p className="font-body text-lg text-text/80 leading-relaxed">
-                            Nous sommes nés d'une conviction simple : la transition énergétique nécessite une approche intégrée et concrète. Dès le départ, notre mission a été d'accompagner aussi bien les particuliers que les acteurs tertiaires vers l'indépendance énergétique. De l'audit initial à la conception de solutions photovoltaïques et de pompes à chaleur, jusqu'au soutien financier via les C2E, nous garantissons des projets performants et pérennes.
+                            Nous sommes nÃ©s d'une conviction simple : la transition Ã©nergÃ©tique nÃ©cessite une approche intÃ©grÃ©e et concrÃ¨te. DÃ¨s le dÃ©part, notre mission a Ã©tÃ© d'accompagner aussi bien les particuliers que les acteurs tertiaires vers l'indÃ©pendance Ã©nergÃ©tique. De l'audit initial Ã  la conception de solutions photovoltaÃ¯ques et de pompes Ã  chaleur, jusqu'au soutien financier via les CEE, nous garantissons des projets performants et pÃ©rennes.
                         </p>
                     </div>
                     <div>
                         <blockquote className="font-serif italic text-3xl md:text-4xl lg:text-5xl text-accent leading-tight border-l-4 border-primary pl-8 py-2">
-                            L'ingénierie prend tout son sens lorsqu'elle est au service du vivant et des générations futures.
+                            L'ingÃ©nierie prend tout son sens lorsqu'elle est au service du vivant et des gÃ©nÃ©rations futures.
                         </blockquote>
                     </div>
                 </div>
@@ -164,13 +164,13 @@ export default function APropos() {
             {/* Equipe */}
             <section ref={teamRef} className="py-32 px-6 max-w-7xl mx-auto">
                 <div className="text-center mb-16">
-                    <h2 className="font-heading font-black text-4xl text-dark mb-4">L'Équipe Dirigeante</h2>
-                    <p className="font-body text-text/70 text-lg">Des experts dédiés à la réussite de vos projets.</p>
+                    <h2 className="font-heading font-black text-4xl text-dark mb-4">L'Ã‰quipe Dirigeante</h2>
+                    <p className="font-body text-text/70 text-lg">Des experts dÃ©diÃ©s Ã  la rÃ©ussite de vos projets.</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {[
-                        { name: "Directrice Générale", role: "Fondatrice — Ingénieure Efficacité", img: "/images/camille.png" },
+                        { name: "Directrice GÃ©nÃ©rale", role: "Fondatrice â€” IngÃ©nieure EfficacitÃ©", img: "/images/camille.png" },
                         { name: "Directeur Technique", role: "Expert Audit & CVC", img: "/images/thomas.png" },
                         { name: "Responsable Financement", role: "Experte Valorisation CEE", img: "/images/sarah.png" }
                     ].map((member, i) => (
@@ -200,37 +200,40 @@ export default function APropos() {
                     <div className="value-card bg-white p-8 rounded-3xl shadow-sm border border-primary/10">
                         <Target className="w-8 h-8 text-primary mb-6" />
                         <h3 className="font-heading font-bold text-xl text-dark mb-3">Rigueur technique</h3>
-                        <p className="font-body text-sm text-text/70">Des calculs précis et des études approfondies pour garantir la viabilité de vos systèmes.</p>
+                        <p className="font-body text-sm text-text/70">Des calculs prÃ©cis et des Ã©tudes approfondies pour garantir la viabilitÃ© de vos systÃ¨mes.</p>
                     </div>
                     <div className="value-card bg-white p-8 rounded-3xl shadow-sm border border-primary/10">
                         <Leaf className="w-8 h-8 text-primary mb-6" />
                         <h3 className="font-heading font-bold text-xl text-dark mb-3">Engagement</h3>
-                        <p className="font-body text-sm text-text/70">Une vision environnementale au cœur de chaque préconisation stratégique.</p>
+                        <p className="font-body text-sm text-text/70">Une vision environnementale au cÅ“ur de chaque prÃ©conisation stratÃ©gique.</p>
                     </div>
                     <div className="value-card bg-white p-8 rounded-3xl shadow-sm border border-primary/10">
                         <HeartHandshake className="w-8 h-8 text-primary mb-6" />
-                        <h3 className="font-heading font-bold text-xl text-dark mb-3">Proximité client</h3>
-                        <p className="font-body text-sm text-text/70">Un accompagnement sur-mesure et une réactivité totale durant toutes les phases.</p>
+                        <h3 className="font-heading font-bold text-xl text-dark mb-3">ProximitÃ© client</h3>
+                        <p className="font-body text-sm text-text/70">Un accompagnement sur-mesure et une rÃ©activitÃ© totale durant toutes les phases.</p>
                     </div>
                     <div className="value-card bg-white p-8 rounded-3xl shadow-sm border border-primary/10">
                         <Lightbulb className="w-8 h-8 text-primary mb-6" />
                         <h3 className="font-heading font-bold text-xl text-dark mb-3">Innovation continue</h3>
-                        <p className="font-body text-sm text-text/70">Une veille technologique constante pour vous proposer les meilleures solutions d'efficacité énergétique.</p>
+                        <p className="font-body text-sm text-text/70">Une veille technologique constante pour vous proposer les meilleures solutions d'efficacitÃ© Ã©nergÃ©tique.</p>
                     </div>
                 </div>
             </section>
 
-            {/* Section Légale */}
+            {/* Section LÃ©gale */}
             <section className="bg-primary pt-24 pb-12 px-6">
                 <div className="max-w-4xl mx-auto text-center font-mono text-white/80 space-y-2 text-sm">
                     <div className="text-accent mb-6">
                         <Leaf className="w-8 h-8 mx-auto" />
                     </div>
                     <p className="font-bold text-white text-lg tracking-wider">SAS BATI ENERGY</p>
-                    <p>45 avenue Pierre Brossolette — 92120 Montrouge</p>
-                    <p>NAF 71.12B — Fondée en 2023</p>
+                    <p>45 avenue Pierre Brossolette â€” 92120 Montrouge</p>
+                    <p>NAF 71.12B â€” FondÃ©e en 2023</p>
                 </div>
             </section>
         </div>
     );
 }
+
+
+
