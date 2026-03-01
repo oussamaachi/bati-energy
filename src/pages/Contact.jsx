@@ -110,7 +110,7 @@ const EfficiencyCalculator = () => {
                         <div>
                             <div className="font-mono text-primary text-sm font-bold tracking-widest mb-3 flex justify-between">
                                 <span>ÉTAPE 2 — SURFACE CONCERNÉE</span>
-                                <span className="text-accent">{surface} mÂ²</span>
+                                <span className="text-accent">{surface} m²</span>
                             </div>
                             <input
                                 type="range"
@@ -122,8 +122,8 @@ const EfficiencyCalculator = () => {
                                 className="w-full h-2 bg-primary/20 rounded-lg appearance-none cursor-pointer accent-accent"
                             />
                             <div className="flex justify-between text-xs text-text/50 font-mono mt-2">
-                                <span>50 mÂ²</span>
-                                <span>10 000 mÂ² +</span>
+                                <span>50 m²</span>
+                                <span>10 000 m² +</span>
                             </div>
                         </div>
 

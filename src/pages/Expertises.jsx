@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const TELEMETRY_LINES = [
     "> Analyse réglementaire Décret Tertiaire...",
-    "> Audit énergétique usine : OK âœ“",
+    "> Audit énergétique usine : OK âœ✓",
     "> Recommandation isolation transmise...",
     "> Veille 2026 : CEE 6ème période intégrée"
 ];

@@ -205,7 +205,7 @@ export default function APropos() {
                     <div className="value-card bg-white p-8 rounded-3xl shadow-sm border border-primary/10">
                         <Leaf className="w-8 h-8 text-primary mb-6" />
                         <h3 className="font-heading font-bold text-xl text-dark mb-3">Engagement</h3>
-                        <p className="font-body text-sm text-text/70">Une vision environnementale au cÅ“ur de chaque préconisation stratégique.</p>
+                        <p className="font-body text-sm text-text/70">Une vision environnementale au cœur de chaque préconisation stratégique.</p>
                     </div>
                     <div className="value-card bg-white p-8 rounded-3xl shadow-sm border border-primary/10">
                         <HeartHandshake className="w-8 h-8 text-primary mb-6" />
