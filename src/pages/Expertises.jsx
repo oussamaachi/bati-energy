@@ -7,15 +7,15 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const TELEMETRY_LINES = [
-    "> Analyse rÃ©glementaire DÃ©cret Tertiaire...",
-    "> Audit Ã©nergÃ©tique usine : OK âœ“",
+    "> Analyse réglementaire Décret Tertiaire...",
+    "> Audit énergétique usine : OK âœ“",
     "> Recommandation isolation transmise...",
-    "> Veille 2026 : CEE 6Ã¨me pÃ©riode intÃ©grÃ©e"
+    "> Veille 2026 : CEE 6ème période intégrée"
 ];
 
 // Custom Interactive Component 1: Diagnostic Shuffler
 const DiagnosticShuffler = () => {
-    const cards = ['Audit Ã©nergÃ©tique', 'Bureau d\'Ã©tudes', 'Valorisation CEE', 'Performance Tertiaire'];
+    const cards = ['Audit énergétique', 'Bureau d\'études', 'Valorisation CEE', 'Performance Tertiaire'];
     const [activeIndex, setActiveIndex] = useState(0);
 
     useEffect(() => {
@@ -235,7 +235,7 @@ export default function Expertises() {
                 <div className="absolute inset-0 opacity-30">
                     <img
                         src="/images/bureau.png"
-                        alt="Expertise EfficacitÃ© Ã‰nergÃ©tique"
+                        alt="Expertise Efficacité Énergétique"
                         className="w-full h-full object-cover object-center"
                     />
                     <div className="absolute inset-0 bg-dark/70"></div>
@@ -248,21 +248,21 @@ export default function Expertises() {
                 </div>
             </section>
 
-            {/* Expertise 1 : Bureau d'Ã©tudes */}
+            {/* Expertise 1 : Bureau d'études */}
             <section id="bureau-etudes" ref={el => sectionRefs.current[0] = el} className="py-32 px-6 overflow-hidden scroll-mt-36">
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 lg:gap-24">
                     <div className="w-full md:w-1/2 order-2 md:order-1">
-                        <span className="inline-block px-4 py-1.5 rounded-full bg-accent/20 text-accent text-sm font-bold tracking-wider mb-4">PÃ”LE 01</span>
-                        <h2 className="font-heading font-black text-4xl lg:text-5xl text-dark mb-6 leading-tight">Bureau d'Ã©tudes & Audit</h2>
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-accent/20 text-accent text-sm font-bold tracking-wider mb-4">PÔLE 01</span>
+                        <h2 className="font-heading font-black text-4xl lg:text-5xl text-dark mb-6 leading-tight">Bureau d'études & Audit</h2>
                         <ul className="space-y-4 font-body text-lg text-text/80 mb-8 border-l-2 border-primary/20 pl-6">
-                            <li>Audits Ã©nergÃ©tiques rÃ©glementaires et volontaires</li>
-                            <li>Diagnostics de performance des bÃ¢timents (enveloppe, Ã©quipements, usages)</li>
-                            <li>Ã‰tudes de faisabilitÃ© et dimensionnement des installations</li>
+                            <li>Audits énergétiques réglementaires et volontaires</li>
+                            <li>Diagnostics de performance des bâtiments (enveloppe, équipements, usages)</li>
+                            <li>Études de faisabilité et dimensionnement des installations</li>
                             <li>Optimisation des puissances de souscription</li>
                             <li>Accompagnement Tertiaire et Industriels</li>
                         </ul>
                         <Link to="/bureau-etudes" className="font-heading font-bold text-primary hover:text-accent transition-colors flex items-center gap-2">
-                            DÃ©couvrir notre dÃ©marche d'audit <ArrowRight className="w-4 h-4" />
+                            Découvrir notre démarche d'audit <ArrowRight className="w-4 h-4" />
                         </Link>
                     </div>
                     <div className="w-full md:w-1/2 order-1 md:order-2">
@@ -270,42 +270,42 @@ export default function Expertises() {
                             <DiagnosticShuffler />
                         </div>
                         <div className="mt-8 rounded-[2.5rem] overflow-hidden shadow-2xl h-80">
-                            <img src="/images/projet_audit.png" alt="Bureau d'Ã©tudes audit Ã©nergÃ©tique" className="w-full h-full object-cover" />
+                            <img src="/images/projet_audit.png" alt="Bureau d'études audit énergétique" className="w-full h-full object-cover" />
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Expertise 2 : PhotovoltaÃ¯que & PAC */}
+            {/* Expertise 2 : Photovoltaïque & PAC */}
             <section id="photovoltaique" ref={el => sectionRefs.current[1] = el} className="py-32 px-6 bg-primary/5 border-y border-primary/10 overflow-hidden scroll-mt-36">
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 lg:gap-24">
                     <div className="w-full md:w-1/2">
                         <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl h-80 mb-8">
-                            <img src="/images/bureau.png" alt="Installation Pompes Ã  chaleur et Solaire" className="w-full h-full object-cover" />
+                            <img src="/images/bureau.png" alt="Installation Pompes à chaleur et Solaire" className="w-full h-full object-cover" />
                         </div>
                         <TelemetryTypewriter />
                     </div>
                     <div className="w-full md:w-1/2">
-                        <span className="inline-block px-4 py-1.5 rounded-full bg-accent/20 text-accent text-sm font-bold tracking-wider mb-4">PÃ”LE 02</span>
-                        <h2 className="font-heading font-black text-4xl lg:text-5xl text-dark mb-6 leading-tight">PhotovoltaÃ¯que & Pompes Ã  Chaleur</h2>
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-accent/20 text-accent text-sm font-bold tracking-wider mb-4">PÔLE 02</span>
+                        <h2 className="font-heading font-black text-4xl lg:text-5xl text-dark mb-6 leading-tight">Photovoltaïque & Pompes à Chaleur</h2>
                         <p className="font-body text-lg text-text/80 mb-6">
-                            Produisez votre propre Ã©nergie et optimisez votre confort thermique avec des solutions durables et rentables, adaptÃ©es aux particuliers et aux professionnels.
+                            Produisez votre propre énergie et optimisez votre confort thermique avec des solutions durables et rentables, adaptées aux particuliers et aux professionnels.
                         </p>
 
                         <div className="mb-6 bg-white p-6 rounded-2xl shadow-sm border border-primary/10">
-                            <h3 className="font-heading font-bold text-xl text-primary mb-3 flex items-center gap-2">â˜€ï¸ PhotovoltaÃ¯que</h3>
+                            <h3 className="font-heading font-bold text-xl text-primary mb-3 flex items-center gap-2">â˜€ï¸ Photovoltaïque</h3>
                             <ul className="space-y-2 font-body text-text/70 pl-6 list-disc marker:text-accent">
                                 <li>Autoconsommation avec ou sans revente de surplus</li>
                                 <li>Centrales solaires pour toitures tertiaires et industrielles</li>
-                                <li>OmbriÃ¨res de parking photovoltaÃ¯ques</li>
+                                <li>Ombrières de parking photovoltaïques</li>
                             </ul>
                         </div>
 
                         <div id="pompes-a-chaleur" className="bg-white p-6 rounded-2xl shadow-sm border border-primary/10 scroll-mt-36">
-                            <h3 className="font-heading font-bold text-xl text-primary mb-3 flex items-center gap-2">â„ï¸ Pompes Ã  Chaleur (PAC)</h3>
+                            <h3 className="font-heading font-bold text-xl text-primary mb-3 flex items-center gap-2">â„ï¸ Pompes à Chaleur (PAC)</h3>
                             <ul className="space-y-2 font-body text-text/70 pl-6 list-disc marker:text-accent">
-                                <li><strong>PAC Air-Air</strong> : SystÃ¨mes de climatisation rÃ©versible haut rendement</li>
-                                <li><strong>PAC Air-Eau</strong> : SystÃ¨mes hydrauliques de chauffage et production d'ECS</li>
+                                <li><strong>PAC Air-Air</strong> : Systèmes de climatisation réversible haut rendement</li>
+                                <li><strong>PAC Air-Eau</strong> : Systèmes hydrauliques de chauffage et production d'ECS</li>
                             </ul>
                         </div>
                     </div>
@@ -316,12 +316,12 @@ export default function Expertises() {
             <section id="cee" ref={el => sectionRefs.current[2] = el} className="py-32 px-6 overflow-hidden scroll-mt-36">
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 lg:gap-24">
                     <div className="w-full md:w-1/2 order-2 md:order-1">
-                        <span className="inline-block px-4 py-1.5 rounded-full bg-accent/20 text-accent text-sm font-bold tracking-wider mb-4">PÃ”LE 03</span>
-                        <h2 className="font-heading font-black text-4xl lg:text-5xl text-dark mb-6 leading-tight">EfficacitÃ© Globale & Primes CEE</h2>
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-accent/20 text-accent text-sm font-bold tracking-wider mb-4">PÔLE 03</span>
+                        <h2 className="font-heading font-black text-4xl lg:text-5xl text-dark mb-6 leading-tight">Efficacité Globale & Primes CEE</h2>
                         <ul className="space-y-4 font-body text-lg text-text/80 mb-8 border-l-2 border-primary/20 pl-6">
                             <li><strong>Isolation Thermique :</strong> Combles, murs (ITI/ITE), toitures terrasses, planchers bas et calorifugeage.</li>
-                            <li><strong>Ã‰clairage :</strong> Relamping LED professionnel et gestion de prÃ©sence.</li>
-                            <li><strong>Aides & Financement :</strong> Montage intÃ©gral de vos dossiers de Primes CEE pour minimiser le reste Ã  charge.</li>
+                            <li><strong>Éclairage :</strong> Relamping LED professionnel et gestion de présence.</li>
+                            <li><strong>Aides & Financement :</strong> Montage intégral de vos dossiers de Primes CEE pour minimiser le reste à charge.</li>
                         </ul>
                         <Scheduler />
                     </div>
@@ -338,7 +338,7 @@ export default function Expertises() {
             <section ref={el => sectionRefs.current[3] = el} className="py-24 px-6 max-w-5xl mx-auto text-center">
                 <h2 className="font-serif italic text-4xl text-dark mb-12">Nos cibles d'intervention</h2>
                 <div className="flex flex-wrap items-center justify-center gap-4">
-                    {['Particuliers', 'BÃ¢timents Tertiaires', 'Infrastructures Industrielles', 'CollectivitÃ©s'].map((sector, i) => (
+                    {['Particuliers', 'Bâtiments Tertiaires', 'Infrastructures Industrielles', 'Collectivités'].map((sector, i) => (
                         <div key={i} className="px-8 py-4 rounded-full border-2 border-primary/20 bg-white font-heading text-lg font-bold text-primary shadow-sm hover:border-accent hover:shadow-lg transition-all cursor-default transform hover:-translate-y-1">
                             {sector}
                         </div>

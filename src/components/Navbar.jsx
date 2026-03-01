@@ -42,27 +42,27 @@ export default function Navbar() {
                             <span className="w-2 h-2 rounded-full bg-accent"></span> Particuliers & Tertiaire
                         </div>
                         <NavLink to="/expertises#photovoltaique" className="px-4 py-2.5 hover:bg-dark/5 rounded-xl transition-colors text-dark hover:text-accent flex flex-col">
-                            <span className="font-semibold text-sm">PhotovoltaÃ¯que</span>
+                            <span className="font-semibold text-sm">Photovoltaïque</span>
                             <span className="text-xs text-dark/60 font-normal mt-0.5">Autoconsommation & Revente</span>
                         </NavLink>
                         <NavLink to="/expertises#pompes-a-chaleur" className="px-4 py-2.5 hover:bg-dark/5 rounded-xl transition-colors text-dark hover:text-accent flex flex-col">
-                            <span className="font-semibold text-sm">Pompes Ã  Chaleur (PAC)</span>
+                            <span className="font-semibold text-sm">Pompes à Chaleur (PAC)</span>
                             <span className="text-xs text-dark/60 font-normal mt-0.5">Air-Air & Air-Eau (Hydraulique)</span>
                         </NavLink>
                         <div className="h-px bg-dark/10 my-1 mx-2"></div>
-                        <NavLink to="/bureau-etudes" className="px-4 py-2.5 hover:bg-dark/5 rounded-xl transition-colors text-dark hover:text-accent text-sm">Bureau d'Ã‰tudes & Audit</NavLink>
+                        <NavLink to="/bureau-etudes" className="px-4 py-2.5 hover:bg-dark/5 rounded-xl transition-colors text-dark hover:text-accent text-sm">Bureau d'Études & Audit</NavLink>
                         <NavLink to="/expertises#cee" className="px-4 py-2.5 hover:bg-dark/5 rounded-xl transition-colors text-dark hover:text-accent text-sm">Primes CEE / Montage dossiers</NavLink>
                     </div>
                 </li>
 
                 <li><NavLink to="/projets" className={({ isActive }) => `hover:text-accent transition-colors ${isActive ? 'text-accent' : ''}`}>Projets</NavLink></li>
                 <li><NavLink to="/blog" className={({ isActive }) => `hover:text-accent transition-colors ${isActive ? 'text-accent' : ''}`}>Blog</NavLink></li>
-                <li><NavLink to="/a-propos" className={({ isActive }) => `hover:text-accent transition-colors ${isActive ? 'text-accent' : ''}`}>Ã€ propos</NavLink></li>
+                <li><NavLink to="/a-propos" className={({ isActive }) => `hover:text-accent transition-colors ${isActive ? 'text-accent' : ''}`}>À propos</NavLink></li>
                 <li><NavLink to="/contact" className={({ isActive }) => `hover:text-accent transition-colors ${isActive ? 'text-accent' : ''}`}>Contact</NavLink></li>
             </ul>
 
             <Link to="/contact" className="hidden xl:flex btn-magnetic px-6 py-2.5 text-sm whitespace-nowrap shrink-0">
-                <span>Demander une Ã©tude</span>
+                <span>Demander une étude</span>
             </Link>
 
             <MobileMenu scrolled={scrolled} isHome={isHome} />
@@ -104,20 +104,20 @@ function MobileMenu({ scrolled, isHome }) {
                                 <span className="w-1.5 h-1.5 rounded-full bg-accent"></span> Particuliers & Tertiaire
                             </div>
                             <div className="flex flex-col border-l-2 border-primary/20 ml-2">
-                                <NavLink to="/expertises#photovoltaique" className={subLinkClass}>â˜€ï¸ PhotovoltaÃ¯que</NavLink>
-                                <NavLink to="/expertises#pompes-a-chaleur" className={subLinkClass}>â„ï¸ Pompes Ã  Chaleur (PAC)</NavLink>
-                                <NavLink to="/bureau-etudes" className={subLinkClass}>ðŸ“‹ Bureau d'Ã‰tudes</NavLink>
+                                <NavLink to="/expertises#photovoltaique" className={subLinkClass}>â˜€ï¸ Photovoltaïque</NavLink>
+                                <NavLink to="/expertises#pompes-a-chaleur" className={subLinkClass}>â„ï¸ Pompes à Chaleur (PAC)</NavLink>
+                                <NavLink to="/bureau-etudes" className={subLinkClass}>ðŸ“‹ Bureau d'Études</NavLink>
                                 <NavLink to="/expertises#cee" className={subLinkClass}>ðŸ’¶ Primes CEE / Dossiers</NavLink>
                             </div>
                         </div>
 
                         <NavLink to="/projets" className={linkClass}>Projets</NavLink>
                         <NavLink to="/blog" className={linkClass}>Blog</NavLink>
-                        <NavLink to="/a-propos" className={linkClass}>Ã€ propos</NavLink>
+                        <NavLink to="/a-propos" className={linkClass}>À propos</NavLink>
                         <NavLink to="/contact" className={linkClass}>Contact</NavLink>
                     </nav>
                     <Link to="/contact" className="btn-magnetic w-full text-center mt-6 py-3 text-sm block">
-                        <span>Demander une Ã©tude</span>
+                        <span>Demander une étude</span>
                     </Link>
                 </div>
             )}
