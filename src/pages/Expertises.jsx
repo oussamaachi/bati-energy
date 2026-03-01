@@ -15,7 +15,7 @@ const TELEMETRY_LINES = [
 
 // Custom Interactive Component 1: Diagnostic Shuffler
 const DiagnosticShuffler = () => {
-    const cards = ['Audit énergétique', 'Bureau d\'études', 'Valorisation CEE', 'Performance Tertiaire'];
+    const cards = ['Audit énergétique', 'Bureau d\'études', 'Valorisation CEE', 'Isolation Thermique'];
     const [activeIndex, setActiveIndex] = useState(0);
 
     useEffect(() => {
@@ -276,28 +276,28 @@ export default function Expertises() {
                 </div>
             </section>
 
-            {/* Expertise 2 : Photovoltaïque & PAC */}
-            <section id="photovoltaique" ref={el => sectionRefs.current[1] = el} className="py-32 px-6 bg-primary/5 border-y border-primary/10 overflow-hidden scroll-mt-36">
+            {/* Expertise 2 : Isolation Thermique & PAC */}
+            <section id="isolation" ref={el => sectionRefs.current[1] = el} className="py-32 px-6 bg-primary/5 border-y border-primary/10 overflow-hidden scroll-mt-36">
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 lg:gap-24">
                     <div className="w-full md:w-1/2">
                         <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl h-80 mb-8">
-                            <img src="/images/bureau.png" alt="Installation Pompes à chaleur et Solaire" className="w-full h-full object-cover" />
+                            <img src="/images/bureau.png" alt="Isolation thermique et Pompes à Chaleur" className="w-full h-full object-cover" />
                         </div>
                         <TelemetryTypewriter />
                     </div>
                     <div className="w-full md:w-1/2">
                         <span className="inline-block px-4 py-1.5 rounded-full bg-accent/20 text-accent text-sm font-bold tracking-wider mb-4">PÔLE 02</span>
-                        <h2 className="font-heading font-black text-4xl lg:text-5xl text-dark mb-6 leading-tight">Photovoltaïque & Pompes à Chaleur</h2>
+                        <h2 className="font-heading font-black text-4xl lg:text-5xl text-dark mb-6 leading-tight">Isolation Thermique & Pompes à Chaleur</h2>
                         <p className="font-body text-lg text-text/80 mb-6">
-                            Produisez votre propre énergie et optimisez votre confort thermique avec des solutions durables et rentables, adaptées aux particuliers et aux professionnels.
+                            Optimisez la performance thermique de vos bâtiments avec des solutions d'isolation et de chauffage durables et rentables, adaptées aux particuliers et aux professionnels.
                         </p>
 
                         <div className="mb-6 bg-white p-6 rounded-2xl shadow-sm border border-primary/10">
-                            <h3 className="font-heading font-bold text-xl text-primary mb-3 flex items-center gap-2">â˜€ï¸ Photovoltaïque</h3>
+                            <h3 className="font-heading font-bold text-xl text-primary mb-3 flex items-center gap-2">â˜€ï¸ Isolation Thermique</h3>
                             <ul className="space-y-2 font-body text-text/70 pl-6 list-disc marker:text-accent">
-                                <li>Autoconsommation avec ou sans revente de surplus</li>
-                                <li>Centrales solaires pour toitures tertiaires et industrielles</li>
-                                <li>Ombrières de parking photovoltaïques</li>
+                                <li>Isolation des combles et toitures (soufflée, déroulée, sarking)</li>
+                                <li>Isolation des murs par l'intérieur (ITI) et par l'extérieur (ITE)</li>
+                                <li>Isolation des planchers bas et calorifugeage des réseaux</li>
                             </ul>
                         </div>
 

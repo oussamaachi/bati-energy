@@ -144,14 +144,14 @@ export default function Accueil() {
                         </div>
                         <h1 className="flex flex-col">
                             <span className="hero-anim text-white font-heading font-black text-4xl md:text-6xl lg:text-[4rem] leading-tight tracking-tight">
-                                Produisez votre propre
+                                Maximisez votre
                             </span>
                             <span className="hero-anim text-accent font-serif italic text-6xl md:text-8xl lg:text-[7rem] leading-none mt-2">
-                                énergie solaire.
+                                efficacité énergétique.
                             </span>
                         </h1>
                         <p className="hero-anim text-bg/90 font-body text-lg md:text-xl max-w-2xl mt-6 border-l-2 border-accent pl-4">
-                            Simulez vos économies d'énergie grâce au photovoltaïque et aux pompes à chaleur. Des solutions clés en main, de l'étude à l'installation.
+                            Audit énergétique, isolation thermique, pompes à chaleur et valorisation CEE. Des solutions clés en main, de l'étude à la réalisation.
                         </p>
                         <div className="hero-anim pt-8 flex flex-wrap items-center gap-6">
                             <Link to="/contact" className="btn-magnetic px-8 py-4 text-base shadow-[0_0_30px_rgba(245,160,0,0.3)]">

@@ -41,9 +41,9 @@ export default function Navbar() {
                         <div className="px-4 py-2 text-xs text-text/50 font-mono uppercase tracking-wider mb-1 flex items-center gap-2">
                             <span className="w-2 h-2 rounded-full bg-accent"></span> Particuliers & Tertiaire
                         </div>
-                        <NavLink to="/expertises#photovoltaique" className="px-4 py-2.5 hover:bg-dark/5 rounded-xl transition-colors text-dark hover:text-accent flex flex-col">
-                            <span className="font-semibold text-sm">Photovoltaïque</span>
-                            <span className="text-xs text-dark/60 font-normal mt-0.5">Autoconsommation & Revente</span>
+                        <NavLink to="/expertises#isolation" className="px-4 py-2.5 hover:bg-dark/5 rounded-xl transition-colors text-dark hover:text-accent flex flex-col">
+                            <span className="font-semibold text-sm">Isolation Thermique</span>
+                            <span className="text-xs text-dark/60 font-normal mt-0.5">ITE, ITI, Combles & Toitures</span>
                         </NavLink>
                         <NavLink to="/expertises#pompes-a-chaleur" className="px-4 py-2.5 hover:bg-dark/5 rounded-xl transition-colors text-dark hover:text-accent flex flex-col">
                             <span className="font-semibold text-sm">Pompes à Chaleur (PAC)</span>
@@ -104,7 +104,7 @@ function MobileMenu({ scrolled, isHome }) {
                                 <span className="w-1.5 h-1.5 rounded-full bg-accent"></span> Particuliers & Tertiaire
                             </div>
                             <div className="flex flex-col border-l-2 border-primary/20 ml-2">
-                                <NavLink to="/expertises#photovoltaique" className={subLinkClass}>â˜€ï¸ Photovoltaïque</NavLink>
+                                <NavLink to="/expertises#isolation" className={subLinkClass}>🏠 Isolation Thermique</NavLink>
                                 <NavLink to="/expertises#pompes-a-chaleur" className={subLinkClass}>â„ï¸ Pompes à Chaleur (PAC)</NavLink>
                                 <NavLink to="/bureau-etudes" className={subLinkClass}>ðŸ“‹ Bureau d'Études</NavLink>
                                 <NavLink to="/expertises#cee" className={subLinkClass}>ðŸ’¶ Primes CEE / Dossiers</NavLink>
@@ -119,9 +119,10 @@ function MobileMenu({ scrolled, isHome }) {
                     <Link to="/contact" className="btn-magnetic w-full text-center mt-6 py-3 text-sm block">
                         <span>Demander une étude</span>
                     </Link>
-                </div>
-            )}
-        </div>
+                </div >
+            )
+}
+        </div >
     );
 }
 

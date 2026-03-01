@@ -26,7 +26,7 @@ const useCountUp = (end, duration = 1.5, start = 0, isDecimal = false) => {
 };
 
 const EfficiencyCalculator = () => {
-    const [projectType, setProjectType] = useState('Photovoltaïque'); // Photovoltaïque, PAC, Isolation, Audit
+    const [projectType, setProjectType] = useState('Isolation'); // Isolation, PAC, Audit
     const [surface, setSurface] = useState(100); // 50 to 10000 m2
     const [structureType, setStructureType] = useState('Particulier'); // Particulier, Tertiaire, Industriel
 
@@ -44,12 +44,7 @@ const EfficiencyCalculator = () => {
         let baseCo2PerM2 = 0;
         let roiBase = 0;
 
-        if (projectType === 'Photovoltaïque') {
-            baseSavingsPerM2 = 20; // Example values for simulation
-            baseCeePerM2 = 0;      // Often different mechanisms for PV
-            baseCo2PerM2 = 0.03;
-            roiBase = 7;
-        } else if (projectType === 'Isolation') {
+        if (projectType === 'Isolation') {
             baseSavingsPerM2 = 25;
             baseCeePerM2 = 15;
             baseCo2PerM2 = 0.04;
@@ -96,7 +91,7 @@ const EfficiencyCalculator = () => {
                         <div>
                             <div className="font-mono text-primary text-sm font-bold tracking-widest mb-3">ÉTAPE 1 â€” LOT TECHNIQUE</div>
                             <div className="flex flex-wrap gap-3">
-                                {['Photovoltaïque', 'Pompes à Chaleur', 'Isolation', 'Audit global'].map(type => (
+                                {['Isolation', 'Pompes à Chaleur', 'Audit global'].map(type => (
                                     <button
                                         key={type}
                                         onClick={() => setProjectType(type)}
@@ -279,7 +274,7 @@ export default function Contact() {
                                 <div className="relative">
                                     <select id="besoin" className="w-full bg-white border border-primary/20 rounded-xl px-5 py-4 appearance-none focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all font-body text-dark cursor-pointer">
                                         <option value="">Sélectionnez un domaine d'intervention</option>
-                                        <option value="solaire">Installation Photovoltaïque</option>
+                                        <option value="isolation">Isolation Thermique (ITE, ITI, Combles)</option>
                                         <option value="pac">Pompes à Chaleur (Air-Air, Air-Eau)</option>
                                         <option value="audit">Bureau d'études & Audit énergétique</option>
                                         <option value="cee">Montage & Valorisation dossier CEE</option>
