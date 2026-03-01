@@ -36,22 +36,24 @@ export default function Navbar() {
                         Nos Solutions
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
                     </div>
-                    {/* Submenu Dropdown */}
-                    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-72 bg-bg/95 backdrop-blur-xl border border-primary/10 rounded-2xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col p-2 pointer-events-none group-hover:pointer-events-auto">
-                        <div className="px-4 py-2 text-xs text-text/50 font-mono uppercase tracking-wider mb-1 flex items-center gap-2">
-                            <span className="w-2 h-2 rounded-full bg-accent"></span> Particuliers & Tertiaire
+                    {/* Submenu Dropdown - pt-4 creates invisible hover bridge */}
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 w-72 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 pointer-events-none group-hover:pointer-events-auto">
+                        <div className="bg-bg/95 backdrop-blur-xl border border-primary/10 rounded-2xl shadow-xl flex flex-col p-2">
+                            <div className="px-4 py-2 text-xs text-text/50 font-mono uppercase tracking-wider mb-1 flex items-center gap-2">
+                                <span className="w-2 h-2 rounded-full bg-accent"></span> Particuliers & Tertiaire
+                            </div>
+                            <NavLink to="/expertises#isolation" className="px-4 py-2.5 hover:bg-dark/5 rounded-xl transition-colors text-dark hover:text-accent flex flex-col">
+                                <span className="font-semibold text-sm">Isolation Thermique</span>
+                                <span className="text-xs text-dark/60 font-normal mt-0.5">ITE, ITI, Combles & Toitures</span>
+                            </NavLink>
+                            <NavLink to="/expertises#pompes-a-chaleur" className="px-4 py-2.5 hover:bg-dark/5 rounded-xl transition-colors text-dark hover:text-accent flex flex-col">
+                                <span className="font-semibold text-sm">Pompes à Chaleur (PAC)</span>
+                                <span className="text-xs text-dark/60 font-normal mt-0.5">Air-Air & Air-Eau (Hydraulique)</span>
+                            </NavLink>
+                            <div className="h-px bg-dark/10 my-1 mx-2"></div>
+                            <NavLink to="/bureau-etudes" className="px-4 py-2.5 hover:bg-dark/5 rounded-xl transition-colors text-dark hover:text-accent text-sm">Bureau d'Études & Audit</NavLink>
+                            <NavLink to="/expertises#cee" className="px-4 py-2.5 hover:bg-dark/5 rounded-xl transition-colors text-dark hover:text-accent text-sm">Primes CEE / Montage dossiers</NavLink>
                         </div>
-                        <NavLink to="/expertises#isolation" className="px-4 py-2.5 hover:bg-dark/5 rounded-xl transition-colors text-dark hover:text-accent flex flex-col">
-                            <span className="font-semibold text-sm">Isolation Thermique</span>
-                            <span className="text-xs text-dark/60 font-normal mt-0.5">ITE, ITI, Combles & Toitures</span>
-                        </NavLink>
-                        <NavLink to="/expertises#pompes-a-chaleur" className="px-4 py-2.5 hover:bg-dark/5 rounded-xl transition-colors text-dark hover:text-accent flex flex-col">
-                            <span className="font-semibold text-sm">Pompes à Chaleur (PAC)</span>
-                            <span className="text-xs text-dark/60 font-normal mt-0.5">Air-Air & Air-Eau (Hydraulique)</span>
-                        </NavLink>
-                        <div className="h-px bg-dark/10 my-1 mx-2"></div>
-                        <NavLink to="/bureau-etudes" className="px-4 py-2.5 hover:bg-dark/5 rounded-xl transition-colors text-dark hover:text-accent text-sm">Bureau d'Études & Audit</NavLink>
-                        <NavLink to="/expertises#cee" className="px-4 py-2.5 hover:bg-dark/5 rounded-xl transition-colors text-dark hover:text-accent text-sm">Primes CEE / Montage dossiers</NavLink>
                     </div>
                 </li>
 
@@ -104,7 +106,8 @@ function MobileMenu({ scrolled, isHome }) {
                                 <span className="w-1.5 h-1.5 rounded-full bg-accent"></span> Particuliers & Tertiaire
                             </div>
                             <div className="flex flex-col border-l-2 border-primary/20 ml-2">
-                                <NavLink to="/expertises#isolation" className={subLinkClass}>🏠 Isolation Thermique</NavLink>
+                                <NavLink to="/expertises#isolation" className={subLinkClass}>🏠 Isolation Thermique</NavLink>
+
                                 <NavLink to="/expertises#pompes-a-chaleur" className={subLinkClass}>â„ï¸ Pompes à Chaleur (PAC)</NavLink>
                                 <NavLink to="/bureau-etudes" className={subLinkClass}>ðŸ“‹ Bureau d'Études</NavLink>
                                 <NavLink to="/expertises#cee" className={subLinkClass}>ðŸ’¶ Primes CEE / Dossiers</NavLink>
@@ -121,7 +124,7 @@ function MobileMenu({ scrolled, isHome }) {
                     </Link>
                 </div >
             )
-}
+            }
         </div >
     );
 }
