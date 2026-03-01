@@ -109,7 +109,7 @@ const TelemetryTypewriter = () => {
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-3 w-3 bg-accent"></span>
                 </span>
-                <span className="font-mono text-xs tracking-wider text-bg/80">FLUX CONSEIL â€” EN DIRECT</span>
+                <span className="font-mono text-xs tracking-wider text-bg/80">FLUX CONSEIL — EN DIRECT</span>
             </div>
 
             <div className="font-mono text-sm leading-relaxed whitespace-pre-wrap flex-grow text-accent-hot">

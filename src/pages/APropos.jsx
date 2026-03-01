@@ -170,7 +170,7 @@ export default function APropos() {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {[
-                        { name: "Directrice Générale", role: "Fondatrice â€” Ingénieure Efficacité", img: "/images/camille.png" },
+                        { name: "Directrice Générale", role: "Fondatrice — Ingénieure Efficacité", img: "/images/camille.png" },
                         { name: "Directeur Technique", role: "Expert Audit & CVC", img: "/images/thomas.png" },
                         { name: "Responsable Financement", role: "Experte Valorisation CEE", img: "/images/sarah.png" }
                     ].map((member, i) => (
@@ -227,8 +227,8 @@ export default function APropos() {
                         <Leaf className="w-8 h-8 mx-auto" />
                     </div>
                     <p className="font-bold text-white text-lg tracking-wider">SAS BATI ENERGY</p>
-                    <p>45 avenue Pierre Brossolette â€” 92120 Montrouge</p>
-                    <p>NAF 71.12B â€” Fondée en 2023</p>
+                    <p>45 avenue Pierre Brossolette — 92120 Montrouge</p>
+                    <p>NAF 71.12B — Fondée en 2023</p>
                 </div>
             </section>
         </div>

@@ -89,7 +89,7 @@ const EfficiencyCalculator = () => {
                     <div className="space-y-8">
                         {/* Step 1 */}
                         <div>
-                            <div className="font-mono text-primary text-sm font-bold tracking-widest mb-3">ÉTAPE 1 â€” LOT TECHNIQUE</div>
+                            <div className="font-mono text-primary text-sm font-bold tracking-widest mb-3">ÉTAPE 1 — LOT TECHNIQUE</div>
                             <div className="flex flex-wrap gap-3">
                                 {['Isolation', 'Pompes à Chaleur', 'Audit global'].map(type => (
                                     <button
@@ -109,7 +109,7 @@ const EfficiencyCalculator = () => {
                         {/* Step 2 */}
                         <div>
                             <div className="font-mono text-primary text-sm font-bold tracking-widest mb-3 flex justify-between">
-                                <span>ÉTAPE 2 â€” SURFACE CONCERNÉE</span>
+                                <span>ÉTAPE 2 — SURFACE CONCERNÉE</span>
                                 <span className="text-accent">{surface} mÂ²</span>
                             </div>
                             <input
@@ -129,7 +129,7 @@ const EfficiencyCalculator = () => {
 
                         {/* Step 3 */}
                         <div>
-                            <div className="font-mono text-primary text-sm font-bold tracking-widest mb-3">ÉTAPE 3 â€” SECTEUR D'ACTIVITÉ</div>
+                            <div className="font-mono text-primary text-sm font-bold tracking-widest mb-3">ÉTAPE 3 — SECTEUR D'ACTIVITÉ</div>
                             <div className="flex flex-wrap gap-3">
                                 {[
                                     { id: 'Particulier', icon: Building2 }, // Reusing Building2 temporarily or adjusting icon
@@ -354,7 +354,7 @@ export default function Contact() {
                                     </div>
                                     <div>
                                         <h4 className="font-mono text-xs tracking-widest text-white/50 mb-2 font-bold uppercase">Horaires d'ouverture</h4>
-                                        <p className="font-body text-lg font-medium leading-relaxed">Lunâ€“Ven : 09:00 â€“ 18:00<br /><span className="text-white/60">Fermé le week-end et jours fériés</span></p>
+                                        <p className="font-body text-lg font-medium leading-relaxed">Lun–Ven : 09:00 – 18:00<br /><span className="text-white/60">Fermé le week-end et jours fériés</span></p>
                                     </div>
                                 </li>
                             </ul>
