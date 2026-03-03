@@ -3,9 +3,9 @@ import { MapPin, Mail, Clock } from 'lucide-react';
 
 export default function Footer() {
     return (
-        <footer className="relative bg-dark text-bg pt-20 pb-6 rounded-t-[3rem] mt-20">
+        <footer className="relative bg-dark text-bg pt-20 pb-6 rounded-t-[3rem] mt-20 overflow-hidden">
             {/* Top Gradient Separator */}
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary-mid via-accent to-primary-mid rounded-t-full"></div>
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary-mid via-accent to-primary-mid rounded-t-\[3rem\]"></div>
 
             <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
                 {/* Col 1 */}
@@ -74,4 +74,6 @@ export default function Footer() {
         </footer>
     );
 }
+
+
 

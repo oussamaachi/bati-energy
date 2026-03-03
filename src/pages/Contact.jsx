@@ -310,7 +310,7 @@ export default function Contact() {
                                         {formState === 'submitting' ? (
                                             <>Traitement en cours <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div></>
                                         ) : formState === 'success' ? (
-                                            <>Demande envoyée avec succès âœ“</>
+                                            <>Demande envoyée avec succès ✓</>
                                         ) : (
                                             <>Demander une étude gratuite <Send className="w-5 h-5" /></>
                                         )}

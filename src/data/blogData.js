@@ -90,6 +90,58 @@ Une étude confiée à **BATI ENERGY** est le livrable fondamental qui vous perm
         `
     },
     {
+        slug: "isolation-toiture-terrasse-techniques-aides-2026",
+        title: "Isolation de Toiture-Terrasse : Techniques et Aides Financières 2025-2026",
+        category: "Conseil",
+        date: "12 Octobre 2026",
+        readTime: "7 min",
+        image: "/images/hero_texture.png",
+        excerpt: "Saviez-vous que 30% des déperditions de chaleur s'effectuent par le toit ? L'isolation des toitures-terrasses est un gisement d'économies massif. Découvrez les techniques (toiture chaude, inversée) et les aides 2026.",
+        content: `
+L'isolation d'une toiture-terrasse représente l'un des investissements les plus rentables en matière de rénovation énergétique. En effet, la chaleur monte, et un toit mal isolé est responsable d'environ **30% des déperditions thermiques** d'un bâtiment. 
+
+Que ce soit pour un bâtiment tertiaire, un immeuble collectif ou une maison individuelle, voici ce qu'il faut savoir sur les techniques d'isolation et les dispositifs d'aides financières valables pour la fin 2025 et l'année 2026.
+
+## Les Techniques d'Isolation par l'Extérieur
+
+L'isolation par l'extérieur est systématiquement privilégiée pour les toitures-terrasses, car elle permet de traiter efficacement les ponts thermiques (les ruptures d'isolation aux jonctions des murs) et de protéger la structure du bâtiment contre les chocs thermiques.
+
+Il existe deux techniques principales :
+
+### 1. La Toiture Chaude (Isolation Conventionnelle)
+C'est la méthode la plus courante. 
+- **Le principe :** L'isolant (souvent des panneaux de polyuréthane PU ou de polystyrène extrudé XPS) est posé *sur* le support de couverture (souvent un pare-vapeur), et il est ensuite recouvert par le revêtement d'étanchéité (bitume, membrane EPDM, PVC...).
+- **L'avantage :** L'isolant est parfaitement protégé des intempéries. C'est la solution offrant généralement le meilleur compromis coût/performance thermique.
+
+### 2. La Toiture Inversée
+Dans ce cas de figure, l'ordre des couches est inversé.
+- **Le principe :** La membrane d'étanchéité est placée directement sur le support de toiture. L'isolant est ensuite posé **au-dessus** de l'étanchéité. Il est alors lesté (par des graviers, des dalles sur plots, ou une végétalisation) pour le maintenir en place et le protéger des UV.
+- **L'avantage :** La couche d'étanchéité est protégée des variations extrêmes de température (gel en hiver, canicule en été) et des agressions mécaniques par l'isolant lui-même, prolongeant ainsi considérablement sa durée de vie. Cela nécessite cependant des isolants spécifiques, insensibles à l'eau (comme le polystyrène extrudé XPS).
+
+## Les Aides Financières 2025-2026 : Ce qu'il faut savoir
+
+L'État français maintient un cap ambitieux pour la rénovation globale, et l'isolation des toitures-terrasses est largement soutenue.
+
+### MaPrimeRénov'
+Pilier du financement de l'ANAH, MaPrimeRénov' est accessible à l'ensemble des propriétaires.
+- **En 2025/2026 :** L'aide est calculée en fonction des revenus du foyer. Pour les ménages modestes et très modestes, la prime peut atteindre **jusqu'à 75 € à 100 € par m²** d'isolant posé (dans la limite d'un plafond de dépenses éligibles).
+- **Condition de performance :** Il est généralement exigé une résistance thermique (R) minimale de **4,5 m².K/W** en rénovation. Nos experts BATI ENERGY visent d'ailleurs souvent des performances supérieures pour maximiser votre confort estival.
+
+### Les Certificats d'Économies d'Énergie (Primes CEE)
+Cumulables avec MaPrimeRénov', les primes CEE (Prime Énergie) sont versées par les fournisseurs d'énergie.
+- **Fiche BAR-EN-105 :** C'est la fiche de référence pour l'isolation des toitures-terrasses. Le montant de la prime dépend de la zone climatique (H1, H2, H3), de l'énergie de chauffage et de la surface isolée. 
+- Chez **BATI ENERGY**, nous intégrons directement le calcul de ces primes CEE dans nos audits et nous chargeons du montage des dossiers pour nos clients (particuliers comme entreprises).
+
+### L'Éco-Prêt à Taux Zéro (Éco-PTZ) et la TVA à 5,5%
+- L'**Éco-PTZ** permet d'emprunter jusqu'à 50 000 € (pour des rénovations globales) sans payer d'intérêts, afin de financer le reste à charge.
+- La **TVA à taux réduit de 5,5%** s'applique directement sur la facture de l'entreprise qui fournit et pose les matériaux.
+
+*Attention :* Pour bénéficier de toutes ces aides, les travaux doivent **impérativement** être réalisés par une entreprise certifiée **RGE** (Reconnu Garant de l'Environnement).
+
+Que vous souhaitiez réaliser un audit énergétique préliminaire ou que vous cherchiez un accompagnement complet pour l'isolation de vos toits-terrasses en incluant la valorisation des CEE, **BATI ENERGY** est votre interlocuteur de confiance.
+        `
+    },
+    {
         slug: "bacs-gtb-pilotage-intelligent",
         title: "Décret BACS et GTB : le pilotage intelligent au cœur de l'efficacité",
         category: "Technologie",

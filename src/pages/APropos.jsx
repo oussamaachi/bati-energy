@@ -5,6 +5,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
+const shouldReduceMotion = () =>
+    typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 export default function APropos() {
     const heroRef = useRef(null);
     const timelineRef = useRef(null);
@@ -13,6 +16,8 @@ export default function APropos() {
     const valuesRef = useRef(null);
 
     useEffect(() => {
+        if (shouldReduceMotion()) return undefined;
+
         let ctx = gsap.context(() => {
             // Hero
             gsap.fromTo('.hero-text',

@@ -6,6 +6,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
+const shouldReduceMotion = () =>
+    typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 const AnimatedChecklist = () => {
     const listRef = useRef(null);
 
@@ -18,6 +21,8 @@ const AnimatedChecklist = () => {
     ];
 
     useEffect(() => {
+        if (shouldReduceMotion()) return undefined;
+
         let ctx = gsap.context(() => {
             gsap.fromTo('.check-item',
                 { x: -20, opacity: 0 },
@@ -65,6 +70,8 @@ export default function FormationAudit() {
     const timelineRef = useRef(null);
 
     useEffect(() => {
+        if (shouldReduceMotion()) return undefined;
+
         let ctx = gsap.context(() => {
             // Hero
             gsap.fromTo('.hero-text',

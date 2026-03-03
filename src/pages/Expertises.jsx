@@ -6,9 +6,12 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
+const shouldReduceMotion = () =>
+    typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 const TELEMETRY_LINES = [
     "> Analyse réglementaire Décret Tertiaire...",
-    "> Audit énergétique usine : OK âœ✓",
+    "> Audit énergétique usine : OK ✓",
     "> Recommandation isolation transmise...",
     "> Veille 2026 : CEE 6ème période intégrée"
 ];
@@ -17,8 +20,12 @@ const TELEMETRY_LINES = [
 const DiagnosticShuffler = () => {
     const cards = ['Audit énergétique', 'Bureau d\'études', 'Valorisation CEE', 'Isolation Thermique'];
     const [activeIndex, setActiveIndex] = useState(0);
+    const reduceMotionRef = useRef(false);
 
     useEffect(() => {
+        reduceMotionRef.current = shouldReduceMotion();
+        if (reduceMotionRef.current) return undefined;
+
         const interval = setInterval(() => {
             setActiveIndex((prev) => (prev + 1) % cards.length);
         }, 3000);
@@ -64,15 +71,27 @@ const TelemetryTypewriter = () => {
     const [currentLineIndex, setCurrentLineIndex] = useState(0);
     const [currentCharIndex, setCurrentCharIndex] = useState(0);
     const [cursorVisible, setCursorVisible] = useState(true);
+    const reduceMotionRef = useRef(false);
+
+    useEffect(() => {
+        reduceMotionRef.current = shouldReduceMotion();
+        if (reduceMotionRef.current) {
+            setDisplayedText(TELEMETRY_LINES.join('\n'));
+        }
+    }, []);
 
     // Blinking cursor
     useEffect(() => {
+        if (reduceMotionRef.current) return undefined;
+
         const blink = setInterval(() => setCursorVisible(v => !v), 500);
         return () => clearInterval(blink);
     }, []);
 
     // Typewriter effect
     useEffect(() => {
+        if (reduceMotionRef.current) return undefined;
+
         if (currentLineIndex >= TELEMETRY_LINES.length) {
             setTimeout(() => {
                 setDisplayedText("");
@@ -127,6 +146,8 @@ const Scheduler = () => {
     const cursorRef = useRef(null);
 
     useEffect(() => {
+        if (shouldReduceMotion()) return undefined;
+
         // Sequence animation
         let ctx = gsap.context(() => {
             const tl = gsap.timeline({ repeat: -1, repeatDelay: 2 });
@@ -188,8 +209,12 @@ export default function Expertises() {
     const heroRef = useRef(null);
     const sectionRefs = useRef([]);
     const location = useLocation();
+    const reduceMotionRef = useRef(false);
 
     useEffect(() => {
+        reduceMotionRef.current = shouldReduceMotion();
+        if (reduceMotionRef.current) return undefined;
+
         let ctx = gsap.context(() => {
             // Hero reveal
             gsap.fromTo('.hero-text',
@@ -222,7 +247,9 @@ export default function Expertises() {
 
         const targetId = location.hash.replace('#', '');
         const timeout = window.setTimeout(() => {
-            document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            document
+                .getElementById(targetId)
+                ?.scrollIntoView({ behavior: reduceMotionRef.current ? 'auto' : 'smooth', block: 'start' });
         }, 100);
 
         return () => window.clearTimeout(timeout);
@@ -293,16 +320,17 @@ export default function Expertises() {
                         </p>
 
                         <div className="mb-6 bg-white p-6 rounded-2xl shadow-sm border border-primary/10">
-                            <h3 className="font-heading font-bold text-xl text-primary mb-3 flex items-center gap-2">â˜€ï¸ Isolation Thermique</h3>
+                            <h3 className="font-heading font-bold text-xl text-primary mb-3 flex items-center gap-2">Isolation Thermique</h3>
                             <ul className="space-y-2 font-body text-text/70 pl-6 list-disc marker:text-accent">
-                                <li>Isolation des combles et toitures (soufflée, déroulée, sarking)</li>
+                                <li>Isolation des combles (soufflée, déroulée, sarking)</li>
+                                <li><strong>Isolation des toitures-terrasses</strong> (toiture chaude, inversée) : supprimez jusqu'à 30% des déperditions thermiques.</li>
                                 <li>Isolation des murs par l'intérieur (ITI) et par l'extérieur (ITE)</li>
                                 <li>Isolation des planchers bas et calorifugeage des réseaux</li>
                             </ul>
                         </div>
 
                         <div id="pompes-a-chaleur" className="bg-white p-6 rounded-2xl shadow-sm border border-primary/10 scroll-mt-36">
-                            <h3 className="font-heading font-bold text-xl text-primary mb-3 flex items-center gap-2">â„ï¸ Pompes à Chaleur (PAC)</h3>
+                            <h3 className="font-heading font-bold text-xl text-primary mb-3 flex items-center gap-2">Pompes à Chaleur (PAC)</h3>
                             <ul className="space-y-2 font-body text-text/70 pl-6 list-disc marker:text-accent">
                                 <li><strong>PAC Air-Air</strong> : Systèmes de climatisation réversible haut rendement</li>
                                 <li><strong>PAC Air-Eau</strong> : Systèmes hydrauliques de chauffage et production d'ECS</li>
