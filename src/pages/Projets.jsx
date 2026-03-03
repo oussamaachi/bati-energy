@@ -155,7 +155,7 @@ const ImageSlider = ({ images, reduceMotion }) => {
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
         {images.map((img, idx) => (
-          <img key={idx} src={img} alt={`Slide ${idx + 1}`} className="w-full h-full object-cover flex-shrink-0" />
+          <img key={idx} src={img} alt={`Slide ${idx + 1}`} loading="lazy" className="w-full h-full object-cover flex-shrink-0" />
         ))}
       </div>
 
@@ -183,11 +183,10 @@ const ImageSlider = ({ images, reduceMotion }) => {
             key={idx}
             onClick={() => setCurrentIndex(idx)}
             aria-label={`Aller à l'image ${idx + 1}`}
-            className={`transition-all duration-300 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
-              currentIndex === idx
+            className={`transition-all duration-300 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${currentIndex === idx
                 ? 'w-8 h-2.5 bg-primary shadow-[0_0_10px_rgba(255,87,34,0.7)]'
                 : 'w-2.5 h-2.5 bg-white/50 hover:bg-white/80'
-            }`}
+              }`}
           />
         ))}
       </div>
@@ -377,11 +376,10 @@ export default function Projets() {
                 key={cat}
                 type="button"
                 onClick={() => setActiveFilter(cat)}
-                className={`flex-shrink-0 px-6 py-2.5 rounded-full font-body text-sm tracking-wide font-bold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
-                  activeFilter === cat
+                className={`flex-shrink-0 px-6 py-2.5 rounded-full font-body text-sm tracking-wide font-bold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${activeFilter === cat
                     ? 'bg-primary text-white scale-105 shadow-md shadow-primary/30'
                     : 'bg-white text-text border border-primary/10 hover:border-primary hover:text-primary hover:shadow-sm'
-                }`}
+                  }`}
               >
                 {cat}
               </button>
@@ -466,7 +464,7 @@ export default function Projets() {
                 {selectedProject.gallery ? (
                   <ImageSlider images={selectedProject.gallery} reduceMotion={reduceMotion.current} />
                 ) : (
-                  <img src={selectedProject.image} alt={selectedProject.title} className="w-full h-full object-cover" />
+                  <img src={selectedProject.image} alt={selectedProject.title} loading="lazy" className="w-full h-full object-cover" />
                 )}
 
                 <div className="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent pointer-events-none"></div>

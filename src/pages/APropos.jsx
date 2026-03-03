@@ -181,7 +181,7 @@ export default function APropos() {
                     ].map((member, i) => (
                         <div key={i} className="team-card group relative overflow-hidden rounded-3xl bg-white shadow-lg">
                             <div className="aspect-[4/5] overflow-hidden">
-                                <img src={member.img} alt={member.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0" />
+                                <img src={member.img} alt={member.name} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0" />
                             </div>
                             <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
 

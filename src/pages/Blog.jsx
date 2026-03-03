@@ -115,7 +115,7 @@ export default function Blog() {
                     {articles.map((article, index) => (
                         <Link to={`/blog/${article.slug}`} key={index} className="article-card flex flex-col bg-bg group cursor-pointer hover:-translate-y-2 transition-transform duration-300">
                             <div className="relative h-64 rounded-[2rem] overflow-hidden mb-6 shadow-md shadow-primary/5">
-                                <img src={article.image} alt={article.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                                <img src={article.image} alt={article.title} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                                 <div className="absolute top-4 left-4 bg-white/90 backdrop-blur text-primary font-mono text-xs font-bold px-3 py-1.5 rounded-md shadow-sm uppercase">
                                     {article.category}
                                 </div>

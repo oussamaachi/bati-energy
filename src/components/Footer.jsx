@@ -11,7 +11,7 @@ export default function Footer() {
                 {/* Col 1 */}
                 <div className="space-y-6">
                     <Link to="/" className="flex items-center gap-2 group">
-                        <img src="/logo.png" alt="BATI ENERGY" className="h-10 w-auto object-contain brightness-0 invert" />
+                        <img src="/logo.webp" alt="BATI ENERGY" className="h-10 w-auto object-contain brightness-0 invert" />
                     </Link>
                     <p className="font-serif italic text-xl text-bg/80">"L'ingénierie au service de la transition énergétique."</p>
                     <p className="font-body text-sm text-bg/60">Fondée en 2023, Montrouge</p>

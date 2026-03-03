@@ -254,7 +254,7 @@ export default function BlogPost() {
                                                 className="flex items-start gap-3 group"
                                             >
                                                 <div className="w-14 h-14 rounded-xl overflow-hidden shrink-0 border border-dark/10">
-                                                    <img src={rel.image} alt={rel.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                                                    <img src={rel.image} alt={rel.title} loading="lazy" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                                                 </div>
                                                 <p className="font-body text-sm font-semibold text-dark/80 group-hover:text-primary transition-colors leading-snug line-clamp-2">
                                                     {rel.title}

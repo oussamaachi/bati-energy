@@ -131,56 +131,54 @@ export default function Accueil() {
 
     return (
         <div className="bg-bg">
-                        {/* Hero Section */}
-            <section ref={heroRef} className="relative min-h-[100dvh] w-full flex items-center justify-center pt-32 pb-20 px-6 bg-dark overflow-hidden">
-                {/* Clean Modern Background */}
+            {/* Hero Section */}
+            <section ref={heroRef} className="relative h-[100dvh] w-full flex items-end pb-24 px-6 overflow-hidden">
+                {/* Background Image */}
                 <div className="absolute inset-0 z-0">
                     <img
                         src="/images/hero_texture.png"
-                        alt="Background Texture"
-                        className="w-full h-full object-cover object-center opacity-10 mix-blend-screen"
+                        alt="Efficacité énergétique bâtiments"
+                        className="w-full h-full object-cover object-center transform scale-105"
                     />
-                    {/* Subtle modern glow */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] bg-primary-mid/20 rounded-full blur-[120px] pointer-events-none"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-dark via-primary/50 to-transparent"></div>
                 </div>
 
-                {/* Hero Content - Centered & Epure */}
-                <div className="relative z-10 max-w-5xl mx-auto w-full flex flex-col items-center text-center mt-10 md:mt-0">
-                    
-                    {/* Modern pill badge */}
-                    <div className="hero-anim inline-flex items-center gap-3 mb-10 px-5 py-2.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md shadow-lg">
-                        <span className="relative flex h-2.5 w-2.5">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-                            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-accent"></span>
-                        </span>
-                        <span className="text-white/80 text-xs font-mono tracking-widest uppercase">Particuliers & Tertiaire</span>
-                    </div>
-
-                    <h1 className="hero-anim flex flex-col items-center mb-8">
-                        <span className="text-white font-heading font-light text-3xl md:text-5xl lg:text-6xl tracking-tight mb-3 opacity-90">
-                            L'ingénierie au service de votre
-                        </span>
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-[#FFC107] font-heading font-black text-5xl md:text-[5.5rem] lg:text-[7.5rem] leading-[1.1] drop-shadow-2xl py-2">
-                            efficacité énergétique.
-                        </span>
-                    </h1>
-
-                    <p className="hero-anim text-white/60 font-body text-xl md:text-2xl max-w-2xl mb-14 font-light leading-relaxed">
-                        De l'audit réglementaire au déploiement de solutions performantes, nous vous accompagnons pour réduire votre empreinte et maximiser vos bénéfices.
-                    </p>
-
-                    <div className="hero-anim flex flex-col sm:flex-row items-center gap-6">
-                        <Link to="/contact" className="px-8 py-4 rounded-full bg-white text-dark font-heading font-bold text-sm tracking-widest uppercase hover:scale-105 hover:bg-accent hover:text-white transition-all shadow-[0_0_30px_rgba(255,255,255,0.1)] flex items-center gap-3">
-                            Démarrer un projet <ArrowRight className="w-4 h-4" />
-                        </Link>
-                        <Link to="/expertises" className="px-8 py-4 rounded-full border border-white/20 text-white font-heading font-medium text-sm tracking-widest uppercase hover:bg-white/10 transition-colors flex items-center gap-3">
-                            Nos expertises
-                        </Link>
+                {/* Hero Content */}
+                <div className="relative z-10 max-w-7xl mx-auto w-full">
+                    <div className="max-w-4xl space-y-4">
+                        <div className="hero-anim flex items-center gap-3 mb-6">
+                            <span className="bg-white/10 border border-white/20 text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full backdrop-blur-sm">
+                                Particuliers
+                            </span>
+                            <span className="bg-accent/20 border border-accent/40 text-accent text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full backdrop-blur-sm">
+                                Tertiaire
+                            </span>
+                        </div>
+                        <h1 className="flex flex-col">
+                            <span className="hero-anim text-white font-body font-light text-3xl md:text-5xl lg:text-[4rem] tracking-wide opacity-90">
+                                Maximisez votre
+                            </span>
+                            <span className="hero-anim text-accent font-heading font-black text-6xl md:text-8xl lg:text-[7rem] leading-none mt-2">
+                                efficacité énergétique.
+                            </span>
+                        </h1>
+                        <p className="hero-anim text-bg/90 font-body text-lg md:text-xl max-w-2xl mt-6 border-l-2 border-accent pl-4">
+                            Audit énergétique, isolation thermique, pompes à chaleur et valorisation CEE. Des solutions clés en main, de l'étude à la réalisation.
+                        </p>
+                        <div className="hero-anim pt-8 flex flex-wrap items-center gap-6">
+                            <Link to="/contact" className="btn-magnetic px-8 py-4 text-base shadow-[0_0_30px_rgba(245,160,0,0.3)] hover:-translate-y-1 transition-transform bg-accent text-dark font-heading font-bold rounded-full">
+                                <span className="flex items-center gap-2">Demander une étude <ArrowRight className="w-5 h-5" /></span>
+                            </Link>
+                            <Link to="/expertises" className="hover-link text-white font-medium flex items-center gap-2 group">
+                                Découvrir nos expertises
+                                <span className="group-hover:translate-x-1 transition-transform">→</span>
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </section>
 
-{/* Stats Bar */}
+            {/* Stats Bar */}
             <section className="bg-primary py-16 px-6 relative z-20 -mt-8 rounded-t-3xl shadow-2xl">
                 <div className="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8">
                     <Counter prefix="+" value={50} label="Projets tertiaires & industriels" />
@@ -285,7 +283,7 @@ export default function Accueil() {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {/* Project 1 */}
                         <div className="project-card group relative h-96 rounded-3xl overflow-hidden cursor-pointer">
-                            <img src="/images/projet_audit.png" alt="Audit Energétique Industriel" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                            <img src="/images/projet_audit.png" alt="Audit Energétique Industriel" loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                             <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
 
                             <div className="absolute inset-0 p-8 flex flex-col justify-end">
@@ -297,7 +295,7 @@ export default function Accueil() {
 
                         {/* Project 2 */}
                         <div className="project-card group relative h-96 rounded-3xl overflow-hidden cursor-pointer">
-                            <img src="/images/formation.png" alt="Rénovation Globale CEE" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                            <img src="/images/formation.png" alt="Rénovation Globale CEE" loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                             <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
 
                             <div className="absolute inset-0 p-8 flex flex-col justify-end">
@@ -309,7 +307,7 @@ export default function Accueil() {
 
                         {/* Project 3 */}
                         <div className="project-card group relative h-96 rounded-3xl overflow-hidden cursor-pointer">
-                            <img src="/images/bureau.png" alt="Relamping LED" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                            <img src="/images/bureau.png" alt="Relamping LED" loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                             <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
 
                             <div className="absolute inset-0 p-8 flex flex-col justify-end">
@@ -349,5 +347,8 @@ export default function Accueil() {
         </div>
     );
 }
+
+
+
 
 

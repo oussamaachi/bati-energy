@@ -297,7 +297,7 @@ export default function Expertises() {
                             <DiagnosticShuffler />
                         </div>
                         <div className="mt-8 rounded-[2.5rem] overflow-hidden shadow-2xl h-80">
-                            <img src="/images/projet_audit.png" alt="Bureau d'études audit énergétique" className="w-full h-full object-cover" />
+                            <img src="/images/projet_audit.png" alt="Bureau d'études audit énergétique" loading="lazy" className="w-full h-full object-cover" />
                         </div>
                     </div>
                 </div>
@@ -308,7 +308,7 @@ export default function Expertises() {
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16 lg:gap-24">
                     <div className="w-full md:w-1/2">
                         <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl h-80 mb-8">
-                            <img src="/images/bureau.png" alt="Isolation thermique et Pompes à Chaleur" className="w-full h-full object-cover" />
+                            <img src="/images/bureau.png" alt="Isolation thermique et Pompes à Chaleur" loading="lazy" className="w-full h-full object-cover" />
                         </div>
                         <TelemetryTypewriter />
                     </div>
@@ -355,7 +355,7 @@ export default function Expertises() {
                     </div>
                     <div className="w-full md:w-1/2 order-1 md:order-2">
                         <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl h-[40rem]">
-                            <img src="/images/projet_territoire.png" alt="Solutions d'isolation et relamping" className="w-full h-full object-cover" />
+                            <img src="/images/projet_territoire.png" alt="Solutions d'isolation et relamping" loading="lazy" className="w-full h-full object-cover" />
                             <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-dark to-transparent opacity-80"></div>
                         </div>
                     </div>
